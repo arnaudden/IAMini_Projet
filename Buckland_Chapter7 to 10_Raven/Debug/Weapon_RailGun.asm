@@ -12,44 +12,44 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _Pi	DQ	0400921f9f01b866er		; 3.14159
-$SG157014 DB	'Slug_MaxSpeed', 00H
+$SG157118 DB	'Slug_MaxSpeed', 00H
 	ORG $+2
-$SG157015 DB	'RailGun_IdealRange', 00H
+$SG157119 DB	'RailGun_IdealRange', 00H
 	ORG $+1
-$SG157016 DB	'RailGun_FiringFreq', 00H
+$SG157120 DB	'RailGun_FiringFreq', 00H
 	ORG $+1
-$SG157017 DB	'RailGun_MaxRoundsCarried', 00H
+$SG157121 DB	'RailGun_MaxRoundsCarried', 00H
 	ORG $+3
-$SG157018 DB	'RailGun_DefaultRounds', 00H
+$SG157122 DB	'RailGun_DefaultRounds', 00H
 	ORG $+2
-$SG157048 DB	'DistanceToTarget', 00H
+$SG157152 DB	'DistanceToTarget', 00H
 	ORG $+3
-$SG157051 DB	'AmmoStatus', 00H
+$SG157155 DB	'AmmoStatus', 00H
 	ORG $+1
-$SG157053 DB	'Desirability', 00H
+$SG157157 DB	'Desirability', 00H
 	ORG $+3
-$SG157059 DB	'DistanceToTarget', 00H
+$SG157163 DB	'DistanceToTarget', 00H
 	ORG $+3
-$SG157064 DB	'Target_Close', 00H
+$SG157168 DB	'Target_Close', 00H
 	ORG $+3
-$SG157069 DB	'Target_Medium', 00H
+$SG157173 DB	'Target_Medium', 00H
 	ORG $+2
-$SG157074 DB	'Target_Far', 00H
+$SG157178 DB	'Target_Far', 00H
 	ORG $+1
-$SG157077 DB	'Desirability', 00H
+$SG157181 DB	'Desirability', 00H
 	ORG $+3
-$SG157082 DB	'VeryDesirable', 00H
+$SG157186 DB	'VeryDesirable', 00H
 	ORG $+2
-$SG157087 DB	'Desirable', 00H
+$SG157191 DB	'Desirable', 00H
 	ORG $+2
-$SG157092 DB	'Undesirable', 00H
-$SG157095 DB	'AmmoStatus', 00H
+$SG157196 DB	'Undesirable', 00H
+$SG157199 DB	'AmmoStatus', 00H
 	ORG $+1
-$SG157100 DB	'Ammo_Loads', 00H
+$SG157204 DB	'Ammo_Loads', 00H
 	ORG $+1
-$SG157105 DB	'Ammo_Okay', 00H
+$SG157209 DB	'Ammo_Okay', 00H
 	ORG $+2
-$SG157110 DB	'Ammo_Low', 00H
+$SG157214 DB	'Ammo_Low', 00H
 	ORG $+3
 _colors	DD	0ffH
 	DD	0ff0000H
@@ -259,15 +259,13 @@ PUBLIC	?_Orphan_range@?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@IB
 PUBLIC	?WorldTransform@@YA?AV?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@AAV12@ABUVector2D@@111@Z ; WorldTransform
 PUBLIC	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ		; BaseGameEntity::Pos
 PUBLIC	?Scale@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Scale
-PUBLIC	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ		; Raven_Bot::Facing
-PUBLIC	?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ	; Raven_Bot::GetWorld
+PUBLIC	??1FuzzyTerm@@UAE@XZ				; FuzzyTerm::~FuzzyTerm
+PUBLIC	??0FuzzyTerm@@QAE@XZ				; FuzzyTerm::FuzzyTerm
+PUBLIC	??_GFuzzyTerm@@UAEPAXI@Z			; FuzzyTerm::`scalar deleting destructor'
 PUBLIC	?ORwithDOM@FuzzySet@@QAEXN@Z			; FuzzySet::ORwithDOM
 PUBLIC	?ClearDOM@FuzzySet@@QAEXXZ			; FuzzySet::ClearDOM
 PUBLIC	?GetDOM@FuzzySet@@QBENXZ			; FuzzySet::GetDOM
 PUBLIC	??R?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QBE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@0@Z ; std::less<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >::operator()
-PUBLIC	??1FuzzyTerm@@UAE@XZ				; FuzzyTerm::~FuzzyTerm
-PUBLIC	??0FuzzyTerm@@QAE@XZ				; FuzzyTerm::FuzzyTerm
-PUBLIC	??_GFuzzyTerm@@UAEPAXI@Z			; FuzzyTerm::`scalar deleting destructor'
 PUBLIC	?SetConfidenceOfConsequentToZero@FuzzyRule@@QAEXXZ ; FuzzyRule::SetConfidenceOfConsequentToZero
 PUBLIC	?Calculate@FuzzyRule@@QAEXXZ			; FuzzyRule::Calculate
 PUBLIC	??1FzSet@@UAE@XZ				; FzSet::~FzSet
@@ -402,6 +400,8 @@ PUBLIC	??0?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@PAVFuzzyRule@@@std@
 PUBLIC	??D?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@PAVFuzzyRule@@@std@@@std@@@std@@QBEAAPAVFuzzyRule@@XZ ; std::_Vector_iterator<std::_Vector_val<std::_Simple_types<FuzzyRule *> > >::operator*
 PUBLIC	??E?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@PAVFuzzyRule@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_Vector_iterator<std::_Vector_val<std::_Simple_types<FuzzyRule *> > >::operator++
 PUBLIC	??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@PAVFuzzyRule@@@std@@@std@@@std@@QAE@XZ ; std::_Vector_iterator<std::_Vector_val<std::_Simple_types<FuzzyRule *> > >::~_Vector_iterator<std::_Vector_val<std::_Simple_types<FuzzyRule *> > >
+PUBLIC	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ		; Raven_Bot::Facing
+PUBLIC	?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ	; Raven_Bot::GetWorld
 PUBLIC	?isReadyForNextShot@Raven_Weapon@@IAE_NXZ	; Raven_Weapon::isReadyForNextShot
 PUBLIC	?UpdateTimeWeaponIsNextAvailable@Raven_Weapon@@IAEXXZ ; Raven_Weapon::UpdateTimeWeaponIsNextAvailable
 PUBLIC	??0Raven_Weapon@@QAE@IIINNNPAVRaven_Bot@@@Z	; Raven_Weapon::Raven_Weapon
@@ -690,16 +690,11 @@ PUBLIC	??_R0?AV_System_error_category@std@@@8		; std::_System_error_category `RT
 PUBLIC	??_R3_System_error_category@std@@8		; std::_System_error_category::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2_System_error_category@std@@8		; std::_System_error_category::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@_System_error_category@std@@8	; std::_System_error_category::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	??_R4Raven_Weapon@@6B@				; Raven_Weapon::`RTTI Complete Object Locator'
-PUBLIC	??_R0?AVRaven_Weapon@@@8			; Raven_Weapon `RTTI Type Descriptor'
-PUBLIC	??_R3Raven_Weapon@@8				; Raven_Weapon::`RTTI Class Hierarchy Descriptor'
-PUBLIC	??_R2Raven_Weapon@@8				; Raven_Weapon::`RTTI Base Class Array'
-PUBLIC	??_R1A@?0A@EA@Raven_Weapon@@8			; Raven_Weapon::`RTTI Base Class Descriptor at (0,-1,0,64)'
-PUBLIC	??_R1A@?0A@EA@FuzzyTerm@@8			; FuzzyTerm::`RTTI Base Class Descriptor at (0,-1,0,64)'
+PUBLIC	??_R4FuzzyTerm@@6B@				; FuzzyTerm::`RTTI Complete Object Locator'
 PUBLIC	??_R0?AVFuzzyTerm@@@8				; FuzzyTerm `RTTI Type Descriptor'
 PUBLIC	??_R3FuzzyTerm@@8				; FuzzyTerm::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2FuzzyTerm@@8				; FuzzyTerm::`RTTI Base Class Array'
-PUBLIC	??_R4FuzzyTerm@@6B@				; FuzzyTerm::`RTTI Complete Object Locator'
+PUBLIC	??_R1A@?0A@EA@FuzzyTerm@@8			; FuzzyTerm::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R4FzVery@@6B@				; FzVery::`RTTI Complete Object Locator'
 PUBLIC	??_R0?AVFzVery@@@8				; FzVery `RTTI Type Descriptor'
 PUBLIC	??_R3FzVery@@8					; FzVery::`RTTI Class Hierarchy Descriptor'
@@ -710,6 +705,11 @@ PUBLIC	??_R0?AVFzFairly@@@8				; FzFairly `RTTI Type Descriptor'
 PUBLIC	??_R3FzFairly@@8				; FzFairly::`RTTI Class Hierarchy Descriptor'
 PUBLIC	??_R2FzFairly@@8				; FzFairly::`RTTI Base Class Array'
 PUBLIC	??_R1A@?0A@EA@FzFairly@@8			; FzFairly::`RTTI Base Class Descriptor at (0,-1,0,64)'
+PUBLIC	??_R4Raven_Weapon@@6B@				; Raven_Weapon::`RTTI Complete Object Locator'
+PUBLIC	??_R0?AVRaven_Weapon@@@8			; Raven_Weapon `RTTI Type Descriptor'
+PUBLIC	??_R3Raven_Weapon@@8				; Raven_Weapon::`RTTI Class Hierarchy Descriptor'
+PUBLIC	??_R2Raven_Weapon@@8				; Raven_Weapon::`RTTI Base Class Array'
+PUBLIC	??_R1A@?0A@EA@Raven_Weapon@@8			; Raven_Weapon::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	??_R4RailGun@@6B@				; RailGun::`RTTI Complete Object Locator'
 PUBLIC	??_R0?AVRailGun@@@8				; RailGun `RTTI Type Descriptor'
 PUBLIC	??_R3RailGun@@8					; RailGun::`RTTI Class Hierarchy Descriptor'
@@ -777,15 +777,15 @@ EXTRN	_lua_isnumber:PROC
 EXTRN	_lua_tonumber:PROC
 EXTRN	_lua_getfield:PROC
 EXTRN	?Instance@Raven_Scriptor@@SAPAV1@XZ:PROC	; Raven_Scriptor::Instance
+EXTRN	??_EFuzzyTerm@@UAEPAXI@Z:PROC			; FuzzyTerm::`vector deleting destructor'
+EXTRN	??1FzAND@@UAE@XZ:PROC				; FzAND::~FzAND
+EXTRN	??0FzAND@@QAE@AAVFuzzyTerm@@0@Z:PROC		; FzAND::FzAND
 EXTRN	?AddLeftShoulderSet@FuzzyVariable@@QAE?AVFzSet@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z:PROC ; FuzzyVariable::AddLeftShoulderSet
 EXTRN	?AddRightShoulderSet@FuzzyVariable@@QAE?AVFzSet@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z:PROC ; FuzzyVariable::AddRightShoulderSet
 EXTRN	?AddTriangularSet@FuzzyVariable@@QAE?AVFzSet@@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@NNN@Z:PROC ; FuzzyVariable::AddTriangularSet
 EXTRN	?Fuzzify@FuzzyVariable@@QAEXN@Z:PROC		; FuzzyVariable::Fuzzify
 EXTRN	?DeFuzzifyMaxAv@FuzzyVariable@@QBENXZ:PROC	; FuzzyVariable::DeFuzzifyMaxAv
 EXTRN	?DeFuzzifyCentroid@FuzzyVariable@@QBENH@Z:PROC	; FuzzyVariable::DeFuzzifyCentroid
-EXTRN	??_EFuzzyTerm@@UAEPAXI@Z:PROC			; FuzzyTerm::`vector deleting destructor'
-EXTRN	??1FzAND@@UAE@XZ:PROC				; FzAND::~FzAND
-EXTRN	??0FzAND@@QAE@AAVFuzzyTerm@@0@Z:PROC		; FzAND::FzAND
 EXTRN	??_EFzVery@@UAEPAXI@Z:PROC			; FzVery::`vector deleting destructor'
 EXTRN	??_EFzFairly@@UAEPAXI@Z:PROC			; FzFairly::`vector deleting destructor'
 EXTRN	??1FuzzyModule@@QAE@XZ:PROC			; FuzzyModule::~FuzzyModule
@@ -1008,6 +1008,41 @@ rdata$r	SEGMENT
 	DD	FLAT:??_R0?AVRailGun@@@8
 	DD	FLAT:??_R3RailGun@@8
 rdata$r	ENDS
+;	COMDAT ??_R1A@?0A@EA@Raven_Weapon@@8
+rdata$r	SEGMENT
+??_R1A@?0A@EA@Raven_Weapon@@8 DD FLAT:??_R0?AVRaven_Weapon@@@8 ; Raven_Weapon::`RTTI Base Class Descriptor at (0,-1,0,64)'
+	DD	00H
+	DD	00H
+	DD	0ffffffffH
+	DD	00H
+	DD	040H
+	DD	FLAT:??_R3Raven_Weapon@@8
+rdata$r	ENDS
+;	COMDAT ??_R2Raven_Weapon@@8
+rdata$r	SEGMENT
+??_R2Raven_Weapon@@8 DD FLAT:??_R1A@?0A@EA@Raven_Weapon@@8 ; Raven_Weapon::`RTTI Base Class Array'
+rdata$r	ENDS
+;	COMDAT ??_R3Raven_Weapon@@8
+rdata$r	SEGMENT
+??_R3Raven_Weapon@@8 DD 00H				; Raven_Weapon::`RTTI Class Hierarchy Descriptor'
+	DD	00H
+	DD	01H
+	DD	FLAT:??_R2Raven_Weapon@@8
+rdata$r	ENDS
+;	COMDAT ??_R0?AVRaven_Weapon@@@8
+data$r	SEGMENT
+??_R0?AVRaven_Weapon@@@8 DD FLAT:??_7type_info@@6B@	; Raven_Weapon `RTTI Type Descriptor'
+	DD	00H
+	DB	'.?AVRaven_Weapon@@', 00H
+data$r	ENDS
+;	COMDAT ??_R4Raven_Weapon@@6B@
+rdata$r	SEGMENT
+??_R4Raven_Weapon@@6B@ DD 00H				; Raven_Weapon::`RTTI Complete Object Locator'
+	DD	00H
+	DD	00H
+	DD	FLAT:??_R0?AVRaven_Weapon@@@8
+	DD	FLAT:??_R3Raven_Weapon@@8
+rdata$r	ENDS
 ;	COMDAT ??_R1A@?0A@EA@FzFairly@@8
 rdata$r	SEGMENT
 ??_R1A@?0A@EA@FzFairly@@8 DD FLAT:??_R0?AVFzFairly@@@8	; FzFairly::`RTTI Base Class Descriptor at (0,-1,0,64)'
@@ -1080,12 +1115,14 @@ rdata$r	SEGMENT
 	DD	FLAT:??_R0?AVFzVery@@@8
 	DD	FLAT:??_R3FzVery@@8
 rdata$r	ENDS
-;	COMDAT ??_R4FuzzyTerm@@6B@
+;	COMDAT ??_R1A@?0A@EA@FuzzyTerm@@8
 rdata$r	SEGMENT
-??_R4FuzzyTerm@@6B@ DD 00H				; FuzzyTerm::`RTTI Complete Object Locator'
+??_R1A@?0A@EA@FuzzyTerm@@8 DD FLAT:??_R0?AVFuzzyTerm@@@8 ; FuzzyTerm::`RTTI Base Class Descriptor at (0,-1,0,64)'
 	DD	00H
 	DD	00H
-	DD	FLAT:??_R0?AVFuzzyTerm@@@8
+	DD	0ffffffffH
+	DD	00H
+	DD	040H
 	DD	FLAT:??_R3FuzzyTerm@@8
 rdata$r	ENDS
 ;	COMDAT ??_R2FuzzyTerm@@8
@@ -1105,50 +1142,13 @@ data$r	SEGMENT
 	DD	00H
 	DB	'.?AVFuzzyTerm@@', 00H
 data$r	ENDS
-;	COMDAT ??_R1A@?0A@EA@FuzzyTerm@@8
+;	COMDAT ??_R4FuzzyTerm@@6B@
 rdata$r	SEGMENT
-??_R1A@?0A@EA@FuzzyTerm@@8 DD FLAT:??_R0?AVFuzzyTerm@@@8 ; FuzzyTerm::`RTTI Base Class Descriptor at (0,-1,0,64)'
+??_R4FuzzyTerm@@6B@ DD 00H				; FuzzyTerm::`RTTI Complete Object Locator'
 	DD	00H
 	DD	00H
-	DD	0ffffffffH
-	DD	00H
-	DD	040H
+	DD	FLAT:??_R0?AVFuzzyTerm@@@8
 	DD	FLAT:??_R3FuzzyTerm@@8
-rdata$r	ENDS
-;	COMDAT ??_R1A@?0A@EA@Raven_Weapon@@8
-rdata$r	SEGMENT
-??_R1A@?0A@EA@Raven_Weapon@@8 DD FLAT:??_R0?AVRaven_Weapon@@@8 ; Raven_Weapon::`RTTI Base Class Descriptor at (0,-1,0,64)'
-	DD	00H
-	DD	00H
-	DD	0ffffffffH
-	DD	00H
-	DD	040H
-	DD	FLAT:??_R3Raven_Weapon@@8
-rdata$r	ENDS
-;	COMDAT ??_R2Raven_Weapon@@8
-rdata$r	SEGMENT
-??_R2Raven_Weapon@@8 DD FLAT:??_R1A@?0A@EA@Raven_Weapon@@8 ; Raven_Weapon::`RTTI Base Class Array'
-rdata$r	ENDS
-;	COMDAT ??_R3Raven_Weapon@@8
-rdata$r	SEGMENT
-??_R3Raven_Weapon@@8 DD 00H				; Raven_Weapon::`RTTI Class Hierarchy Descriptor'
-	DD	00H
-	DD	01H
-	DD	FLAT:??_R2Raven_Weapon@@8
-rdata$r	ENDS
-;	COMDAT ??_R0?AVRaven_Weapon@@@8
-data$r	SEGMENT
-??_R0?AVRaven_Weapon@@@8 DD FLAT:??_7type_info@@6B@	; Raven_Weapon `RTTI Type Descriptor'
-	DD	00H
-	DB	'.?AVRaven_Weapon@@', 00H
-data$r	ENDS
-;	COMDAT ??_R4Raven_Weapon@@6B@
-rdata$r	SEGMENT
-??_R4Raven_Weapon@@6B@ DD 00H				; Raven_Weapon::`RTTI Complete Object Locator'
-	DD	00H
-	DD	00H
-	DD	FLAT:??_R0?AVRaven_Weapon@@@8
-	DD	FLAT:??_R3Raven_Weapon@@8
 rdata$r	ENDS
 ;	COMDAT ??_R1A@?0A@EA@_System_error_category@std@@8
 rdata$r	SEGMENT
@@ -15464,7 +15464,7 @@ $LN2@GetDesirab:
 ; 73   :     //fuzzify distance and amount of ammo
 ; 74   :     m_FuzzyModule.Fuzzify("DistanceToTarget", DistToTarget);
 
-	push	OFFSET $SG157048
+	push	OFFSET $SG157152
 	lea	ecx, DWORD PTR $T4[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -15482,7 +15482,7 @@ $LN2@GetDesirab:
 
 ; 75   :     m_FuzzyModule.Fuzzify("AmmoStatus", (double)m_iNumRoundsLeft);
 
-	push	OFFSET $SG157051
+	push	OFFSET $SG157155
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -15507,7 +15507,7 @@ $LN2@GetDesirab:
 ; 76   : 
 ; 77   :     m_dLastDesirabilityScore = m_FuzzyModule.DeFuzzify("Desirability", FuzzyModule::max_av);
 
-	push	OFFSET $SG157053
+	push	OFFSET $SG157157
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -15846,30 +15846,30 @@ _owner$ = 8						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _owner$[ebp]
 	push	eax
-	push	OFFSET $SG157014
+	push	OFFSET $SG157118
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG157015
+	push	OFFSET $SG157119
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG157016
+	push	OFFSET $SG157120
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG157017
+	push	OFFSET $SG157121
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
 	push	eax
-	push	OFFSET $SG157018
+	push	OFFSET $SG157122
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -16150,7 +16150,7 @@ __$EHRec$ = -12						; size = 12
 ; 89   : 
 ; 90   :   FuzzyVariable& DistanceToTarget = m_FuzzyModule.CreateFLV("DistanceToTarget");
 
-	push	OFFSET $SG157059
+	push	OFFSET $SG157163
 	lea	ecx, DWORD PTR $T27[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -16179,7 +16179,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T24[ebp], esp
-	push	OFFSET $SG157064
+	push	OFFSET $SG157168
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv653[ebp], eax
 	lea	ecx, DWORD PTR _$S1$[ebp]
@@ -16205,7 +16205,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T23[ebp], esp
-	push	OFFSET $SG157069
+	push	OFFSET $SG157173
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv659[ebp], eax
 	lea	eax, DWORD PTR _$S2$[ebp]
@@ -16231,7 +16231,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T22[ebp], esp
-	push	OFFSET $SG157074
+	push	OFFSET $SG157178
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv665[ebp], eax
 	lea	edx, DWORD PTR _$S3$[ebp]
@@ -16246,7 +16246,7 @@ __$EHRec$ = -12						; size = 12
 ; 95   : 
 ; 96   :   FuzzyVariable& Desirability = m_FuzzyModule.CreateFLV("Desirability");
 
-	push	OFFSET $SG157077
+	push	OFFSET $SG157181
 	lea	ecx, DWORD PTR $T26[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
@@ -16275,7 +16275,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T21[ebp], esp
-	push	OFFSET $SG157082
+	push	OFFSET $SG157186
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv672[ebp], eax
 	lea	edx, DWORD PTR _$S4$[ebp]
@@ -16301,7 +16301,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T20[ebp], esp
-	push	OFFSET $SG157087
+	push	OFFSET $SG157191
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv678[ebp], eax
 	lea	ecx, DWORD PTR _$S5$[ebp]
@@ -16327,7 +16327,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T19[ebp], esp
-	push	OFFSET $SG157092
+	push	OFFSET $SG157196
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv684[ebp], eax
 	lea	eax, DWORD PTR _$S6$[ebp]
@@ -16342,7 +16342,7 @@ __$EHRec$ = -12						; size = 12
 ; 101  : 
 ; 102  :   FuzzyVariable& AmmoStatus = m_FuzzyModule.CreateFLV("AmmoStatus");
 
-	push	OFFSET $SG157095
+	push	OFFSET $SG157199
 	lea	ecx, DWORD PTR $T25[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
@@ -16370,7 +16370,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T18[ebp], esp
-	push	OFFSET $SG157100
+	push	OFFSET $SG157204
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv691[ebp], eax
 	lea	eax, DWORD PTR _$S7$[ebp]
@@ -16396,7 +16396,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T17[ebp], esp
-	push	OFFSET $SG157105
+	push	OFFSET $SG157209
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv697[ebp], eax
 	lea	edx, DWORD PTR _$S8$[ebp]
@@ -16422,7 +16422,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T16[ebp], esp
-	push	OFFSET $SG157110
+	push	OFFSET $SG157214
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv703[ebp], eax
 	lea	ecx, DWORD PTR _$S9$[ebp]
@@ -17219,6 +17219,61 @@ $LN2@isReadyFor:
 	pop	ebp
 	ret	0
 ?isReadyForNextShot@Raven_Weapon@@IAE_NXZ ENDP		; Raven_Weapon::isReadyForNextShot
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.h
+;	COMDAT ?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ PROC		; Raven_Bot::GetWorld, COMDAT
+; _this$ = ecx
+
+; 209  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax+148]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ ENDP		; Raven_Bot::GetWorld
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.h
+;	COMDAT ?Facing@Raven_Bot@@QBE?AUVector2D@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___$ReturnUdt$ = 8					; size = 4
+?Facing@Raven_Bot@@QBE?AUVector2D@@XZ PROC		; Raven_Bot::Facing, COMDAT
+; _this$ = ecx
+
+; 158  :   Vector2D      Facing()const{return m_vFacing;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 208				; 000000d0H
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], edx
+	mov	edx, DWORD PTR [eax+4]
+	mov	DWORD PTR [ecx+4], edx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [ecx+12], eax
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?Facing@Raven_Bot@@QBE?AUVector2D@@XZ ENDP		; Raven_Bot::Facing
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??1?$_Vector_iterator@V?$_Vector_val@U?$_Simple_types@PAVFuzzyRule@@@std@@@std@@@std@@QAE@XZ
@@ -26329,78 +26384,6 @@ _this$ = -4						; size = 4
 ?SetConfidenceOfConsequentToZero@FuzzyRule@@QAEXXZ ENDP	; FuzzyRule::SetConfidenceOfConsequentToZero
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
-;	COMDAT ??_GFuzzyTerm@@UAEPAXI@Z
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___flags$ = 8						; size = 4
-??_GFuzzyTerm@@UAEPAXI@Z PROC				; FuzzyTerm::`scalar deleting destructor', COMDAT
-; _this$ = ecx
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	ecx, DWORD PTR _this$[ebp]
-	call	??1FuzzyTerm@@UAE@XZ			; FuzzyTerm::~FuzzyTerm
-	mov	eax, DWORD PTR ___flags$[ebp]
-	and	eax, 1
-	je	SHORT $LN1@scalar
-	mov	ecx, DWORD PTR _this$[ebp]
-	push	ecx
-	call	??3@YAXPAX@Z				; operator delete
-	add	esp, 4
-$LN1@scalar:
-	mov	eax, DWORD PTR _this$[ebp]
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	4
-??_GFuzzyTerm@@UAEPAXI@Z ENDP				; FuzzyTerm::`scalar deleting destructor'
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-;	COMDAT ??0FuzzyTerm@@QAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??0FuzzyTerm@@QAE@XZ PROC				; FuzzyTerm::FuzzyTerm, COMDAT
-; _this$ = ecx
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax], OFFSET ??_7FuzzyTerm@@6B@
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??0FuzzyTerm@@QAE@XZ ENDP				; FuzzyTerm::FuzzyTerm
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\fuzzy\fuzzyterm.h
-;	COMDAT ??1FuzzyTerm@@UAE@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-??1FuzzyTerm@@UAE@XZ PROC				; FuzzyTerm::~FuzzyTerm, COMDAT
-; _this$ = ecx
-
-; 17   :   virtual ~FuzzyTerm(){}
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	DWORD PTR [eax], OFFSET ??_7FuzzyTerm@@6B@
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??1FuzzyTerm@@UAE@XZ ENDP				; FuzzyTerm::~FuzzyTerm
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstddef
 ;	COMDAT ??R?$less@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@QBE_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@1@0@Z
 _TEXT	SEGMENT
@@ -26512,59 +26495,76 @@ $LN1@ORwithDOM:
 ?ORwithDOM@FuzzySet@@QAEXN@Z ENDP			; FuzzySet::ORwithDOM
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
-; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.h
-;	COMDAT ?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ
+;	COMDAT ??_GFuzzyTerm@@UAEPAXI@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ PROC		; Raven_Bot::GetWorld, COMDAT
+___flags$ = 8						; size = 4
+??_GFuzzyTerm@@UAEPAXI@Z PROC				; FuzzyTerm::`scalar deleting destructor', COMDAT
 ; _this$ = ecx
-
-; 203  :   Raven_Game* const                  GetWorld(){return m_pWorld;} 
-
 	push	ebp
 	mov	ebp, esp
 	push	ecx
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
-	mov	eax, DWORD PTR _this$[ebp]
-	mov	eax, DWORD PTR [eax+148]
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-?GetWorld@Raven_Bot@@QAEQAVRaven_Game@@XZ ENDP		; Raven_Bot::GetWorld
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.h
-;	COMDAT ?Facing@Raven_Bot@@QBE?AUVector2D@@XZ
-_TEXT	SEGMENT
-_this$ = -4						; size = 4
-___$ReturnUdt$ = 8					; size = 4
-?Facing@Raven_Bot@@QBE?AUVector2D@@XZ PROC		; Raven_Bot::Facing, COMDAT
-; _this$ = ecx
-
-; 152  :   Vector2D      Facing()const{return m_vFacing;}
-
-	push	ebp
-	mov	ebp, esp
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??1FuzzyTerm@@UAE@XZ			; FuzzyTerm::~FuzzyTerm
+	mov	eax, DWORD PTR ___flags$[ebp]
+	and	eax, 1
+	je	SHORT $LN1@scalar
+	mov	ecx, DWORD PTR _this$[ebp]
 	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-	mov	DWORD PTR _this$[ebp], ecx
+	call	??3@YAXPAX@Z				; operator delete
+	add	esp, 4
+$LN1@scalar:
 	mov	eax, DWORD PTR _this$[ebp]
-	add	eax, 208				; 000000d0H
-	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
-	mov	edx, DWORD PTR [eax]
-	mov	DWORD PTR [ecx], edx
-	mov	edx, DWORD PTR [eax+4]
-	mov	DWORD PTR [ecx+4], edx
-	mov	edx, DWORD PTR [eax+8]
-	mov	DWORD PTR [ecx+8], edx
-	mov	eax, DWORD PTR [eax+12]
-	mov	DWORD PTR [ecx+12], eax
-	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	4
-?Facing@Raven_Bot@@QBE?AUVector2D@@XZ ENDP		; Raven_Bot::Facing
+??_GFuzzyTerm@@UAEPAXI@Z ENDP				; FuzzyTerm::`scalar deleting destructor'
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+;	COMDAT ??0FuzzyTerm@@QAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??0FuzzyTerm@@QAE@XZ PROC				; FuzzyTerm::FuzzyTerm, COMDAT
+; _this$ = ecx
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], OFFSET ??_7FuzzyTerm@@6B@
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??0FuzzyTerm@@QAE@XZ ENDP				; FuzzyTerm::FuzzyTerm
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\fuzzy\fuzzyterm.h
+;	COMDAT ??1FuzzyTerm@@UAE@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+??1FuzzyTerm@@UAE@XZ PROC				; FuzzyTerm::~FuzzyTerm, COMDAT
+; _this$ = ecx
+
+; 17   :   virtual ~FuzzyTerm(){}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	DWORD PTR [eax], OFFSET ??_7FuzzyTerm@@6B@
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??1FuzzyTerm@@UAE@XZ ENDP				; FuzzyTerm::~FuzzyTerm
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\game\basegameentity.h

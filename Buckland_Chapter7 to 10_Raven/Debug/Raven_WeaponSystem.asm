@@ -10,7 +10,7 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG152987 DB	' ', 00H
+$SG153107 DB	' ', 00H
 	ORG $+6
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
@@ -22411,7 +22411,7 @@ _this$ = -4						; size = 4
 ?GetTargetBot@Raven_Bot@@QBEQAV1@XZ PROC		; Raven_Bot::GetTargetBot, COMDAT
 ; _this$ = ecx
 
-; 209  :   Raven_Bot* const                   GetTargetBot()const{return m_pTargSys->GetTarget();}
+; 215  :   Raven_Bot* const                   GetTargetBot()const{return m_pTargSys->GetTarget();}
 
 	push	ebp
 	mov	ebp, esp
@@ -22437,7 +22437,7 @@ _this$ = -4						; size = 4
 ?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ PROC ; Raven_Bot::GetTargetSys, COMDAT
 ; _this$ = ecx
 
-; 208  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
+; 214  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -23575,7 +23575,7 @@ $LN4@RenderDesi:
 
 	lea	ecx, DWORD PTR _type$11[ebp]
 	push	ecx
-	push	OFFSET $SG152987
+	push	OFFSET $SG153107
 	push	2
 	lea	edx, DWORD PTR _score$12[ebp]
 	push	edx

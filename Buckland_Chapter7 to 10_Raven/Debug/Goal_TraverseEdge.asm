@@ -10,17 +10,17 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG155701 DB	'Bot_MaxSwimmingSpeed', 00H
-$SG155737 DB	00H
-	ORG $+2
-$SG155703 DB	'Bot_MaxCrawlingSpeed', 00H
-	ORG $+3
-$SG155735 DB	'BOT ', 00H
-	ORG $+3
-$SG155736 DB	' IS STUCK!!', 00H
-$SG155741 DB	'Bot_MaxSpeed', 00H
-	ORG $+7
 _Pi	DQ	0400921f9f01b866er		; 3.14159
+$SG161022 DB	'Bot_MaxSwimmingSpeed', 00H
+$SG161058 DB	00H
+	ORG $+2
+$SG161024 DB	'Bot_MaxCrawlingSpeed', 00H
+	ORG $+3
+$SG161056 DB	'BOT ', 00H
+	ORG $+3
+$SG161057 DB	' IS STUCK!!', 00H
+$SG161062 DB	'Bot_MaxSpeed', 00H
+	ORG $+7
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
 	DD	0ff0000H
@@ -610,6 +610,7 @@ PUBLIC	??_C@_0CB@OHIHCHGJ@Cannot?5add?5goals?5to?5atomic?5goals@ ; `string'
 PUBLIC	??_C@_02MDKMJEGG@eE?$AA@			; `string'
 PUBLIC	??_C@_02OOPEBDOJ@pP?$AA@			; `string'
 PUBLIC	??_C@_01LFCBOECM@?4?$AA@			; `string'
+PUBLIC	??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ ; `string'
 PUBLIC	??_C@_1DM@GMPLOCPK@?$AAs?$AAt?$AAr?$AAi?$AAn?$AAg?$AA?5?$AAs?$AAu?$AAb?$AAs?$AAc?$AAr?$AAi?$AAp?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5?$AAr?$AAa?$AAn?$AAg?$AAe?$AA?$AA@ ; `string'
 PUBLIC	??_C@_0BA@JFNIOLAK@string?5too?5long?$AA@	; `string'
 PUBLIC	??_C@_0BI@CFPLBAOH@invalid?5string?5position?$AA@ ; `string'
@@ -628,7 +629,6 @@ PUBLIC	??_C@_0CB@NOKEJIID@?$DMPopLuaNumber?$DO?5Cannot?5retrieve?3?5@ ; `string'
 PUBLIC	?_Psave@?$_Facetptr@V?$num_put@DV?$ostreambuf_iterator@DU?$char_traits@D@std@@@std@@@std@@@std@@2PBVfacet@locale@2@B ; std::_Facetptr<std::num_put<char,std::ostreambuf_iterator<char,std::char_traits<char> > > >::_Psave
 PUBLIC	?_Psave@?$_Facetptr@V?$numpunct@D@std@@@std@@2PBVfacet@locale@2@B ; std::_Facetptr<std::numpunct<char> >::_Psave
 PUBLIC	??_C@_0EJ@IBPBNBIE@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsoft@ ; `string'
-PUBLIC	??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ ; `string'
 PUBLIC	??_C@_1BGO@ENKEMOHL@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
 PUBLIC	??_C@_1EM@FKAOCOMF@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AA?$CL?$AA?5?$AAo?$AAf?$AAf?$AAs?$AAe?$AAt?$AA?5?$AAo?$AAu?$AAt?$AA?5?$AAo?$AAf?$AA?5@ ; `string'
 PUBLIC	??_C@_1BHA@HJAKPBPH@?$AAs?$AAt?$AAd?$AA?3?$AA?3?$AA_?$AAV?$AAe?$AAc?$AAt?$AAo?$AAr?$AA_?$AAc?$AAo?$AAn?$AAs?$AAt?$AA_?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?$DM?$AAc?$AAl?$AAa?$AAs@ ; `string'
@@ -2006,16 +2006,6 @@ CONST	SEGMENT
 	DB	'a', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H, '*', 00H, 00H
 	DB	00H						; `string'
 CONST	ENDS
-;	COMDAT ??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@
-CONST	SEGMENT
-??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ DB 'v'
-	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
-	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
-	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
-	DB	'd', 00H, 'e', 00H, 'r', 00H, 'e', 00H, 'f', 00H, 'e', 00H, 'r'
-	DB	00H, 'e', 00H, 'n', 00H, 'c', 00H, 'a', 00H, 'b', 00H, 'l', 00H
-	DB	'e', 00H, 00H, 00H				; `string'
-CONST	ENDS
 ;	COMDAT ??_C@_0EJ@IBPBNBIE@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsoft@
 CONST	SEGMENT
 ??_C@_0EJ@IBPBNBIE@C?3?2Program?5Files?5?$CIx86?$CJ?2Microsoft@ DB 'C:\Pr'
@@ -2119,6 +2109,16 @@ CONST	SEGMENT
 	DB	00H, 'p', 00H, 't', 00H, ' ', 00H, 'o', 00H, 'u', 00H, 't', 00H
 	DB	' ', 00H, 'o', 00H, 'f', 00H, ' ', 00H, 'r', 00H, 'a', 00H, 'n'
 	DB	00H, 'g', 00H, 'e', 00H, 00H, 00H		; `string'
+CONST	ENDS
+;	COMDAT ??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@
+CONST	SEGMENT
+??_C@_1EG@FOHJJHAC@?$AAv?$AAe?$AAc?$AAt?$AAo?$AAr?$AA?5?$AAi?$AAt?$AAe?$AAr?$AAa?$AAt?$AAo?$AAr?$AA?5?$AAn?$AAo?$AAt?$AA?5?$AAd?$AAe?$AAr?$AAe?$AAf?$AAe?$AAr?$AAe?$AAn?$AAc?$AAa?$AAb@ DB 'v'
+	DB	00H, 'e', 00H, 'c', 00H, 't', 00H, 'o', 00H, 'r', 00H, ' ', 00H
+	DB	'i', 00H, 't', 00H, 'e', 00H, 'r', 00H, 'a', 00H, 't', 00H, 'o'
+	DB	00H, 'r', 00H, ' ', 00H, 'n', 00H, 'o', 00H, 't', 00H, ' ', 00H
+	DB	'd', 00H, 'e', 00H, 'r', 00H, 'e', 00H, 'f', 00H, 'e', 00H, 'r'
+	DB	00H, 'e', 00H, 'n', 00H, 'c', 00H, 'a', 00H, 'b', 00H, 'l', 00H
+	DB	'e', 00H, 00H, 00H				; `string'
 CONST	ENDS
 ;	COMDAT ??_C@_01LFCBOECM@?4?$AA@
 CONST	SEGMENT
@@ -18517,7 +18517,7 @@ _this$ = -4						; size = 4
 ; 141  :   //return max speed back to normal
 ; 142  :   m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxSpeed"));
 
-	push	OFFSET $SG155741
+	push	OFFSET $SG161062
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18688,7 +18688,7 @@ $LN4@Activate:
 ; 42   :     {
 ; 43   :       m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxSwimmingSpeed"));
 
-	push	OFFSET $SG155701
+	push	OFFSET $SG161022
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18710,7 +18710,7 @@ $LN3@Activate:
 ; 49   :     {
 ; 50   :        m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxCrawlingSpeed"));
 
-	push	OFFSET $SG155703
+	push	OFFSET $SG161024
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18946,11 +18946,11 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG155737
-	push	OFFSET $SG155736
+	push	OFFSET $SG161058
+	push	OFFSET $SG161057
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG155735
+	push	OFFSET $SG161056
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY04$$CBD@DebugConsole@@QAEAAV0@AAY04$$CBD@Z ; DebugConsole::operator<<<char const [5]>
@@ -19540,7 +19540,7 @@ _this$ = -4						; size = 4
 ?GetSteering@Raven_Bot@@QAEQAVRaven_Steering@@XZ PROC	; Raven_Bot::GetSteering, COMDAT
 ; _this$ = ecx
 
-; 204  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
+; 210  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
 
 	push	ebp
 	mov	ebp, esp

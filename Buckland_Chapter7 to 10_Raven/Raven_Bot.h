@@ -16,6 +16,8 @@
 #include "game/MovingEntity.h"
 #include "misc/utils.h"
 #include "Raven_TargetingSystem.h"
+#include "fuzzy/FuzzyOperators.h"
+#include "Fuzzy/FuzzyModule.h"
 
 
 class Raven_PathPlanner;
@@ -30,7 +32,7 @@ class Raven_WeaponSystem;
 class Raven_SensoryMemory;
 
 
-
+using namespace std;
 
 class Raven_Bot : public MovingEntity
 {
@@ -122,10 +124,14 @@ private:
   //initializes the bot's VB with its geometry
   void          SetUpVertexBuffer();
 
+  //fuzzy logic is used to determine a shot deviation.
+  FuzzyModule   m_FuzzyModule;
+
+  string team;
 
 public:
   
-  Raven_Bot(Raven_Game* world, Vector2D pos);
+  Raven_Bot(Raven_Game* world, Vector2D pos, string t);
   virtual ~Raven_Bot();
 
   //the usual suspects
@@ -210,6 +216,10 @@ public:
   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
 
+
+  void InitializeFuzzyModule();
+
+  string GetTeam(){ return team; }
 
 };
 

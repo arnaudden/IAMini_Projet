@@ -18,12 +18,14 @@
 
 #include "goals/Raven_Goal_Types.h"
 #include "goals/Goal_Think.h"
+#include "fuzzy/FuzzyOperators.h"
 
+#include <sstream>
 
 #include "Debug/DebugConsole.h"
 
 //-------------------------- ctor ---------------------------------------------
-Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos):
+Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos, string t):
 
   MovingEntity(pos,
                script->GetDouble("Bot_Scale"),
@@ -56,6 +58,8 @@ Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos):
   //a bot starts off facing in the direction it is heading
   m_vFacing = m_vHeading;
 
+  
+
   //create the navigation module
   m_pPathPlanner = new Raven_PathPlanner(this);
 
@@ -81,6 +85,8 @@ Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos):
                                         script->GetDouble("Bot_AimPersistance"));
 
   m_pSensoryMem = new Raven_SensoryMemory(this, script->GetDouble("Bot_MemorySpan"));
+
+  team = t;
 }
 
 //-------------------------------- dtor ---------------------------------------
@@ -134,8 +140,10 @@ void Raven_Bot::Update()
     //examine all the opponents in the bots sensory memory and select one
     //to be the current target
     if (m_pTargetSelectionRegulator->isReady())
-    {      
-      m_pTargSys->Update();
+    {
+		
+		m_pTargSys->Update();
+		
     }
 
     //appraise and arbitrate between all possible high level goals
@@ -384,7 +392,23 @@ void Raven_Bot::ChangeWeapon(unsigned int type)
 //-----------------------------------------------------------------------------
 void Raven_Bot::FireWeapon(Vector2D pos)
 {
-  m_pWeaponSys->ShootAt(pos);
+	
+		double distanceToTarget = Vec2DDistance(Pos(), GetTargetBot()->Pos());
+		double targetVisibility = m_pSensoryMem->GetTimeOpponentHasBeenVisible(GetTargetBot());
+		double targetVelocity = Vec2DLength(GetTargetBot()->Velocity());
+
+#ifdef LOG_CREATIONAL_STUFF
+		debug_con << "Targetvisibility" << ttos(targetVisibility) << "";
+#endif
+
+		m_FuzzyModule.Fuzzify("DistToTarget", distanceToTarget);
+		m_FuzzyModule.Fuzzify("TargetVisilibity", targetVisibility);
+		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
+
+		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
+		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
+		m_pWeaponSys->ShootAt(pos + vShotDeviation);
+	
 }
 
 //----------------- CalculateExpectedTimeToReachPosition ----------------------
@@ -576,4 +600,107 @@ void Raven_Bot::IncreaseHealth(unsigned int val)
 {
   m_iHealth+=val; 
   Clamp(m_iHealth, 0, m_iMaxHealth);
+}
+
+// Set up fuzzy rules and variable to determine shot deviations
+
+void Raven_Bot::InitializeFuzzyModule()
+{
+	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
+
+	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
+	FzSet& Target_Close = DistToTarget.AddTriangularSet("Target_Close", 25, 50, 150);
+	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 50, 150, 300);
+	FzSet& Target_Far = DistToTarget.AddTriangularSet("Target_Far", 150, 300, 600);
+	FzSet& Target_VeryFar = DistToTarget.AddRightShoulderSet("Target_VeryFar", 300, 600, 1000);
+
+	FuzzyVariable& Velocity = m_FuzzyModule.CreateFLV("Velocity");
+	FzSet& Fast= Velocity.AddTriangularSet("Fast", 0.30, 0.60, 1);
+	FzSet& Middle = Velocity.AddTriangularSet("MiddleSpeed", 0.10, 0.30, 0.60);
+	FzSet& Slow = Velocity.AddLeftShoulderSet("Slow", 0, 0.10, 0.30);
+
+
+	FuzzyVariable& TargetVisibility = m_FuzzyModule.CreateFLV("TargetVisibility");
+	FzSet& LongVisibility = TargetVisibility.AddRightShoulderSet("LongVisibility", 300, 700, 1000);
+	FzSet& Visibility = TargetVisibility.AddTriangularSet("Visibility", 100, 300, 700);
+	FzSet& ShortVisibility = TargetVisibility.AddTriangularSet("ShortVisibility", 0, 100, 300);
+
+	FuzzyVariable& ShotDeviation = m_FuzzyModule.CreateFLV("ShotDeviation");
+	FzSet& LongDeviation = TargetVisibility.AddRightShoulderSet("LongDeviation", 40, 70, 100);
+	FzSet& MiddleDeviation = TargetVisibility.AddTriangularSet("MiddleDeviation", 10, 40, 70);
+	FzSet& LittleDeviation = TargetVisibility.AddTriangularSet("LittleDeviation", 0, 10, 40);
+	FzSet& NoDeviation = TargetVisibility.AddSingletonSet("NoDeviation", 0, 0, 0);
+
+	// Definition of the rules
+
+	//Target_VeryClose
+	
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, ShortVisibility), NoDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, Visibility), NoDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, LongVisibility), NoDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, ShortVisibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, Visibility), NoDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, LongVisibility), NoDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, Visibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, LongVisibility), NoDeviation);
+
+	// Target_Close
+
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, ShortVisibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, Visibility), NoDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, LongVisibility), NoDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, ShortVisibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, Visibility), NoDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, LongVisibility), NoDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, Visibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, LongVisibility), NoDeviation);
+
+	// Target_Medium
+
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, Visibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, LongVisibility), NoDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, Visibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, LongVisibility), LittleDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, ShortVisibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, Visibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, LongVisibility), MiddleDeviation);
+
+	// Target_Far
+
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, Visibility), LittleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, LongVisibility), LittleDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, ShortVisibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, Visibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, LongVisibility), LittleDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, ShortVisibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, Visibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, LongVisibility), MiddleDeviation);
+
+	//Target_VeryFar
+
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, ShortVisibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, Visibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, LongVisibility), LittleDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, ShortVisibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, Visibility), MiddleDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, LongVisibility), MiddleDeviation);
+
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, ShortVisibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, Visibility), LongDeviation);
+	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, LongVisibility), LongDeviation);
+
 }

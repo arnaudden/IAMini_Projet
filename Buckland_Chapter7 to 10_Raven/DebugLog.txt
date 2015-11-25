@@ -76,3 +76,4 @@ maps/Raven_DM1.map loaded okay
 deleting raven bot (id = 401)
 deleting raven bot (id = 402)
 deleting raven bot (id = 403)
+deleting raven bot (id = 404)
