@@ -201,7 +201,7 @@ void Raven_Game::Update()
 bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
 {
   //make sure there are some spawn points available
-  if (m_pMap->GetSpawnPoints().size() <= 0)
+  if (m_pMap->GetSpawnPoints().size() <= 1)
   {
     ErrorBox("Map has no spawn points!"); return false;
   }
@@ -209,11 +209,19 @@ bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
   //we'll make the same number of attempts to spawn a bot this update as
   //there are spawn points
   int attempts = m_pMap->GetSpawnPoints().size();
-
+  Vector2D pos;
   while (--attempts >= 0)
   { 
     //select a random spawn point
-    Vector2D pos = m_pMap->GetRandomSpawnPoint();
+	  if (pBot->GetTeam() == "Blue")
+	  {
+		  pos = m_pMap->GetSpawnPoints()[1];
+	  }
+	  else if (pBot->GetTeam() == "Red")
+	  {
+		  pos = m_pMap->GetSpawnPoints()[0];
+	  }
+    
 
     //check to see if it's occupied
     std::list<Raven_Bot*>::const_iterator curBot = m_Bots.begin();
@@ -244,22 +252,29 @@ bool Raven_Game::AttemptToAddBot(Raven_Bot* pBot)
 //
 //  Adds a bot and switches on the default steering behavior
 //-----------------------------------------------------------------------------
-void Raven_Game::AddBots(unsigned int NumBotsToAdd, string team)
+void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 { 
   while (NumBotsToAdd--)
   {
     //create a bot. (its position is irrelevant at this point because it will
     //not be rendered until it is spawned)
-
+	  Raven_Bot* rb;
+	  if (NumBotsToAdd % 2 == 0)
+	  {
+		  rb= new Raven_Bot(this, Vector2D(), "Blue");
+	  }
+	  else
+	  {
+		  rb = new Raven_Bot(this, Vector2D(), "Red");
+	  }
 	  
-	Raven_Bot* rb = new Raven_Bot(this, Vector2D(), team);
 	  
     //switch the default steering behaviors on
     rb->GetSteering()->WallAvoidanceOn();
     rb->GetSteering()->SeparationOn();
 
     m_Bots.push_back(rb);
-
+	
     //register the bot with the entity manager
     EntityMgr->RegisterEntity(rb);
 
@@ -398,8 +413,8 @@ bool Raven_Game::LoadMap(const std::string& filename)
   //load the new map data
   if (m_pMap->LoadMap(filename))
   { 
-    AddBots(script->GetInt("NumRedBots"), "Red");
-	AddBots(script->GetInt("NumBlueBots"), "Blue");
+    AddBots(script->GetInt("NumBots"));
+
   
     return true;
   }

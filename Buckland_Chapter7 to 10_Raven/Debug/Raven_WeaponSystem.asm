@@ -10,7 +10,7 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG153061 DB	' ', 00H
+$SG153060 DB	' ', 00H
 	ORG $+6
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
@@ -24561,7 +24561,7 @@ $LN4@RenderDesi:
 
 	lea	ecx, DWORD PTR _type$11[ebp]
 	push	ecx
-	push	OFFSET $SG153061
+	push	OFFSET $SG153060
 	push	2
 	lea	edx, DWORD PTR _score$12[ebp]
 	push	edx

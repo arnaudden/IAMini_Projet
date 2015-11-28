@@ -6,6 +6,7 @@
 #include "Goal_NegotiateDoor.h"
 #include "misc/cgdi.h"
 
+#include "Goal_DodgeSideToSide.h"
 
 
 //------------------------------ ctor -----------------------------------------
@@ -27,6 +28,7 @@ void Goal_FollowPath::Activate()
   //get a reference to the next edge
   PathEdge edge = m_Path.front();
 
+  Vector2D strafePoint;
   //remove the edge from the path
   m_Path.pop_front(); 
 
@@ -36,8 +38,11 @@ void Goal_FollowPath::Activate()
   switch(edge.Behavior())
   {
   case NavGraphEdge::normal:
-    {
-      AddSubgoal(new Goal_TraverseEdge(m_pOwner, edge, m_Path.empty()));
+  {
+
+	  if (m_pOwner->canStepLeft(strafePoint) || m_pOwner->canStepRight(strafePoint))
+		  AddSubgoal(new Goal_DodgeSideToSide(m_pOwner));
+	  AddSubgoal(new Goal_TraverseEdge(m_pOwner, edge, m_Path.empty()));
     }
 
     break;

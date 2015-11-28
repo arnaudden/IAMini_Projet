@@ -15,6 +15,7 @@
 //-----------------------------------------------------------------------------
 void Goal_DodgeSideToSide::Activate()
 {
+
   m_iStatus = active;
 
   m_pOwner->GetSteering()->SeekOn();
@@ -28,7 +29,7 @@ void Goal_DodgeSideToSide::Activate()
       }
       else
       {
-        //debug_con << "changing" << "";
+		  //debug_con << "changing" << "";
         m_bClockwise = !m_bClockwise;
         m_iStatus = inactive;
       }
@@ -48,7 +49,8 @@ void Goal_DodgeSideToSide::Activate()
       }
     }
 
-   
+	
+		
 }
 
 
@@ -93,7 +95,8 @@ void Goal_DodgeSideToSide::Render()
   gdi->HollowBrush();
 
   gdi->Line(m_pOwner->Pos(), m_vStrafeTarget);
-  gdi->Circle(m_vStrafeTarget, 3);
+  gdi->Circle(m_vStrafeTarget, 10);
+
 #endif
   
 }

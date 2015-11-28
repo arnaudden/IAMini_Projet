@@ -12,7 +12,7 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 _SEND_MSG_IMMEDIATELY DQ 00000000000000000r	; 0
 _Pi	DQ	0400921f9f01b866er		; 3.14159
-$SG153068 DB	'Bot_TriggerUpdateFreq', 00H
+$SG153067 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
@@ -2804,7 +2804,7 @@ _range$ = 12						; size = 8
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
-	push	OFFSET $SG153068
+	push	OFFSET $SG153067
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt

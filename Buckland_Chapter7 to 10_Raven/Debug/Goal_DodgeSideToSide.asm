@@ -193,8 +193,8 @@ PUBLIC	__real@0010000000000000
 PUBLIC	__real@00800000
 PUBLIC	__real@3ff0000000000000
 PUBLIC	__real@4000000000000000
-PUBLIC	__real@4008000000000000
 PUBLIC	__real@4010000000000000
+PUBLIC	__real@4024000000000000
 PUBLIC	__real@7f7fffff
 PUBLIC	__real@7fefffffffffffff
 EXTRN	__purecall:PROC
@@ -312,13 +312,13 @@ CONST	ENDS
 CONST	SEGMENT
 __real@7f7fffff DD 07f7fffffr			; 3.40282e+038
 CONST	ENDS
+;	COMDAT __real@4024000000000000
+CONST	SEGMENT
+__real@4024000000000000 DQ 04024000000000000r	; 10
+CONST	ENDS
 ;	COMDAT __real@4010000000000000
 CONST	SEGMENT
 __real@4010000000000000 DQ 04010000000000000r	; 4
-CONST	ENDS
-;	COMDAT __real@4008000000000000
-CONST	SEGMENT
-__real@4008000000000000 DQ 04008000000000000r	; 3
 CONST	ENDS
 ;	COMDAT __real@4000000000000000
 CONST	SEGMENT
@@ -1799,7 +1799,7 @@ _this$ = -4						; size = 4
 ?Terminate@Goal_DodgeSideToSide@@UAEXXZ PROC		; Goal_DodgeSideToSide::Terminate
 ; _this$ = ecx
 
-; 82   : {
+; 84   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1807,7 +1807,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 83   :   m_pOwner->GetSteering()->SeekOff();
+; 85   :   m_pOwner->GetSteering()->SeekOff();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+8]
@@ -1815,7 +1815,7 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	?SeekOff@Raven_Steering@@QAEXXZ		; Raven_Steering::SeekOff
 
-; 84   : }
+; 86   : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -1833,7 +1833,7 @@ _this$ = -4						; size = 4
 ?Render@Goal_DodgeSideToSide@@UAEXXZ PROC		; Goal_DodgeSideToSide::Render
 ; _this$ = ecx
 
-; 89   : {
+; 91   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1846,22 +1846,22 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 90   : #define SHOW_TARGET
-; 91   : #ifdef SHOW_TARGET
-; 92   :   gdi->OrangePen();
+; 92   : #define SHOW_TARGET
+; 93   : #ifdef SHOW_TARGET
+; 94   :   gdi->OrangePen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?OrangePen@Cgdi@@QAEXXZ			; Cgdi::OrangePen
 
-; 93   :   gdi->HollowBrush();
+; 95   :   gdi->HollowBrush();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?HollowBrush@Cgdi@@QAEXXZ		; Cgdi::HollowBrush
 
-; 94   : 
-; 95   :   gdi->Line(m_pOwner->Pos(), m_vStrafeTarget);
+; 96   : 
+; 97   :   gdi->Line(m_pOwner->Pos(), m_vStrafeTarget);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 16					; 00000010H
@@ -1894,10 +1894,10 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	?Line@Cgdi@@QAEXUVector2D@@0@Z		; Cgdi::Line
 
-; 96   :   gdi->Circle(m_vStrafeTarget, 3);
+; 98   :   gdi->Circle(m_vStrafeTarget, 10);
 
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@4008000000000000
+	movsd	xmm0, QWORD PTR __real@4024000000000000
 	movsd	QWORD PTR [esp], xmm0
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 16					; 00000010H
@@ -1915,9 +1915,10 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	?Circle@Cgdi@@QAEXUVector2D@@N@Z	; Cgdi::Circle
 
-; 97   : #endif
-; 98   :   
-; 99   : }
+; 99   : 
+; 100  : #endif
+; 101  :   
+; 102  : }
 
 	add	esp, 20					; 00000014H
 	cmp	ebp, esp
@@ -1934,7 +1935,7 @@ _this$ = -4						; size = 4
 ?Process@Goal_DodgeSideToSide@@UAEHXZ PROC		; Goal_DodgeSideToSide::Process
 ; _this$ = ecx
 
-; 59   : {
+; 61   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -1942,15 +1943,15 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 60   :   //if status is inactive, call Activate()
-; 61   :   ActivateIfInactive(); 
+; 62   :   //if status is inactive, call Activate()
+; 63   :   ActivateIfInactive(); 
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ActivateIfInactive@?$Goal@VRaven_Bot@@@@IAEXXZ ; Goal<Raven_Bot>::ActivateIfInactive
 
-; 62   : 
-; 63   :   //if target goes out of view terminate
-; 64   :   if (!m_pOwner->GetTargetSys()->isTargetWithinFOV())
+; 64   : 
+; 65   :   //if target goes out of view terminate
+; 66   :   if (!m_pOwner->GetTargetSys()->isTargetWithinFOV())
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+8]
@@ -1961,19 +1962,19 @@ _this$ = -4						; size = 4
 	test	ecx, ecx
 	jne	SHORT $LN3@Process
 
-; 65   :   {
-; 66   :     m_iStatus = completed;
+; 67   :   {
+; 68   :     m_iStatus = completed;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+12], 2
 	jmp	SHORT $LN2@Process
 $LN3@Process:
 
-; 67   :   }
-; 68   : 
-; 69   :   //else if bot reaches the target position set status to inactive so the goal 
-; 70   :   //is reactivated on the next update-step
-; 71   :   else if (m_pOwner->isAtPosition(m_vStrafeTarget))
+; 69   :   }
+; 70   : 
+; 71   :   //else if bot reaches the target position set status to inactive so the goal 
+; 72   :   //is reactivated on the next update-step
+; 73   :   else if (m_pOwner->isAtPosition(m_vStrafeTarget))
 
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 16					; 00000010H
@@ -1994,21 +1995,21 @@ $LN3@Process:
 	test	edx, edx
 	je	SHORT $LN2@Process
 
-; 72   :   {
-; 73   :     m_iStatus = inactive;
+; 74   :   {
+; 75   :     m_iStatus = inactive;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+12], 1
 $LN2@Process:
 
-; 74   :   }
-; 75   : 
-; 76   :   return m_iStatus;
+; 76   :   }
+; 77   : 
+; 78   :   return m_iStatus;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [ecx+12]
 
-; 77   : }
+; 79   : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -2037,13 +2038,14 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 18   :   m_iStatus = active;
+; 18   : 
+; 19   :   m_iStatus = active;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+12], 0
 
-; 19   : 
-; 20   :   m_pOwner->GetSteering()->SeekOn();
+; 20   : 
+; 21   :   m_pOwner->GetSteering()->SeekOn();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+8]
@@ -2051,17 +2053,17 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	?SeekOn@Raven_Steering@@QAEXXZ		; Raven_Steering::SeekOn
 
-; 21   : 
-; 22   :   
-; 23   :     if (m_bClockwise)
+; 22   : 
+; 23   :   
+; 24   :     if (m_bClockwise)
 
 	mov	edx, DWORD PTR _this$[ebp]
 	movzx	eax, BYTE PTR [edx+32]
 	test	eax, eax
 	je	SHORT $LN6@Activate
 
-; 24   :     {
-; 25   :       if (m_pOwner->canStepRight(m_vStrafeTarget))
+; 25   :     {
+; 26   :       if (m_pOwner->canStepRight(m_vStrafeTarget))
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 16					; 00000010H
@@ -2073,8 +2075,8 @@ _this$ = -4						; size = 4
 	test	eax, eax
 	je	SHORT $LN5@Activate
 
-; 26   :       {
-; 27   :         m_pOwner->GetSteering()->SetTarget(m_vStrafeTarget);
+; 27   :       {
+; 28   :         m_pOwner->GetSteering()->SetTarget(m_vStrafeTarget);
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 16					; 00000010H
@@ -2094,15 +2096,15 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	?SetTarget@Raven_Steering@@QAEXUVector2D@@@Z ; Raven_Steering::SetTarget
 
-; 28   :       }
-; 29   :       else
+; 29   :       }
+; 30   :       else
 
 	jmp	SHORT $LN4@Activate
 $LN5@Activate:
 
-; 30   :       {
-; 31   :         //debug_con << "changing" << "";
-; 32   :         m_bClockwise = !m_bClockwise;
+; 31   :       {
+; 32   : 		  //debug_con << "changing" << "";
+; 33   :         m_bClockwise = !m_bClockwise;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	movzx	ecx, BYTE PTR [eax+32]
@@ -2117,22 +2119,22 @@ $LN10@Activate:
 	mov	al, BYTE PTR tv137[ebp]
 	mov	BYTE PTR [edx+32], al
 
-; 33   :         m_iStatus = inactive;
+; 34   :         m_iStatus = inactive;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+12], 1
 $LN4@Activate:
 
-; 34   :       }
-; 35   :     }
-; 36   : 
-; 37   :     else
+; 35   :       }
+; 36   :     }
+; 37   : 
+; 38   :     else
 
 	jmp	SHORT $LN7@Activate
 $LN6@Activate:
 
-; 38   :     {
-; 39   :       if (m_pOwner->canStepLeft(m_vStrafeTarget))
+; 39   :     {
+; 40   :       if (m_pOwner->canStepLeft(m_vStrafeTarget))
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 16					; 00000010H
@@ -2144,8 +2146,8 @@ $LN6@Activate:
 	test	ecx, ecx
 	je	SHORT $LN2@Activate
 
-; 40   :       {
-; 41   :         m_pOwner->GetSteering()->SetTarget(m_vStrafeTarget);
+; 41   :       {
+; 42   :         m_pOwner->GetSteering()->SetTarget(m_vStrafeTarget);
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 16					; 00000010H
@@ -2165,15 +2167,15 @@ $LN6@Activate:
 	mov	ecx, eax
 	call	?SetTarget@Raven_Steering@@QAEXUVector2D@@@Z ; Raven_Steering::SetTarget
 
-; 42   :       }
-; 43   :       else
+; 43   :       }
+; 44   :       else
 
 	jmp	SHORT $LN7@Activate
 $LN2@Activate:
 
-; 44   :       {
-; 45   :        // debug_con << "changing" << "";
-; 46   :         m_bClockwise = !m_bClockwise;
+; 45   :       {
+; 46   :        // debug_con << "changing" << "";
+; 47   :         m_bClockwise = !m_bClockwise;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	movzx	edx, BYTE PTR [ecx+32]
@@ -2188,17 +2190,18 @@ $LN12@Activate:
 	mov	cl, BYTE PTR tv169[ebp]
 	mov	BYTE PTR [eax+32], cl
 
-; 47   :         m_iStatus = inactive;
+; 48   :         m_iStatus = inactive;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+12], 1
 $LN7@Activate:
 
-; 48   :       }
-; 49   :     }
-; 50   : 
-; 51   :    
-; 52   : }
+; 49   :       }
+; 50   :     }
+; 51   : 
+; 52   : 	
+; 53   : 		
+; 54   : }
 
 	add	esp, 12					; 0000000cH
 	cmp	ebp, esp

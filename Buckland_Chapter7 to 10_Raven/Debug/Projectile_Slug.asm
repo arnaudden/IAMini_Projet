@@ -11,16 +11,16 @@ INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
 _Pi	DQ	0400921f9f01b866er		; 3.14159
-$SG159042 DB	'Slug_MaxForce', 00H
+$SG159041 DB	'Slug_MaxForce', 00H
 	ORG $+2
-$SG159043 DB	'Slug_Mass', 00H
+$SG159042 DB	'Slug_Mass', 00H
 	ORG $+2
-$SG159044 DB	'Slug_MaxSpeed', 00H
+$SG159043 DB	'Slug_MaxSpeed', 00H
 	ORG $+2
-$SG159045 DB	'Slug_Scale', 00H
+$SG159044 DB	'Slug_Scale', 00H
 	ORG $+1
-$SG159046 DB	'Slug_Damage', 00H
-$SG159047 DB	'Slug_Persistance', 00H
+$SG159045 DB	'Slug_Damage', 00H
+$SG159046 DB	'Slug_Persistance', 00H
 	ORG $+3
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
@@ -7169,6 +7169,12 @@ _target$ = 12						; size = 16
 	lea	eax, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
+	push	OFFSET $SG159041
+	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
+	mov	ecx, eax
+	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
+	sub	esp, 8
+	fstp	QWORD PTR [esp]
 	push	OFFSET $SG159042
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
@@ -7188,12 +7194,6 @@ _target$ = 12						; size = 16
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
 	push	OFFSET $SG159045
-	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
-	mov	ecx, eax
-	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
-	sub	esp, 8
-	fstp	QWORD PTR [esp]
-	push	OFFSET $SG159046
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -7247,7 +7247,7 @@ _target$ = 12						; size = 16
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx], OFFSET ??_7Slug@@6B@
-	push	OFFSET $SG159047
+	push	OFFSET $SG159046
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble

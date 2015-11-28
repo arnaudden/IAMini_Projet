@@ -476,7 +476,7 @@ bool Raven_Bot::canStepRight(Vector2D& PositionOfStep)const
 {
   static const double StepDistance = BRadius() * 2;
 
-  PositionOfStep = Pos() + Facing().Perp() * StepDistance + Facing().Perp() * BRadius();
+  PositionOfStep = Pos() + Facing().Perp() * StepDistance + Facing().Perp() * BRadius() ;
 
   return canWalkTo(PositionOfStep);
 }

@@ -8,6 +8,7 @@
 
 #include "Goal_Wander.h"
 #include "Goal_FollowPath.h"
+#include "Goal_DodgeSideToSide.h"
 
 
 int ItemTypeToGoalType(int gt)
@@ -81,16 +82,21 @@ bool Goal_GetItem::HandleMessage(const Telegram& msg)
   //if the msg was not handled, test to see if this goal can handle it
   if (bHandled == false)
   {
+
+	
     switch(msg.Msg)
     {
     case Msg_PathReady:
 
       //clear any existing goals
-      RemoveAllSubgoals();
-
+		RemoveAllSubgoals();
       AddSubgoal(new Goal_FollowPath(m_pOwner,
-                                     m_pOwner->GetPathPlanner()->GetPath()));
+		  m_pOwner->GetPathPlanner()->GetPath()));
+	  //AddSubgoal(new Goal_DodgeSideToSide(m_pOwner));
+	  
 
+
+	  
       //get the pointer to the item
       m_pGiverTrigger = static_cast<Raven_Map::TriggerType*>(msg.ExtraInfo);
 

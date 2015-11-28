@@ -63,7 +63,6 @@ Creating a Wall
 Creating a Wall
 Creating a Spawn Point
 Creating a Spawn Point
-Creating a Spawn Point
 Creating a Health
 Creating a Health
 Creating a Health
@@ -77,3 +76,9 @@ deleting raven bot (id = 401)
 deleting raven bot (id = 402)
 deleting raven bot (id = 403)
 deleting raven bot (id = 404)
+deleting raven bot (id = 405)
+deleting raven bot (id = 406)
+deleting raven bot (id = 407)
+deleting raven bot (id = 408)
+deleting raven bot (id = 409)
+deleting raven bot (id = 410)
