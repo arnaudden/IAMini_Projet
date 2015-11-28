@@ -112,7 +112,12 @@ PUBLIC	?message@_System_error_category@std@@UBE?AV?$basic_string@DU?$char_traits
 PUBLIC	?default_error_condition@_System_error_category@std@@UBE?AVerror_condition@2@H@Z ; std::_System_error_category::default_error_condition
 PUBLIC	??1_System_error_category@std@@UAE@XZ		; std::_System_error_category::~_System_error_category
 PUBLIC	??_G_System_error_category@std@@UAEPAXI@Z	; std::_System_error_category::`scalar deleting destructor'
+PUBLIC	?OrangePen@Cgdi@@QAEXXZ				; Cgdi::OrangePen
+PUBLIC	?HollowBrush@Cgdi@@QAEXXZ			; Cgdi::HollowBrush
+PUBLIC	?Line@Cgdi@@QAEXUVector2D@@0@Z			; Cgdi::Line
+PUBLIC	?Circle@Cgdi@@QAEXUVector2D@@N@Z		; Cgdi::Circle
 PUBLIC	??0_Ignore@std@@QAE@XZ				; std::_Ignore::_Ignore
+PUBLIC	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ		; BaseGameEntity::Pos
 PUBLIC	?GetSteering@Raven_Bot@@QAEQAVRaven_Steering@@XZ ; Raven_Bot::GetSteering
 PUBLIC	?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ ; Raven_Bot::GetTargetSys
 PUBLIC	?ActivateIfInactive@?$Goal@VRaven_Bot@@@@IAEXXZ	; Goal<Raven_Bot>::ActivateIfInactive
@@ -186,7 +191,9 @@ PUBLIC	??_R2_System_error_category@std@@8		; std::_System_error_category::`RTTI 
 PUBLIC	??_R1A@?0A@EA@_System_error_category@std@@8	; std::_System_error_category::`RTTI Base Class Descriptor at (0,-1,0,64)'
 PUBLIC	__real@0010000000000000
 PUBLIC	__real@00800000
+PUBLIC	__real@3ff0000000000000
 PUBLIC	__real@4000000000000000
+PUBLIC	__real@4008000000000000
 PUBLIC	__real@4010000000000000
 PUBLIC	__real@7f7fffff
 PUBLIC	__real@7fefffffffffffff
@@ -197,6 +204,11 @@ EXTRN	_atexit:PROC
 EXTRN	_memcpy:PROC
 EXTRN	_strlen:PROC
 EXTRN	_memmove:PROC
+EXTRN	__imp__Ellipse@20:PROC
+EXTRN	__imp__GetStockObject@4:PROC
+EXTRN	__imp__LineTo@12:PROC
+EXTRN	__imp__SelectObject@8:PROC
+EXTRN	__imp__MoveToEx@16:PROC
 EXTRN	??0_Lockit@std@@QAE@H@Z:PROC			; std::_Lockit::_Lockit
 EXTRN	??1_Lockit@std@@QAE@XZ:PROC			; std::_Lockit::~_Lockit
 EXTRN	__hypot:PROC
@@ -210,6 +222,7 @@ EXTRN	?_Winerror_map@std@@YAPBDH@Z:PROC		; std::_Winerror_map
 EXTRN	??_E_Generic_error_category@std@@UAEPAXI@Z:PROC	; std::_Generic_error_category::`vector deleting destructor'
 EXTRN	??_E_Iostream_error_category@std@@UAEPAXI@Z:PROC ; std::_Iostream_error_category::`vector deleting destructor'
 EXTRN	??_E_System_error_category@std@@UAEPAXI@Z:PROC	; std::_System_error_category::`vector deleting destructor'
+EXTRN	?Instance@Cgdi@@SAPAV1@XZ:PROC			; Cgdi::Instance
 EXTRN	?isTargetWithinFOV@Raven_TargetingSystem@@QBE_NXZ:PROC ; Raven_TargetingSystem::isTargetWithinFOV
 EXTRN	?isAtPosition@Raven_Bot@@QBE_NUVector2D@@@Z:PROC ; Raven_Bot::isAtPosition
 EXTRN	?canStepLeft@Raven_Bot@@QBE_NAAUVector2D@@@Z:PROC ; Raven_Bot::canStepLeft
@@ -303,9 +316,17 @@ CONST	ENDS
 CONST	SEGMENT
 __real@4010000000000000 DQ 04010000000000000r	; 4
 CONST	ENDS
+;	COMDAT __real@4008000000000000
+CONST	SEGMENT
+__real@4008000000000000 DQ 04008000000000000r	; 3
+CONST	ENDS
 ;	COMDAT __real@4000000000000000
 CONST	SEGMENT
 __real@4000000000000000 DQ 04000000000000000r	; 2
+CONST	ENDS
+;	COMDAT __real@3ff0000000000000
+CONST	SEGMENT
+__real@3ff0000000000000 DQ 03ff0000000000000r	; 1
 CONST	ENDS
 ;	COMDAT __real@00800000
 CONST	SEGMENT
@@ -1807,6 +1828,7 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\goals\goal_dodgesidetoside.cpp
 _TEXT	SEGMENT
+$T1 = -20						; size = 16
 _this$ = -4						; size = 4
 ?Render@Goal_DodgeSideToSide@@UAEXXZ PROC		; Goal_DodgeSideToSide::Render
 ; _this$ = ecx
@@ -1815,21 +1837,91 @@ _this$ = -4						; size = 4
 
 	push	ebp
 	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	sub	esp, 20					; 00000014H
+	mov	eax, -858993460				; ccccccccH
+	mov	DWORD PTR [ebp-20], eax
+	mov	DWORD PTR [ebp-16], eax
+	mov	DWORD PTR [ebp-12], eax
+	mov	DWORD PTR [ebp-8], eax
+	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 90   : //#define SHOW_TARGET
+; 90   : #define SHOW_TARGET
 ; 91   : #ifdef SHOW_TARGET
 ; 92   :   gdi->OrangePen();
+
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?OrangePen@Cgdi@@QAEXXZ			; Cgdi::OrangePen
+
 ; 93   :   gdi->HollowBrush();
+
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?HollowBrush@Cgdi@@QAEXXZ		; Cgdi::HollowBrush
+
 ; 94   : 
 ; 95   :   gdi->Line(m_pOwner->Pos(), m_vStrafeTarget);
+
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 16					; 00000010H
+	sub	esp, 16					; 00000010H
+	mov	ecx, esp
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], edx
+	mov	edx, DWORD PTR [eax+4]
+	mov	DWORD PTR [ecx+4], edx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [ecx+12], eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [edx+8]
+	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
+	sub	esp, 16					; 00000010H
+	mov	ecx, esp
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], edx
+	mov	edx, DWORD PTR [eax+4]
+	mov	DWORD PTR [ecx+4], edx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [ecx+12], eax
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?Line@Cgdi@@QAEXUVector2D@@0@Z		; Cgdi::Line
+
 ; 96   :   gdi->Circle(m_vStrafeTarget, 3);
+
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR __real@4008000000000000
+	movsd	QWORD PTR [esp], xmm0
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 16					; 00000010H
+	sub	esp, 16					; 00000010H
+	mov	edx, esp
+	mov	eax, DWORD PTR [ecx]
+	mov	DWORD PTR [edx], eax
+	mov	eax, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx+4], eax
+	mov	eax, DWORD PTR [ecx+8]
+	mov	DWORD PTR [edx+8], eax
+	mov	ecx, DWORD PTR [ecx+12]
+	mov	DWORD PTR [edx+12], ecx
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?Circle@Cgdi@@QAEXUVector2D@@N@Z	; Cgdi::Circle
+
 ; 97   : #endif
 ; 98   :   
 ; 99   : }
 
+	add	esp, 20					; 00000014H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
 	mov	esp, ebp
 	pop	ebp
 	ret	0
@@ -2205,7 +2297,7 @@ _this$ = -4						; size = 4
 ?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ PROC ; Raven_Bot::GetTargetSys, COMDAT
 ; _this$ = ecx
 
-; 214  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
+; 217  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -2227,7 +2319,7 @@ _this$ = -4						; size = 4
 ?GetSteering@Raven_Bot@@QAEQAVRaven_Steering@@XZ PROC	; Raven_Bot::GetSteering, COMDAT
 ; _this$ = ecx
 
-; 210  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
+; 213  :   Raven_Steering* const              GetSteering(){return m_pSteering;}
 
 	push	ebp
 	mov	ebp, esp
@@ -2240,6 +2332,39 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ?GetSteering@Raven_Bot@@QAEQAVRaven_Steering@@XZ ENDP	; Raven_Bot::GetSteering
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\game\basegameentity.h
+;	COMDAT ?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___$ReturnUdt$ = 8					; size = 4
+?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ PROC		; BaseGameEntity::Pos, COMDAT
+; _this$ = ecx
+
+; 89   :   Vector2D     Pos()const{return m_vPosition;}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 24					; 00000018H
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], edx
+	mov	edx, DWORD PTR [eax+4]
+	mov	DWORD PTR [ecx+4], edx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [ecx+12], eax
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ ENDP		; BaseGameEntity::Pos
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\tuple
@@ -2303,6 +2428,208 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ??0_Ignore@std@@QAE@XZ ENDP				; std::_Ignore::_Ignore
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
+;	COMDAT ?Circle@Cgdi@@QAEXUVector2D@@N@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_pos$ = 8						; size = 16
+_radius$ = 24						; size = 8
+?Circle@Cgdi@@QAEXUVector2D@@N@Z PROC			; Cgdi::Circle, COMDAT
+; _this$ = ecx
+
+; 338  :   {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	esi
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 339  :     Ellipse(m_hdc,
+; 340  :            (int)(pos.x-radius),
+; 341  :            (int)(pos.y-radius),
+; 342  :            (int)(pos.x+radius+1),
+; 343  :            (int)(pos.y+radius+1));
+
+	movsd	xmm0, QWORD PTR _pos$[ebp+8]
+	addsd	xmm0, QWORD PTR _radius$[ebp]
+	addsd	xmm0, QWORD PTR __real@3ff0000000000000
+	cvttsd2si eax, xmm0
+	mov	esi, esp
+	push	eax
+	movsd	xmm0, QWORD PTR _pos$[ebp]
+	addsd	xmm0, QWORD PTR _radius$[ebp]
+	addsd	xmm0, QWORD PTR __real@3ff0000000000000
+	cvttsd2si ecx, xmm0
+	push	ecx
+	movsd	xmm0, QWORD PTR _pos$[ebp+8]
+	subsd	xmm0, QWORD PTR _radius$[ebp]
+	cvttsd2si edx, xmm0
+	push	edx
+	movsd	xmm0, QWORD PTR _pos$[ebp]
+	subsd	xmm0, QWORD PTR _radius$[ebp]
+	cvttsd2si eax, xmm0
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	call	DWORD PTR __imp__Ellipse@20
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 344  :   }
+
+	pop	esi
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	24					; 00000018H
+?Circle@Cgdi@@QAEXUVector2D@@N@Z ENDP			; Cgdi::Circle
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
+;	COMDAT ?Line@Cgdi@@QAEXUVector2D@@0@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_from$ = 8						; size = 16
+_to$ = 24						; size = 16
+?Line@Cgdi@@QAEXUVector2D@@0@Z PROC			; Cgdi::Line, COMDAT
+; _this$ = ecx
+
+; 244  :   {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	esi
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 245  :     MoveToEx(m_hdc, (int)from.x, (int)from.y, NULL);
+
+	mov	esi, esp
+	push	0
+	cvttsd2si eax, QWORD PTR _from$[ebp+8]
+	push	eax
+	cvttsd2si ecx, QWORD PTR _from$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+124]
+	push	eax
+	call	DWORD PTR __imp__MoveToEx@16
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 246  :     LineTo(m_hdc, (int)to.x, (int)to.y);
+
+	cvttsd2si ecx, QWORD PTR _to$[ebp+8]
+	mov	esi, esp
+	push	ecx
+	cvttsd2si edx, QWORD PTR _to$[ebp]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+124]
+	push	ecx
+	call	DWORD PTR __imp__LineTo@12
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+
+; 247  :   }
+
+	pop	esi
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	32					; 00000020H
+?Line@Cgdi@@QAEXUVector2D@@0@Z ENDP			; Cgdi::Line
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
+;	COMDAT ?HollowBrush@Cgdi@@QAEXXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?HollowBrush@Cgdi@@QAEXXZ PROC				; Cgdi::HollowBrush, COMDAT
+; _this$ = ecx
+
+; 161  :   void HollowBrush(){if(m_hdc)SelectObject(m_hdc, GetStockObject(HOLLOW_BRUSH));}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	esi
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+124], 0
+	je	SHORT $LN2@HollowBrus
+	mov	esi, esp
+	push	5
+	call	DWORD PTR __imp__GetStockObject@4
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+	mov	esi, esp
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+124]
+	push	edx
+	call	DWORD PTR __imp__SelectObject@8
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN2@HollowBrus:
+	pop	esi
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?HollowBrush@Cgdi@@QAEXXZ ENDP				; Cgdi::HollowBrush
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
+;	COMDAT ?OrangePen@Cgdi@@QAEXXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?OrangePen@Cgdi@@QAEXXZ PROC				; Cgdi::OrangePen, COMDAT
+; _this$ = ecx
+
+; 144  :   void OrangePen() {if(m_hdc){SelectObject(m_hdc, m_OrangePen);}}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	esi
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+124], 0
+	je	SHORT $LN2@OrangePen
+	mov	esi, esp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+32]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+124]
+	push	ecx
+	call	DWORD PTR __imp__SelectObject@8
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN2@OrangePen:
+	pop	esi
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?OrangePen@Cgdi@@QAEXXZ ENDP				; Cgdi::OrangePen
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\utils.h

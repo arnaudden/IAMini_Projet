@@ -127,7 +127,10 @@ private:
   //fuzzy logic is used to determine a shot deviation.
   FuzzyModule   m_FuzzyModule;
 
+  // indicate the team of a bot
   string team;
+
+  Vector2D vShotDeviation;
 
 public:
   
@@ -218,6 +221,8 @@ public:
 
 
   void InitializeFuzzyModule();
+
+  Vector2D addDeviation();
 
   string GetTeam(){ return team; }
 

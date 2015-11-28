@@ -5556,7 +5556,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; Raven_Bot::GetTeam, COMDAT
 ; _this$ = ecx
 
-; 222  :   string GetTeam(){ return team; }
+; 227  :   string GetTeam(){ return team; }
 
 	push	ebp
 	mov	ebp, esp
@@ -5590,7 +5590,7 @@ _this$ = -4						; size = 4
 ?GetSensoryMem@Raven_Bot@@QBEQAVRaven_SensoryMemory@@XZ PROC ; Raven_Bot::GetSensoryMem, COMDAT
 ; _this$ = ecx
 
-; 217  :   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
+; 220  :   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
 
 	push	ebp
 	mov	ebp, esp
@@ -5613,7 +5613,7 @@ _this$ = -4						; size = 4
 ?isAlive@Raven_Bot@@QBE_NXZ PROC			; Raven_Bot::isAlive, COMDAT
 ; _this$ = ecx
 
-; 163  :   bool          isAlive()const{return m_Status == alive;}
+; 166  :   bool          isAlive()const{return m_Status == alive;}
 
 	push	ebp
 	mov	ebp, esp

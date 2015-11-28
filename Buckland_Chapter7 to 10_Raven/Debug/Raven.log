@@ -1,9 +1,76 @@
-﻿Build started 26/11/2015 00:36:58.
+﻿Build started 28/11/2015 22:22:24.
      1>Project "D:\UQAC\Intellignece artificielle pour le jeu vidéo\TP 3\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" on node 2 (Build target(s)).
-     1>Link:
+     1>ClCompile:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\CL.exe /c /I..\Common /Zi /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _WINDOWS /D _VC80_UPGRADE=0x0600 /D _MBCS /Gm /EHsc /RTC1 /MTd /GS /fp:precise /Zc:wchar_t /Zc:forScope /GR /FAs /Fa".\Debug/" /Fo".\Debug/" /Fd".\Debug/vc120.pdb" /FR".\Debug\\" /Gd /TP /analyze- /errorReport:prompt /Zm200  goals\Goal_DodgeSideToSide.cpp
+         Goal_DodgeSideToSide.cpp
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 12.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:".\Debug/Raven.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /NODEFAULTLIB:libcmt /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:".\Debug/Raven.pdb" /SUBSYSTEM:WINDOWS /TLBID:1 /DYNAMICBASE:NO /IMPLIB:".\Debug\Raven.lib" /MACHINE:X86 /SAFESEH .\Debug\Script1.res
+         .\Debug/main.obj
+         .\Debug/Raven_Bot.obj
+         .\Debug/Raven_Game.obj
+         .\Debug/Raven_Map.obj
+         .\Debug/Raven_Weapon.obj
+         .\Debug/Weapon_Blaster.obj
+         .\Debug/Weapon_RailGun.obj
+         .\Debug/Weapon_RocketLauncher.obj
+         .\Debug/Weapon_ShotGun.obj
+         .\Debug/Projectile_Bolt.obj
+         .\Debug/Projectile_Pellet.obj
+         .\Debug/Projectile_Rocket.obj
+         .\Debug/Projectile_Slug.obj
+         .\Debug/Raven_Projectile.obj
+         .\Debug/BaseGameEntity.obj
+         .\Debug/Raven_Scriptor.obj
+         .\Debug/EntityManager.obj
+         .\Debug/GraveMarkers.obj
+         .\Debug/Raven_Door.obj
+         .\Debug/Raven_UserOptions.obj
+         .\Debug/Raven_Goal_Types.obj
+         .\Debug/Goal_AdjustRange.obj
+         .\Debug/Goal_AttackTarget.obj
+         .\Debug/Goal_Explore.obj
+         .\Debug/Goal_FollowPath.obj
+         .\Debug/Goal_GetItem.obj
+         .\Debug/Goal_HuntTarget.obj
+         .\Debug/Goal_MoveToPosition.obj
+         .\Debug/Goal_NegotiateDoor.obj
+         .\Debug/Goal_Think.obj
+         .\Debug/AttackTargetGoal_Evaluator.obj
+         .\Debug/ExploreGoal_Evaluator.obj
+         .\Debug/GetHealthGoal_Evaluator.obj
+         .\Debug/GetWeaponGoal_Evaluator.obj
+         .\Debug/Raven_Feature.obj
+         .\Debug/Goal_DodgeSideToSide.obj
+         .\Debug/Goal_SayPhrase.obj
+         .\Debug/Goal_SeekToPosition.obj
+         .\Debug/Goal_TraverseEdge.obj
+         .\Debug/Goal_Wander.obj
+         .\Debug/FuzzyModule.obj
+         .\Debug/FuzzyOperators.obj
+         .\Debug/FuzzyVariable.obj
+         .\Debug/FuzzySet_LeftShoulder.obj
+         .\Debug/FuzzySet_RightShoulder.obj
+         .\Debug/FuzzySet_Singleton.obj
+         .\Debug/FuzzySet_Triangle.obj
+         .\Debug/Raven_PathPlanner.obj
+         .\Debug/Raven_SteeringBehaviors.obj
+         .\Debug/MessageDispatcher.obj
+         .\Debug/Raven_SensoryMemory.obj
+         .\Debug/Trigger_HealthGiver.obj
+         .\Debug/Trigger_SoundNotify.obj
+         .\Debug/Trigger_WeaponGiver.obj
+         .\Debug/Raven_WeaponSystem.obj
+         .\Debug/Raven_TargetingSystem.obj
+         .\Debug/Cgdi.obj
+         .\Debug/CrudeTimer.obj
+         .\Debug/DebugConsole.obj
+         .\Debug/FrameCounter.obj
+         .\Debug/PrecisionTimer.obj
+         .\Debug/Vector2d.obj
+         .\Debug/WindowUtils.obj
          Raven.vcxproj -> D:\UQAC\Intellignece artificielle pour le jeu vidéo\TP 3\Buckland_Chapter7 to 10_Raven\.\Debug\Raven.exe
      1>Done Building Project "D:\UQAC\Intellignece artificielle pour le jeu vidéo\TP 3\Buckland_Chapter7 to 10_Raven\Raven.vcxproj" (Build target(s)).
 
 Build succeeded.
 
-Time Elapsed 00:00:00.09
+Time Elapsed 00:00:02.72

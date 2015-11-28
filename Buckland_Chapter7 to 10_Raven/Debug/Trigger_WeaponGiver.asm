@@ -12,9 +12,6 @@ INCLUDELIB OLDNAMES
 CONST	SEGMENT
 _Pi	DQ	0400921f9f01b866er		; 3.14159
 _pi	DQ	0400921f9f01b866er		; 3.14159
-$SG149352 DB	'DefaultGiverTriggerRange', 00H
-	ORG $+3
-$SG149354 DB	'Weapon_RespawnDelay', 00H
 _colors	DD	0ffH
 	DD	0ff0000H
 	DD	0ff00H
@@ -30,6 +27,9 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG149358 DB	'DefaultGiverTriggerRange', 00H
+	ORG $+3
+$SG149360 DB	'Weapon_RespawnDelay', 00H
 CONST	ENDS
 PUBLIC	_hypot
 PUBLIC	_ldexpf
@@ -20933,7 +20933,7 @@ _in$ = 8						; size = 4
 ; 61   :   //create this trigger's region of fluence
 ; 62   :   AddCircularTriggerRegion(Pos(), script->GetDouble("DefaultGiverTriggerRange"));
 
-	push	OFFSET $SG149352
+	push	OFFSET $SG149358
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -20960,7 +20960,7 @@ _in$ = 8						; size = 4
 ; 64   : 
 ; 65   :   SetRespawnDelay((unsigned int)(script->GetDouble("Weapon_RespawnDelay") * FrameRate));
 
-	push	OFFSET $SG149354
+	push	OFFSET $SG149360
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -22401,7 +22401,7 @@ _this$ = -4						; size = 4
 ?GetWeaponSys@Raven_Bot@@QBEQAVRaven_WeaponSystem@@XZ PROC ; Raven_Bot::GetWeaponSys, COMDAT
 ; _this$ = ecx
 
-; 216  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
+; 219  :   Raven_WeaponSystem* const          GetWeaponSys()const{return m_pWeaponSys;}
 
 	push	ebp
 	mov	ebp, esp

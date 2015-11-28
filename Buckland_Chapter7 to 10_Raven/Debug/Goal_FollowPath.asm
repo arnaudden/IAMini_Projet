@@ -26,7 +26,7 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG164099 DB	'<Goal_FollowPath::Activate>: Unrecognized edge type', 00H
+$SG164102 DB	'<Goal_FollowPath::Activate>: Unrecognized edge type', 00H
 _pi	DQ	0400921f9f01b866er		; 3.14159
 CONST	ENDS
 PUBLIC	_hypot
@@ -10351,7 +10351,7 @@ $LN1@Activate:
 ; 69   : 
 ; 70   :     throw std::runtime_error("<Goal_FollowPath::Activate>: Unrecognized edge type");
 
-	push	OFFSET $SG164099
+	push	OFFSET $SG164102
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@

@@ -10,95 +10,112 @@ INCLUDELIB LIBCMTD
 INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
-$SG171021 DB	'DistToTarget', 00H
-$SG170699 DB	00H
-$SG170818 DB	00H
-$SG170827 DB	00H
-$SG171026 DB	'Target_VeryClose', 00H
+$SG171009 DB	'Blue', 00H
+$SG170704 DB	00H
+$SG170824 DB	00H
+$SG170833 DB	00H
+$SG171030 DB	'Red', 00H
+$SG171046 DB	'H:', 00H
+	ORG $+1
+$SG171053 DB	'Scr:', 00H
 	ORG $+3
-$SG171031 DB	'Target_Close', 00H
-	ORG $+3
-$SG171036 DB	'Target_Medium', 00H
+$SG171064 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG171041 DB	'Target_Far', 00H
-	ORG $+1
-$SG171046 DB	'Target_VeryFar', 00H
-	ORG $+1
-$SG171049 DB	'Velocity', 00H
+$SG171092 DB	'DistanceToTarget', 00H
 	ORG $+3
-$SG171054 DB	'Fast', 00H
+$SG171097 DB	'Target_VeryClose', 00H
 	ORG $+3
-$SG171059 DB	'MiddleSpeed', 00H
-$SG171064 DB	'Slow', 00H
+$SG171102 DB	'Target_Close', 00H
 	ORG $+3
-$SG171067 DB	'TargetVisibility', 00H
-	ORG $+3
-$SG171072 DB	'LongVisibility', 00H
-	ORG $+1
-$SG171077 DB	'Visibility', 00H
-	ORG $+1
-$SG171082 DB	'ShortVisibility', 00H
-$SG171085 DB	'ShotDeviation', 00H
+$SG171107 DB	'Target_Medium', 00H
 	ORG $+2
-$SG171090 DB	'LongDeviation', 00H
+$SG171112 DB	'Target_Far', 00H
+	ORG $+1
+$SG171117 DB	'Target_VeryFar', 00H
+	ORG $+1
+$SG171120 DB	'Velocity', 00H
+	ORG $+3
+$SG171125 DB	'Fast', 00H
+	ORG $+3
+$SG171130 DB	'MiddleSpeed', 00H
+$SG171135 DB	'Slow', 00H
+	ORG $+3
+$SG171138 DB	'TargetVisibility', 00H
+	ORG $+3
+$SG171143 DB	'LongVisibility', 00H
+	ORG $+1
+$SG171148 DB	'Visibility', 00H
+	ORG $+1
+$SG171153 DB	'ShortVisibility', 00H
+$SG171156 DB	'ShotDeviation', 00H
 	ORG $+2
-$SG171095 DB	'MiddleDeviation', 00H
-$SG171100 DB	'LittleDeviation', 00H
-$SG171105 DB	'NoDeviation', 00H
-$SG170610 DB	'Bot_MaxHeadTurnRate', 00H
+$SG171161 DB	'LongDeviation', 00H
+	ORG $+2
+$SG171166 DB	'MiddleDeviation', 00H
+$SG171171 DB	'LittleDeviation', 00H
+$SG171176 DB	'NoDeviation', 00H
+$SG171234 DB	'DistanceToTarget', 00H
+	ORG $+3
+$SG171236 DB	'Velocity', 00H
+	ORG $+3
+$SG171238 DB	'TargetVisibility', 00H
+	ORG $+3
+$SG171241 DB	'ShotDeviation', 00H
+	ORG $+2
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _SmallestDelay DQ 03fd0000000000000r		; 0.25
-$SG170609 DB	'Bot_MaxForce', 00H
+$SG170614 DB	'Bot_MaxForce', 00H
 	ORG $+3
-$SG170611 DB	'Bot_Scale', 00H
+$SG170615 DB	'Bot_MaxHeadTurnRate', 00H
+$SG170616 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG170612 DB	'Bot_Scale', 00H
+$SG170617 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG170613 DB	'Bot_Mass', 00H
+$SG170618 DB	'Bot_Mass', 00H
 	ORG $+3
-$SG170614 DB	'Bot_MaxSpeed', 00H
+$SG170619 DB	'Bot_MaxSpeed', 00H
 	ORG $+3
-$SG170615 DB	'Bot_Scale', 00H
+$SG170620 DB	'Bot_Scale', 00H
 	ORG $+2
-$SG170616 DB	'Bot_MaxHealth', 00H
+$SG170621 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG170617 DB	'Bot_MaxHealth', 00H
+$SG170622 DB	'Bot_MaxHealth', 00H
 	ORG $+2
-$SG170618 DB	'Bot_FOV', 00H
-$SG170619 DB	'HitFlashTime', 00H
+$SG170623 DB	'Bot_FOV', 00H
+$SG170624 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG170632 DB	'Bot_WeaponSelectionFrequency', 00H
+$SG170637 DB	'Bot_WeaponSelectionFrequency', 00H
 	ORG $+3
-$SG170637 DB	'Bot_GoalAppraisalUpdateFreq', 00H
-$SG170642 DB	'Bot_TargetingUpdateFreq', 00H
-$SG170647 DB	'Bot_TriggerUpdateFreq', 00H
+$SG170642 DB	'Bot_GoalAppraisalUpdateFreq', 00H
+$SG170647 DB	'Bot_TargetingUpdateFreq', 00H
+$SG170652 DB	'Bot_TriggerUpdateFreq', 00H
 	ORG $+2
-$SG170652 DB	'Bot_VisionUpdateFreq', 00H
+$SG170657 DB	'Bot_VisionUpdateFreq', 00H
 	ORG $+3
-$SG170665 DB	'Bot_AimPersistance', 00H
+$SG170670 DB	'Bot_AimPersistance', 00H
 	ORG $+1
-$SG170666 DB	'Bot_AimAccuracy', 00H
-$SG170667 DB	'Bot_ReactionTime', 00H
+$SG170671 DB	'Bot_AimAccuracy', 00H
+$SG170672 DB	'Bot_ReactionTime', 00H
 	ORG $+3
-$SG170672 DB	'Bot_MemorySpan', 00H
+$SG170677 DB	'Bot_MemorySpan', 00H
 	ORG $+1
-$SG170697 DB	'deleting raven bot (id = ', 00H
+$SG170702 DB	'deleting raven bot (id = ', 00H
 	ORG $+2
-$SG170698 DB	')', 00H
+$SG170703 DB	')', 00H
 	ORG $+2
-$SG170808 DB	'HitFlashTime', 00H
+$SG170814 DB	'HitFlashTime', 00H
 	ORG $+3
-$SG170817 DB	'Player Possesses bot ', 00H
+$SG170823 DB	'Player Possesses bot ', 00H
 	ORG $+2
-$SG170826 DB	'Player is exorcised from bot ', 00H
+$SG170832 DB	'Player is exorcised from bot ', 00H
 	ORG $+2
-$SG170843 DB	'DistToTarget', 00H
+$SG170849 DB	'DistToTarget', 00H
 	ORG $+3
-$SG170845 DB	'TargetVisilibity', 00H
+$SG170851 DB	'TargetVisilibity', 00H
 	ORG $+3
-$SG170847 DB	'Velocity', 00H
+$SG170853 DB	'Velocity', 00H
 	ORG $+3
-$SG170850 DB	'ShotDeviation', 00H
+$SG170856 DB	'ShotDeviation', 00H
 	ORG $+2
 _colors	DD	0ffH
 	DD	0ff0000H
@@ -115,14 +132,9 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG170975 DB	'H:', 00H
-	ORG $+1
-$SG170982 DB	'Scr:', 00H
-	ORG $+3
-$SG170993 DB	'Bot_Scale', 00H
-	ORG $+2
-_SEND_MSG_IMMEDIATELY DQ 00000000000000000r	; 0
+	ORG $+4
 _Pi	DQ	0400921f9f01b866er		; 3.14159
+_SEND_MSG_IMMEDIATELY DQ 00000000000000000r	; 0
 CONST	ENDS
 PUBLIC	_hypot
 PUBLIC	?abs@@YANN@Z					; abs
@@ -521,6 +533,7 @@ PUBLIC	?Velocity@MovingEntity@@QBE?AUVector2D@@XZ	; MovingEntity::Velocity
 PUBLIC	?MaxSpeed@MovingEntity@@QBENXZ			; MovingEntity::MaxSpeed
 PUBLIC	??_GMovingEntity@@UAEPAXI@Z			; MovingEntity::`scalar deleting destructor'
 PUBLIC	??$Clamp@NHH@@YAXAANABH1@Z			; Clamp<double,int,int>
+PUBLIC	?isTargetPresent@Raven_TargetingSystem@@QBE_NXZ	; Raven_TargetingSystem::isTargetPresent
 PUBLIC	?GetTarget@Raven_TargetingSystem@@QBEPAVRaven_Bot@@XZ ; Raven_TargetingSystem::GetTarget
 PUBLIC	?ClearTarget@Raven_TargetingSystem@@QAEXXZ	; Raven_TargetingSystem::ClearTarget
 PUBLIC	??1FuzzyTerm@@UAE@XZ				; FuzzyTerm::~FuzzyTerm
@@ -686,11 +699,13 @@ PUBLIC	?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ ; Raven_Bot::Get
 PUBLIC	?GetTargetBot@Raven_Bot@@QBEQAV1@XZ		; Raven_Bot::GetTargetBot
 PUBLIC	?GetSensoryMem@Raven_Bot@@QBEQAVRaven_SensoryMemory@@XZ ; Raven_Bot::GetSensoryMem
 PUBLIC	?InitializeFuzzyModule@Raven_Bot@@QAEXXZ	; Raven_Bot::InitializeFuzzyModule
+PUBLIC	?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ	; Raven_Bot::addDeviation
 PUBLIC	??_GRaven_Bot@@UAEPAXI@Z			; Raven_Bot::`scalar deleting destructor'
 PUBLIC	?BluePen@Cgdi@@QAEXXZ				; Cgdi::BluePen
 PUBLIC	?ThickRedPen@Cgdi@@QAEXXZ			; Cgdi::ThickRedPen
 PUBLIC	?HollowBrush@Cgdi@@QAEXXZ			; Cgdi::HollowBrush
-PUBLIC	?BrownBrush@Cgdi@@QAEXXZ			; Cgdi::BrownBrush
+PUBLIC	?RedBrush@Cgdi@@QAEXXZ				; Cgdi::RedBrush
+PUBLIC	?BlueBrush@Cgdi@@QAEXXZ				; Cgdi::BlueBrush
 PUBLIC	?TextAtPos@Cgdi@@QAEXNNABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; Cgdi::TextAtPos
 PUBLIC	?TransparentText@Cgdi@@QAEXXZ			; Cgdi::TransparentText
 PUBLIC	?TextColor@Cgdi@@QAEXHHH@Z			; Cgdi::TextColor
@@ -791,6 +806,7 @@ PUBLIC	??$?6$$BY00$$CBD@DebugConsole@@QAEAAV0@AAY00$$CBD@Z ; DebugConsole::opera
 PUBLIC	??$DereferenceToType@H@@YAHPAX@Z		; DereferenceToType<int>
 PUBLIC	??$?6$$BY0BG@$$CBD@DebugConsole@@QAEAAV0@AAY0BG@$$CBD@Z ; DebugConsole::operator<<<char const [22]>
 PUBLIC	??$?6$$BY0BO@$$CBD@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z ; DebugConsole::operator<<<char const [30]>
+PUBLIC	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??$Clamp@HHH@@YAXAAHABH1@Z			; Clamp<int,int,int>
 PUBLIC	??$forward@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YA$$QAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z ; std::forward<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 PUBLIC	??$?9V?$allocator@D@std@@V01@@std@@YA_NABU?$_Wrap_alloc@V?$allocator@D@std@@@0@0@Z ; std::operator!=<std::allocator<char>,std::allocator<char> >
@@ -984,7 +1000,6 @@ PUBLIC	??0?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_B
 PUBLIC	??D?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QBEAAPAV?$Goal@VRaven_Bot@@@@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::operator*
 PUBLIC	??E?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::operator++
 PUBLIC	??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QAE@XZ ; std::_List_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >::~_List_iterator<std::_List_val<std::_List_simple_types<Goal<Raven_Bot> *> > >
-PUBLIC	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??$?8V?$allocator@D@std@@V01@@std@@YA_NABU?$_Wrap_alloc@V?$allocator@D@std@@@0@0@Z ; std::operator==<std::allocator<char>,std::allocator<char> >
 PUBLIC	??$?8DD@std@@YA_NABV?$allocator@D@0@0@Z		; std::operator==<char,char>
 PUBLIC	??$_Uninitialized_copy@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@UVector2D@@@std@@@std@@@std@@PAUVector2D@@U?$_Wrap_alloc@V?$allocator@UVector2D@@@std@@@2@@std@@YAPAUVector2D@@V?$_Vector_const_iterator@V?$_Vector_val@U?$_Simple_types@UVector2D@@@std@@@std@@@0@0PAU1@AAU?$_Wrap_alloc@V?$allocator@UVector2D@@@std@@@0@@Z ; std::_Uninitialized_copy<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<Vector2D> > >,Vector2D *,std::_Wrap_alloc<std::allocator<Vector2D> > >
@@ -1413,10 +1428,7 @@ PUBLIC	__real@38aa95a5b7f87a0f
 PUBLIC	__real@3cb0000000000000
 PUBLIC	__real@3d719799812dea11
 PUBLIC	__real@3f847ae147ae147b
-PUBLIC	__real@3fb999999999999a
-PUBLIC	__real@3fd3333333333333
 PUBLIC	__real@3fe0000000000000
-PUBLIC	__real@3fe3333333333333
 PUBLIC	__real@3fe999999999999a
 PUBLIC	__real@3ff0000000000000
 PUBLIC	__real@4000000000000000
@@ -1428,6 +1440,7 @@ PUBLIC	__real@4020000000000000
 PUBLIC	__real@4024000000000000
 PUBLIC	__real@4034000000000000
 PUBLIC	__real@4039000000000000
+PUBLIC	__real@403e000000000000
 PUBLIC	__real@4044000000000000
 PUBLIC	__real@4049000000000000
 PUBLIC	__real@404e000000000000
@@ -1567,7 +1580,7 @@ EXTRN	?Instance@Raven_UserOptions@@SAPAV1@XZ:PROC	; Raven_UserOptions::Instance
 EXTRN	??0Raven_WeaponSystem@@QAE@PAVRaven_Bot@@NNN@Z:PROC ; Raven_WeaponSystem::Raven_WeaponSystem
 EXTRN	??1Raven_WeaponSystem@@QAE@XZ:PROC		; Raven_WeaponSystem::~Raven_WeaponSystem
 EXTRN	?Initialize@Raven_WeaponSystem@@QAEXXZ:PROC	; Raven_WeaponSystem::Initialize
-EXTRN	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXXZ:PROC ; Raven_WeaponSystem::TakeAimAndShoot
+EXTRN	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXUVector2D@@@Z:PROC ; Raven_WeaponSystem::TakeAimAndShoot
 EXTRN	?SelectWeapon@Raven_WeaponSystem@@QAEXXZ:PROC	; Raven_WeaponSystem::SelectWeapon
 EXTRN	?ChangeWeapon@Raven_WeaponSystem@@QAEXI@Z:PROC	; Raven_WeaponSystem::ChangeWeapon
 EXTRN	?ShootAt@Raven_WeaponSystem@@QBEXUVector2D@@@Z:PROC ; Raven_WeaponSystem::ShootAt
@@ -1812,6 +1825,10 @@ CONST	ENDS
 CONST	SEGMENT
 __real@4044000000000000 DQ 04044000000000000r	; 40
 CONST	ENDS
+;	COMDAT __real@403e000000000000
+CONST	SEGMENT
+__real@403e000000000000 DQ 0403e000000000000r	; 30
+CONST	ENDS
 ;	COMDAT __real@4039000000000000
 CONST	SEGMENT
 __real@4039000000000000 DQ 04039000000000000r	; 25
@@ -1856,21 +1873,9 @@ CONST	ENDS
 CONST	SEGMENT
 __real@3fe999999999999a DQ 03fe999999999999ar	; 0.8
 CONST	ENDS
-;	COMDAT __real@3fe3333333333333
-CONST	SEGMENT
-__real@3fe3333333333333 DQ 03fe3333333333333r	; 0.6
-CONST	ENDS
 ;	COMDAT __real@3fe0000000000000
 CONST	SEGMENT
 __real@3fe0000000000000 DQ 03fe0000000000000r	; 0.5
-CONST	ENDS
-;	COMDAT __real@3fd3333333333333
-CONST	SEGMENT
-__real@3fd3333333333333 DQ 03fd3333333333333r	; 0.3
-CONST	ENDS
-;	COMDAT __real@3fb999999999999a
-CONST	SEGMENT
-__real@3fb999999999999a DQ 03fb999999999999ar	; 0.1
 CONST	ENDS
 ;	COMDAT __real@3f847ae147ae147b
 CONST	SEGMENT
@@ -5529,6 +5534,14 @@ __unwindtable$?canStepRight@Raven_Bot@@QBE_NAAUVector2D@@@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?canStepRight@Raven_Bot@@QBE_NAAUVector2D@@@Z$0
 __unwindtable$?canStepLeft@Raven_Bot@@QBE_NAAUVector2D@@@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?canStepLeft@Raven_Bot@@QBE_NAAUVector2D@@@Z$0
+__unwindtable$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$0
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$1
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$2
+	DD	0ffffffffH
+	DD	FLAT:__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$3
 __unwindtable$?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z$0
 	DD	0ffffffffH
@@ -5537,6 +5550,13 @@ __unwindtable$?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z DD 0ffffffffH
 	DD	FLAT:__unwindfunclet$?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z$2
 	DD	0ffffffffH
 	DD	FLAT:__unwindfunclet$?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z$3
+__ehfuncinfo$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ DD 019930522H
+	DD	04H
+	DD	FLAT:__unwindtable$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
 __ehfuncinfo$?InitializeFuzzyModule@Raven_Bot@@QAEXXZ DD 019930522H
 	DD	040H
 	DD	FLAT:__unwindtable$?InitializeFuzzyModule@Raven_Bot@@QAEXXZ
@@ -17174,47 +17194,6 @@ __Right$ = 12						; size = 4
 	pop	ebp
 	ret	0
 ??$?8V?$allocator@D@std@@V01@@std@@YA_NABU?$_Wrap_alloc@V?$allocator@D@std@@@0@0@Z ENDP ; std::operator==<std::allocator<char>,std::allocator<char> >
-_TEXT	ENDS
-; Function compile flags: /Odtp /RTCsu
-; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
-;	COMDAT ??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
-_TEXT	SEGMENT
-tv68 = -4						; size = 4
-__Left$ = 8						; size = 4
-__Right$ = 12						; size = 4
-??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z PROC ; std::operator==<char,std::char_traits<char>,std::allocator<char> >, COMDAT
-
-; 2488 : 	{	// test for string vs. NTCS equality
-
-	push	ebp
-	mov	ebp, esp
-	push	ecx
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
-
-; 2489 : 	return (_Left.compare(_Right) == 0);
-
-	mov	eax, DWORD PTR __Right$[ebp]
-	push	eax
-	mov	ecx, DWORD PTR __Left$[ebp]
-	call	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHPBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
-	test	eax, eax
-	jne	SHORT $LN3@operator
-	mov	DWORD PTR tv68[ebp], 1
-	jmp	SHORT $LN4@operator
-$LN3@operator:
-	mov	DWORD PTR tv68[ebp], 0
-$LN4@operator:
-	mov	al, BYTE PTR tv68[ebp]
-
-; 2490 : 	}
-
-	add	esp, 4
-	cmp	ebp, esp
-	call	__RTC_CheckEsp
-	mov	esp, ebp
-	pop	ebp
-	ret	0
-??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ENDP ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??1?$_List_iterator@V?$_List_val@U?$_List_simple_types@PAV?$Goal@VRaven_Bot@@@@@std@@@std@@@std@@QAE@XZ
@@ -31303,6 +31282,47 @@ $LN1@Clamp:
 ??$Clamp@HHH@@YAXAAHABH1@Z ENDP				; Clamp<int,int,int>
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
+;	COMDAT ??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z
+_TEXT	SEGMENT
+tv68 = -4						; size = 4
+__Left$ = 8						; size = 4
+__Right$ = 12						; size = 4
+??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z PROC ; std::operator==<char,std::char_traits<char>,std::allocator<char> >, COMDAT
+
+; 2488 : 	{	// test for string vs. NTCS equality
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+
+; 2489 : 	return (_Left.compare(_Right) == 0);
+
+	mov	eax, DWORD PTR __Right$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __Left$[ebp]
+	call	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHPBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+	test	eax, eax
+	jne	SHORT $LN3@operator
+	mov	DWORD PTR tv68[ebp], 1
+	jmp	SHORT $LN4@operator
+$LN3@operator:
+	mov	DWORD PTR tv68[ebp], 0
+$LN4@operator:
+	mov	al, BYTE PTR tv68[ebp]
+
+; 2490 : 	}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ENDP ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\debug\debugconsole.h
 ;	COMDAT ??$?6$$BY0BO@$$CBD@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z
 _TEXT	SEGMENT
@@ -40308,13 +40328,13 @@ _s$ = 24						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
-;	COMDAT ?BrownBrush@Cgdi@@QAEXXZ
+;	COMDAT ?BlueBrush@Cgdi@@QAEXXZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
-?BrownBrush@Cgdi@@QAEXXZ PROC				; Cgdi::BrownBrush, COMDAT
+?BlueBrush@Cgdi@@QAEXXZ PROC				; Cgdi::BlueBrush, COMDAT
 ; _this$ = ecx
 
-; 166  :   void BrownBrush() {if(m_hdc)SelectObject(m_hdc, m_BrownBrush);}
+; 164  :   void BlueBrush()  {if(m_hdc)SelectObject(m_hdc, m_BlueBrush);}
 
 	push	ebp
 	mov	ebp, esp
@@ -40324,10 +40344,10 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+124], 0
-	je	SHORT $LN2@BrownBrush
+	je	SHORT $LN2@BlueBrush
 	mov	esi, esp
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	edx, DWORD PTR [ecx+104]
+	mov	edx, DWORD PTR [ecx+96]
 	push	edx
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+124]
@@ -40335,7 +40355,7 @@ _this$ = -4						; size = 4
 	call	DWORD PTR __imp__SelectObject@8
 	cmp	esi, esp
 	call	__RTC_CheckEsp
-$LN2@BrownBrush:
+$LN2@BlueBrush:
 	pop	esi
 	add	esp, 4
 	cmp	ebp, esp
@@ -40343,7 +40363,46 @@ $LN2@BrownBrush:
 	mov	esp, ebp
 	pop	ebp
 	ret	0
-?BrownBrush@Cgdi@@QAEXXZ ENDP				; Cgdi::BrownBrush
+?BlueBrush@Cgdi@@QAEXXZ ENDP				; Cgdi::BlueBrush
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
+;	COMDAT ?RedBrush@Cgdi@@QAEXXZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+?RedBrush@Cgdi@@QAEXXZ PROC				; Cgdi::RedBrush, COMDAT
+; _this$ = ecx
+
+; 163  :   void RedBrush()  {if(m_hdc)SelectObject(m_hdc, m_RedBrush);}
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	push	esi
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+124], 0
+	je	SHORT $LN2@RedBrush
+	mov	esi, esp
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+88]
+	push	edx
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+124]
+	push	ecx
+	call	DWORD PTR __imp__SelectObject@8
+	cmp	esi, esp
+	call	__RTC_CheckEsp
+$LN2@RedBrush:
+	pop	esi
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?RedBrush@Cgdi@@QAEXXZ ENDP				; Cgdi::RedBrush
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\cgdi.h
@@ -40496,6 +40555,276 @@ $LN1@scalar:
 	ret	4
 ??_GRaven_Bot@@UAEPAXI@Z ENDP				; Raven_Bot::`scalar deleting destructor'
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.cpp
+_TEXT	SEGMENT
+$T2 = -236						; size = 16
+$T3 = -220						; size = 16
+$T4 = -204						; size = 16
+_vShotDeviation$5 = -184				; size = 16
+$T6 = -164						; size = 28
+_shotDeviation$7 = -136					; size = 8
+$T8 = -128						; size = 28
+$T9 = -100						; size = 28
+$T10 = -72						; size = 28
+_targetVelocity$11 = -44				; size = 8
+_targetVisibility$12 = -36				; size = 8
+_distanceToTarget$13 = -28				; size = 8
+_this$ = -20						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ PROC	; Raven_Bot::addDeviation
+; _this$ = ecx
+
+; 727  : {
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 224				; 000000e0H
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-236]
+	mov	ecx, 56					; 00000038H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 728  : 	if (m_pTargSys->isTargetPresent())
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+168]
+	call	?isTargetPresent@Raven_TargetingSystem@@QBE_NXZ ; Raven_TargetingSystem::isTargetPresent
+	movzx	ecx, al
+	test	ecx, ecx
+	je	$LN1@addDeviati
+
+; 729  : 	{
+; 730  : 		double distanceToTarget = Vec2DDistance(Pos(), GetTargetBot()->Pos());
+
+	lea	edx, DWORD PTR $T4[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?GetTargetBot@Raven_Bot@@QBEQAV1@XZ	; Raven_Bot::GetTargetBot
+	mov	ecx, eax
+	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
+	push	eax
+	lea	eax, DWORD PTR $T3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
+	push	eax
+	call	?Vec2DDistance@@YANABUVector2D@@0@Z	; Vec2DDistance
+	add	esp, 8
+	fstp	QWORD PTR _distanceToTarget$13[ebp]
+
+; 731  : 		double targetVisibility = m_pSensoryMem->GetTimeOpponentHasBeenVisible(GetTargetBot());
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?GetTargetBot@Raven_Bot@@QBEQAV1@XZ	; Raven_Bot::GetTargetBot
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+156]
+	call	?GetTimeOpponentHasBeenVisible@Raven_SensoryMemory@@QBENPAVRaven_Bot@@@Z ; Raven_SensoryMemory::GetTimeOpponentHasBeenVisible
+	fstp	QWORD PTR _targetVisibility$12[ebp]
+
+; 732  : 		double targetVelocity = Vec2DLength(GetTargetBot()->Velocity());
+
+	lea	edx, DWORD PTR $T2[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?GetTargetBot@Raven_Bot@@QBEQAV1@XZ	; Raven_Bot::GetTargetBot
+	mov	ecx, eax
+	call	?Velocity@MovingEntity@@QBE?AUVector2D@@XZ ; MovingEntity::Velocity
+	push	eax
+	call	?Vec2DLength@@YANABUVector2D@@@Z	; Vec2DLength
+	add	esp, 4
+	fstp	QWORD PTR _targetVelocity$11[ebp]
+
+; 733  : 
+; 734  : 
+; 735  : 		m_FuzzyModule.Fuzzify("DistanceToTarget", distanceToTarget);
+
+	push	OFFSET $SG171234
+	lea	ecx, DWORD PTR $T10[ebp]
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR _distanceToTarget$13[ebp]
+	movsd	QWORD PTR [esp], xmm0
+	lea	eax, DWORD PTR $T10[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 272				; 00000110H
+	call	?Fuzzify@FuzzyModule@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@N@Z ; FuzzyModule::Fuzzify
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR $T10[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 736  : 		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
+
+	push	OFFSET $SG171236
+	lea	ecx, DWORD PTR $T9[ebp]
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], 1
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR _targetVelocity$11[ebp]
+	movsd	QWORD PTR [esp], xmm0
+	lea	ecx, DWORD PTR $T9[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 272				; 00000110H
+	call	?Fuzzify@FuzzyModule@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@N@Z ; FuzzyModule::Fuzzify
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR $T9[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 737  : 		m_FuzzyModule.Fuzzify("TargetVisibility", targetVisibility);
+
+	push	OFFSET $SG171238
+	lea	ecx, DWORD PTR $T8[ebp]
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR _targetVisibility$12[ebp]
+	movsd	QWORD PTR [esp], xmm0
+	lea	edx, DWORD PTR $T8[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 272				; 00000110H
+	call	?Fuzzify@FuzzyModule@@QAEXABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@N@Z ; FuzzyModule::Fuzzify
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR $T8[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 738  : 
+; 739  : 		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
+
+	push	OFFSET $SG171241
+	lea	ecx, DWORD PTR $T6[ebp]
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	DWORD PTR __$EHRec$[ebp+8], 3
+	push	0
+	lea	eax, DWORD PTR $T6[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 272				; 00000110H
+	call	?DeFuzzify@FuzzyModule@@QAENABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@W4DefuzzifyMethod@1@@Z ; FuzzyModule::DeFuzzify
+	fstp	QWORD PTR _shotDeviation$7[ebp]
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR $T6[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+
+; 740  : 		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
+
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR _shotDeviation$7[ebp]
+	movsd	QWORD PTR [esp], xmm0
+	sub	esp, 8
+	movsd	xmm0, QWORD PTR _shotDeviation$7[ebp]
+	movsd	QWORD PTR [esp], xmm0
+	lea	ecx, DWORD PTR _vShotDeviation$5[ebp]
+	call	??0Vector2D@@QAE@NN@Z			; Vector2D::Vector2D
+
+; 741  : 		return vShotDeviation;
+
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	edx, DWORD PTR _vShotDeviation$5[ebp]
+	mov	DWORD PTR [ecx], edx
+	mov	eax, DWORD PTR _vShotDeviation$5[ebp+4]
+	mov	DWORD PTR [ecx+4], eax
+	mov	edx, DWORD PTR _vShotDeviation$5[ebp+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR _vShotDeviation$5[ebp+12]
+	mov	DWORD PTR [ecx+12], eax
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+$LN1@addDeviati:
+
+; 742  : 	}
+; 743  : 	
+; 744  : }
+
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN11@addDeviati
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 236				; 000000ecH
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+$LN11@addDeviati:
+	DD	1
+	DD	$LN10@addDeviati
+$LN10@addDeviati:
+	DD	-184					; ffffff48H
+	DD	16					; 00000010H
+	DD	$LN8@addDeviati
+$LN8@addDeviati:
+	DB	118					; 00000076H
+	DB	83					; 00000053H
+	DB	104					; 00000068H
+	DB	111					; 0000006fH
+	DB	116					; 00000074H
+	DB	68					; 00000044H
+	DB	101					; 00000065H
+	DB	118					; 00000076H
+	DB	105					; 00000069H
+	DB	97					; 00000061H
+	DB	116					; 00000074H
+	DB	105					; 00000069H
+	DB	111					; 0000006fH
+	DB	110					; 0000006eH
+	DB	0
+_TEXT	ENDS
+text$x	SEGMENT
+__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$0:
+	lea	ecx, DWORD PTR $T10[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$1:
+	lea	ecx, DWORD PTR $T9[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$2:
+	lea	ecx, DWORD PTR $T8[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+__unwindfunclet$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ$3:
+	lea	ecx, DWORD PTR $T6[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+__ehhandler$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-232]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ ENDP	; Raven_Bot::addDeviation
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.cpp
 _TEXT	SEGMENT
@@ -40723,7 +41052,7 @@ __$EHRec$ = -12						; size = 12
 ?InitializeFuzzyModule@Raven_Bot@@QAEXXZ PROC		; Raven_Bot::InitializeFuzzyModule
 ; _this$ = ecx
 
-; 608  : {
+; 625  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -40747,9 +41076,10 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 609  : 	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
+; 626  : 	
+; 627  : 	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistanceToTarget");
 
-	push	OFFSET $SG171021
+	push	OFFSET $SG171092
 	lea	ecx, DWORD PTR $T65[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -40763,8 +41093,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T65[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 610  : 
-; 611  : 	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
+; 628  : 
+; 629  : 	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4049000000000000
@@ -40778,7 +41108,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T61[ebp], esp
-	push	OFFSET $SG171026
+	push	OFFSET $SG171097
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1939[ebp], eax
 	lea	ecx, DWORD PTR _$S5$[ebp]
@@ -40790,7 +41120,7 @@ __$EHRec$ = -12						; size = 12
 	lea	edx, DWORD PTR _$S5$[ebp]
 	mov	DWORD PTR _Target_VeryClose$[ebp], edx
 
-; 612  : 	FzSet& Target_Close = DistToTarget.AddTriangularSet("Target_Close", 25, 50, 150);
+; 630  : 	FzSet& Target_Close = DistToTarget.AddTriangularSet("Target_Close", 25, 50, 150);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4062c00000000000
@@ -40804,7 +41134,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T60[ebp], esp
-	push	OFFSET $SG171031
+	push	OFFSET $SG171102
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1945[ebp], eax
 	lea	eax, DWORD PTR _$S6$[ebp]
@@ -40816,7 +41146,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _$S6$[ebp]
 	mov	DWORD PTR _Target_Close$[ebp], ecx
 
-; 613  : 	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 50, 150, 300);
+; 631  : 	FzSet& Target_Medium = DistToTarget.AddTriangularSet("Target_Medium", 50, 150, 300);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4072c00000000000
@@ -40830,7 +41160,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T59[ebp], esp
-	push	OFFSET $SG171036
+	push	OFFSET $SG171107
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1951[ebp], eax
 	lea	edx, DWORD PTR _$S7$[ebp]
@@ -40842,7 +41172,7 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR _$S7$[ebp]
 	mov	DWORD PTR _Target_Medium$[ebp], eax
 
-; 614  : 	FzSet& Target_Far = DistToTarget.AddTriangularSet("Target_Far", 150, 300, 600);
+; 632  : 	FzSet& Target_Far = DistToTarget.AddTriangularSet("Target_Far", 150, 300, 600);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4082c00000000000
@@ -40856,7 +41186,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T58[ebp], esp
-	push	OFFSET $SG171041
+	push	OFFSET $SG171112
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1957[ebp], eax
 	lea	ecx, DWORD PTR _$S8$[ebp]
@@ -40868,7 +41198,7 @@ __$EHRec$ = -12						; size = 12
 	lea	edx, DWORD PTR _$S8$[ebp]
 	mov	DWORD PTR _Target_Far$[ebp], edx
 
-; 615  : 	FzSet& Target_VeryFar = DistToTarget.AddRightShoulderSet("Target_VeryFar", 300, 600, 1000);
+; 633  : 	FzSet& Target_VeryFar = DistToTarget.AddRightShoulderSet("Target_VeryFar", 300, 600, 1000);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@408f400000000000
@@ -40882,7 +41212,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T57[ebp], esp
-	push	OFFSET $SG171046
+	push	OFFSET $SG171117
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1963[ebp], eax
 	lea	eax, DWORD PTR _$S9$[ebp]
@@ -40894,10 +41224,10 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _$S9$[ebp]
 	mov	DWORD PTR _Target_VeryFar$[ebp], ecx
 
-; 616  : 
-; 617  : 	FuzzyVariable& Velocity = m_FuzzyModule.CreateFLV("Velocity");
+; 634  : 
+; 635  : 	FuzzyVariable& Velocity = m_FuzzyModule.CreateFLV("Velocity");
 
-	push	OFFSET $SG171049
+	push	OFFSET $SG171120
 	lea	ecx, DWORD PTR $T64[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 6
@@ -40911,21 +41241,21 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T64[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 618  : 	FzSet& Fast= Velocity.AddTriangularSet("Fast", 0.30, 0.60, 1);
+; 636  : 	FzSet& Fast= Velocity.AddTriangularSet("Fast", 30, 60, 100);
 
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3ff0000000000000
+	movsd	xmm0, QWORD PTR __real@4059000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fe3333333333333
+	movsd	xmm0, QWORD PTR __real@404e000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fd3333333333333
+	movsd	xmm0, QWORD PTR __real@403e000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T56[ebp], esp
-	push	OFFSET $SG171054
+	push	OFFSET $SG171125
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1970[ebp], eax
 	lea	eax, DWORD PTR _$S10$[ebp]
@@ -40937,21 +41267,21 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _$S10$[ebp]
 	mov	DWORD PTR _Fast$[ebp], ecx
 
-; 619  : 	FzSet& Middle = Velocity.AddTriangularSet("MiddleSpeed", 0.10, 0.30, 0.60);
+; 637  : 	FzSet& Middle = Velocity.AddTriangularSet("MiddleSpeed", 10, 30, 60);
 
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fe3333333333333
+	movsd	xmm0, QWORD PTR __real@404e000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fd3333333333333
+	movsd	xmm0, QWORD PTR __real@403e000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fb999999999999a
+	movsd	xmm0, QWORD PTR __real@4024000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T55[ebp], esp
-	push	OFFSET $SG171059
+	push	OFFSET $SG171130
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1976[ebp], eax
 	lea	edx, DWORD PTR _$S11$[ebp]
@@ -40963,13 +41293,13 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR _$S11$[ebp]
 	mov	DWORD PTR _Middle$[ebp], eax
 
-; 620  : 	FzSet& Slow = Velocity.AddLeftShoulderSet("Slow", 0, 0.10, 0.30);
+; 638  : 	FzSet& Slow = Velocity.AddLeftShoulderSet("Slow", 0, 10, 30);
 
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fd3333333333333
+	movsd	xmm0, QWORD PTR __real@403e000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
-	movsd	xmm0, QWORD PTR __real@3fb999999999999a
+	movsd	xmm0, QWORD PTR __real@4024000000000000
 	movsd	QWORD PTR [esp], xmm0
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@0000000000000000
@@ -40977,7 +41307,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T54[ebp], esp
-	push	OFFSET $SG171064
+	push	OFFSET $SG171135
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1982[ebp], eax
 	lea	ecx, DWORD PTR _$S12$[ebp]
@@ -40989,11 +41319,11 @@ __$EHRec$ = -12						; size = 12
 	lea	edx, DWORD PTR _$S12$[ebp]
 	mov	DWORD PTR _Slow$[ebp], edx
 
-; 621  : 
-; 622  : 
-; 623  : 	FuzzyVariable& TargetVisibility = m_FuzzyModule.CreateFLV("TargetVisibility");
+; 639  : 
+; 640  : 
+; 641  : 	FuzzyVariable& TargetVisibility = m_FuzzyModule.CreateFLV("TargetVisibility");
 
-	push	OFFSET $SG171067
+	push	OFFSET $SG171138
 	lea	ecx, DWORD PTR $T63[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 10		; 0000000aH
@@ -41007,7 +41337,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T63[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 624  : 	FzSet& LongVisibility = TargetVisibility.AddRightShoulderSet("LongVisibility", 300, 700, 1000);
+; 642  : 	FzSet& LongVisibility = TargetVisibility.AddRightShoulderSet("LongVisibility", 300, 700, 1000);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@408f400000000000
@@ -41021,7 +41351,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T53[ebp], esp
-	push	OFFSET $SG171072
+	push	OFFSET $SG171143
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1989[ebp], eax
 	lea	ecx, DWORD PTR _$S13$[ebp]
@@ -41033,7 +41363,7 @@ __$EHRec$ = -12						; size = 12
 	lea	edx, DWORD PTR _$S13$[ebp]
 	mov	DWORD PTR _LongVisibility$[ebp], edx
 
-; 625  : 	FzSet& Visibility = TargetVisibility.AddTriangularSet("Visibility", 100, 300, 700);
+; 643  : 	FzSet& Visibility = TargetVisibility.AddTriangularSet("Visibility", 100, 300, 700);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4085e00000000000
@@ -41047,7 +41377,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T52[ebp], esp
-	push	OFFSET $SG171077
+	push	OFFSET $SG171148
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv1995[ebp], eax
 	lea	eax, DWORD PTR _$S14$[ebp]
@@ -41059,7 +41389,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _$S14$[ebp]
 	mov	DWORD PTR _Visibility$[ebp], ecx
 
-; 626  : 	FzSet& ShortVisibility = TargetVisibility.AddTriangularSet("ShortVisibility", 0, 100, 300);
+; 644  : 	FzSet& ShortVisibility = TargetVisibility.AddTriangularSet("ShortVisibility", 0, 100, 300);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4072c00000000000
@@ -41073,7 +41403,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T51[ebp], esp
-	push	OFFSET $SG171082
+	push	OFFSET $SG171153
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv2001[ebp], eax
 	lea	edx, DWORD PTR _$S15$[ebp]
@@ -41085,10 +41415,10 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR _$S15$[ebp]
 	mov	DWORD PTR _ShortVisibility$[ebp], eax
 
-; 627  : 
-; 628  : 	FuzzyVariable& ShotDeviation = m_FuzzyModule.CreateFLV("ShotDeviation");
+; 645  : 
+; 646  : 	FuzzyVariable& ShotDeviation = m_FuzzyModule.CreateFLV("ShotDeviation");
 
-	push	OFFSET $SG171085
+	push	OFFSET $SG171156
 	lea	ecx, DWORD PTR $T62[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 14		; 0000000eH
@@ -41102,7 +41432,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T62[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 629  : 	FzSet& LongDeviation = TargetVisibility.AddRightShoulderSet("LongDeviation", 40, 70, 100);
+; 647  : 	FzSet& LongDeviation = TargetVisibility.AddRightShoulderSet("LongDeviation", 40, 70, 100);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4059000000000000
@@ -41116,7 +41446,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T50[ebp], esp
-	push	OFFSET $SG171090
+	push	OFFSET $SG171161
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv2008[ebp], eax
 	lea	edx, DWORD PTR _$S16$[ebp]
@@ -41128,7 +41458,7 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR _$S16$[ebp]
 	mov	DWORD PTR _LongDeviation$[ebp], eax
 
-; 630  : 	FzSet& MiddleDeviation = TargetVisibility.AddTriangularSet("MiddleDeviation", 10, 40, 70);
+; 648  : 	FzSet& MiddleDeviation = TargetVisibility.AddTriangularSet("MiddleDeviation", 10, 40, 70);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4051800000000000
@@ -41142,7 +41472,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T49[ebp], esp
-	push	OFFSET $SG171095
+	push	OFFSET $SG171166
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv2014[ebp], eax
 	lea	ecx, DWORD PTR _$S17$[ebp]
@@ -41154,7 +41484,7 @@ __$EHRec$ = -12						; size = 12
 	lea	edx, DWORD PTR _$S17$[ebp]
 	mov	DWORD PTR _MiddleDeviation$[ebp], edx
 
-; 631  : 	FzSet& LittleDeviation = TargetVisibility.AddTriangularSet("LittleDeviation", 0, 10, 40);
+; 649  : 	FzSet& LittleDeviation = TargetVisibility.AddTriangularSet("LittleDeviation", 0, 10, 40);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4044000000000000
@@ -41168,7 +41498,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T48[ebp], esp
-	push	OFFSET $SG171100
+	push	OFFSET $SG171171
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv2020[ebp], eax
 	lea	eax, DWORD PTR _$S18$[ebp]
@@ -41180,7 +41510,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR _$S18$[ebp]
 	mov	DWORD PTR _LittleDeviation$[ebp], ecx
 
-; 632  : 	FzSet& NoDeviation = TargetVisibility.AddSingletonSet("NoDeviation", 0, 0, 0);
+; 650  : 	FzSet& NoDeviation = TargetVisibility.AddSingletonSet("NoDeviation", 0, 0, 0);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@0000000000000000
@@ -41194,7 +41524,7 @@ __$EHRec$ = -12						; size = 12
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T47[ebp], esp
-	push	OFFSET $SG171105
+	push	OFFSET $SG171176
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv2026[ebp], eax
 	lea	edx, DWORD PTR _$S19$[ebp]
@@ -41206,12 +41536,12 @@ __$EHRec$ = -12						; size = 12
 	lea	eax, DWORD PTR _$S19$[ebp]
 	mov	DWORD PTR _NoDeviation$[ebp], eax
 
-; 633  : 
-; 634  : 	// Definition of the rules
-; 635  : 
-; 636  : 	//Target_VeryClose
-; 637  : 	
-; 638  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, ShortVisibility), NoDeviation);
+; 651  : 
+; 652  : 	// Definition of the rules
+; 653  : 
+; 654  : 	//Target_VeryClose
+; 655  : 	
+; 656  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, ShortVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41236,7 +41566,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T46[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 639  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, Visibility), NoDeviation);
+; 657  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, Visibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41261,7 +41591,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T45[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 640  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, LongVisibility), NoDeviation);
+; 658  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Slow, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41286,8 +41616,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T44[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 641  : 
-; 642  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, ShortVisibility), LittleDeviation);
+; 659  : 
+; 660  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, ShortVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41312,7 +41642,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T43[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 643  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, Visibility), NoDeviation);
+; 661  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, Visibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41337,7 +41667,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T42[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 644  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, LongVisibility), NoDeviation);
+; 662  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Middle, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41362,8 +41692,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T41[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 645  : 
-; 646  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, ShortVisibility), MiddleDeviation);
+; 663  : 
+; 664  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41388,7 +41718,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T40[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 647  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, Visibility), LittleDeviation);
+; 665  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, Visibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41413,7 +41743,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T39[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 648  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, LongVisibility), NoDeviation);
+; 666  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryClose, Fast, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41438,10 +41768,10 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T38[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 649  : 
-; 650  : 	// Target_Close
-; 651  : 
-; 652  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, ShortVisibility), LittleDeviation);
+; 667  : 
+; 668  : 	// Target_Close
+; 669  : 
+; 670  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, ShortVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41466,7 +41796,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T37[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 653  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, Visibility), NoDeviation);
+; 671  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, Visibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41491,7 +41821,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T36[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 654  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, LongVisibility), NoDeviation);
+; 672  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Slow, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41516,8 +41846,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T35[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 655  : 
-; 656  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, ShortVisibility), LittleDeviation);
+; 673  : 
+; 674  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, ShortVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41542,7 +41872,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T34[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 657  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, Visibility), NoDeviation);
+; 675  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, Visibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41567,7 +41897,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T33[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 658  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, LongVisibility), NoDeviation);
+; 676  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Middle, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41592,8 +41922,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T32[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 659  : 
-; 660  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, ShortVisibility), MiddleDeviation);
+; 677  : 
+; 678  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41618,7 +41948,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T31[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 661  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, Visibility), LittleDeviation);
+; 679  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, Visibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41643,7 +41973,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T30[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 662  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, LongVisibility), NoDeviation);
+; 680  : 	m_FuzzyModule.AddRule(FzAND(Target_Close, Fast, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41668,10 +41998,10 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T29[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 663  : 
-; 664  : 	// Target_Medium
-; 665  : 
-; 666  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, ShortVisibility), MiddleDeviation);
+; 681  : 
+; 682  : 	// Target_Medium
+; 683  : 
+; 684  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41696,7 +42026,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T28[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 667  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, Visibility), LittleDeviation);
+; 685  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, Visibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41721,7 +42051,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T27[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 668  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, LongVisibility), NoDeviation);
+; 686  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Slow, LongVisibility), NoDeviation);
 
 	mov	ecx, DWORD PTR _NoDeviation$[ebp]
 	push	ecx
@@ -41746,8 +42076,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T26[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 669  : 
-; 670  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, ShortVisibility), MiddleDeviation);
+; 687  : 
+; 688  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41772,7 +42102,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T25[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 671  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, Visibility), MiddleDeviation);
+; 689  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, Visibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41797,7 +42127,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T24[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 672  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, LongVisibility), LittleDeviation);
+; 690  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Middle, LongVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41822,8 +42152,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T23[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 673  : 
-; 674  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, ShortVisibility), LongDeviation);
+; 691  : 
+; 692  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, ShortVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -41848,7 +42178,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T22[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 675  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, Visibility), MiddleDeviation);
+; 693  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, Visibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41873,7 +42203,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T21[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 676  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, LongVisibility), MiddleDeviation);
+; 694  : 	m_FuzzyModule.AddRule(FzAND(Target_Medium, Fast, LongVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41898,10 +42228,10 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T20[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 677  : 
-; 678  : 	// Target_Far
-; 679  : 
-; 680  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, ShortVisibility), MiddleDeviation);
+; 695  : 
+; 696  : 	// Target_Far
+; 697  : 
+; 698  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -41926,7 +42256,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T19[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 681  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, Visibility), LittleDeviation);
+; 699  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, Visibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41951,7 +42281,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T18[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 682  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, LongVisibility), LittleDeviation);
+; 700  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Slow, LongVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -41976,8 +42306,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T17[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 683  : 
-; 684  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, ShortVisibility), LongDeviation);
+; 701  : 
+; 702  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, ShortVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42002,7 +42332,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T16[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 685  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, Visibility), MiddleDeviation);
+; 703  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, Visibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42027,7 +42357,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T15[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 686  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, LongVisibility), LittleDeviation);
+; 704  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Middle, LongVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -42052,8 +42382,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T14[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 687  : 
-; 688  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, ShortVisibility), LongDeviation);
+; 705  : 
+; 706  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, ShortVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42078,7 +42408,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T13[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 689  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, Visibility), LongDeviation);
+; 707  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, Visibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42103,7 +42433,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T12[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 690  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, LongVisibility), MiddleDeviation);
+; 708  : 	m_FuzzyModule.AddRule(FzAND(Target_Far, Fast, LongVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42128,10 +42458,10 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T11[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 691  : 
-; 692  : 	//Target_VeryFar
-; 693  : 
-; 694  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, ShortVisibility), MiddleDeviation);
+; 709  : 
+; 710  : 	//Target_VeryFar
+; 711  : 
+; 712  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, ShortVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42156,7 +42486,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T10[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 695  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, Visibility), MiddleDeviation);
+; 713  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, Visibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42181,7 +42511,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T9[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 696  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, LongVisibility), LittleDeviation);
+; 714  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Slow, LongVisibility), LittleDeviation);
 
 	mov	ecx, DWORD PTR _LittleDeviation$[ebp]
 	push	ecx
@@ -42206,8 +42536,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 697  : 
-; 698  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, ShortVisibility), LongDeviation);
+; 715  : 
+; 716  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, ShortVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42232,7 +42562,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 699  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, Visibility), MiddleDeviation);
+; 717  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, Visibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42257,7 +42587,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T6[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 700  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, LongVisibility), MiddleDeviation);
+; 718  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Middle, LongVisibility), MiddleDeviation);
 
 	mov	ecx, DWORD PTR _MiddleDeviation$[ebp]
 	push	ecx
@@ -42282,8 +42612,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T5[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 701  : 
-; 702  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, ShortVisibility), LongDeviation);
+; 719  : 
+; 720  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, ShortVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42308,7 +42638,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T4[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 703  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, Visibility), LongDeviation);
+; 721  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, Visibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42333,7 +42663,7 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T3[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 704  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, LongVisibility), LongDeviation);
+; 722  : 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, LongVisibility), LongDeviation);
 
 	mov	ecx, DWORD PTR _LongDeviation$[ebp]
 	push	ecx
@@ -42358,8 +42688,8 @@ __$EHRec$ = -12						; size = 12
 	lea	ecx, DWORD PTR $T2[ebp]
 	call	??1FzAND@@UAE@XZ			; FzAND::~FzAND
 
-; 705  : 
-; 706  : }
+; 723  : 	
+; 724  : }
 
 	mov	BYTE PTR __$EHRec$[ebp+8], 17		; 00000011H
 	lea	ecx, DWORD PTR _$S19$[ebp]
@@ -42776,7 +43106,7 @@ _this$ = -4						; size = 4
 ?GetSensoryMem@Raven_Bot@@QBEQAVRaven_SensoryMemory@@XZ PROC ; Raven_Bot::GetSensoryMem, COMDAT
 ; _this$ = ecx
 
-; 217  :   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
+; 220  :   Raven_SensoryMemory* const         GetSensoryMem()const{return m_pSensoryMem;}
 
 	push	ebp
 	mov	ebp, esp
@@ -42798,7 +43128,7 @@ _this$ = -4						; size = 4
 ?GetTargetBot@Raven_Bot@@QBEQAV1@XZ PROC		; Raven_Bot::GetTargetBot, COMDAT
 ; _this$ = ecx
 
-; 215  :   Raven_Bot* const                   GetTargetBot()const{return m_pTargSys->GetTarget();}
+; 218  :   Raven_Bot* const                   GetTargetBot()const{return m_pTargSys->GetTarget();}
 
 	push	ebp
 	mov	ebp, esp
@@ -42824,7 +43154,7 @@ _this$ = -4						; size = 4
 ?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ PROC ; Raven_Bot::GetTargetSys, COMDAT
 ; _this$ = ecx
 
-; 214  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
+; 217  :   Raven_TargetingSystem* const       GetTargetSys(){return m_pTargSys;}
 
 	push	ebp
 	mov	ebp, esp
@@ -42846,7 +43176,7 @@ _this$ = -4						; size = 4
 ?GetBrain@Raven_Bot@@QAEQAVGoal_Think@@XZ PROC		; Raven_Bot::GetBrain, COMDAT
 ; _this$ = ecx
 
-; 212  :   Goal_Think* const                  GetBrain(){return m_pBrain;}
+; 215  :   Goal_Think* const                  GetBrain(){return m_pBrain;}
 
 	push	ebp
 	mov	ebp, esp
@@ -42877,7 +43207,7 @@ _PositionOfStep$ = 8					; size = 4
 ?canStepBackward@Raven_Bot@@QBE_NAAUVector2D@@@Z PROC	; Raven_Bot::canStepBackward
 ; _this$ = ecx
 
-; 491  : {
+; 494  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -42900,7 +43230,7 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 492  :   static const double StepDistance = BRadius() * 2;
+; 495  :   static const double StepDistance = BRadius() * 2;
 
 	mov	eax, DWORD PTR ?$S4@?1??canStepBackward@Raven_Bot@@QBE_NAAUVector2D@@@Z@4IA
 	and	eax, 1
@@ -42918,8 +43248,8 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 $LN1@canStepBac:
 
-; 493  : 
-; 494  :   PositionOfStep = Pos() - Facing() * StepDistance - Facing() * BRadius();
+; 496  : 
+; 497  :   PositionOfStep = Pos() - Facing() * StepDistance - Facing() * BRadius();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -42972,8 +43302,8 @@ $LN1@canStepBac:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
 
-; 495  : 
-; 496  :   return canWalkTo(PositionOfStep);
+; 498  : 
+; 499  :   return canWalkTo(PositionOfStep);
 
 	mov	ecx, DWORD PTR _PositionOfStep$[ebp]
 	sub	esp, 16					; 00000010H
@@ -42989,7 +43319,7 @@ $LN1@canStepBac:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?canWalkTo@Raven_Bot@@QBE_NUVector2D@@@Z ; Raven_Bot::canWalkTo
 
-; 497  : }
+; 500  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -43035,7 +43365,7 @@ _PositionOfStep$ = 8					; size = 4
 ?canStepForward@Raven_Bot@@QBE_NAAUVector2D@@@Z PROC	; Raven_Bot::canStepForward
 ; _this$ = ecx
 
-; 482  : {
+; 485  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43058,7 +43388,7 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 483  :   static const double StepDistance = BRadius() * 2;
+; 486  :   static const double StepDistance = BRadius() * 2;
 
 	mov	eax, DWORD PTR ?$S3@?1??canStepForward@Raven_Bot@@QBE_NAAUVector2D@@@Z@4IA
 	and	eax, 1
@@ -43076,8 +43406,8 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 $LN1@canStepFor:
 
-; 484  : 
-; 485  :   PositionOfStep = Pos() + Facing() * StepDistance + Facing() * BRadius();
+; 487  : 
+; 488  :   PositionOfStep = Pos() + Facing() * StepDistance + Facing() * BRadius();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -43130,8 +43460,8 @@ $LN1@canStepFor:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
 
-; 486  : 
-; 487  :   return canWalkTo(PositionOfStep);
+; 489  : 
+; 490  :   return canWalkTo(PositionOfStep);
 
 	mov	ecx, DWORD PTR _PositionOfStep$[ebp]
 	sub	esp, 16					; 00000010H
@@ -43147,7 +43477,7 @@ $LN1@canStepFor:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?canWalkTo@Raven_Bot@@QBE_NUVector2D@@@Z ; Raven_Bot::canWalkTo
 
-; 488  : }
+; 491  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -43195,7 +43525,7 @@ _PositionOfStep$ = 8					; size = 4
 ?canStepRight@Raven_Bot@@QBE_NAAUVector2D@@@Z PROC	; Raven_Bot::canStepRight
 ; _this$ = ecx
 
-; 473  : {
+; 476  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43218,7 +43548,7 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 474  :   static const double StepDistance = BRadius() * 2;
+; 477  :   static const double StepDistance = BRadius() * 2;
 
 	mov	eax, DWORD PTR ?$S2@?1??canStepRight@Raven_Bot@@QBE_NAAUVector2D@@@Z@4IA
 	and	eax, 1
@@ -43236,8 +43566,8 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 $LN1@canStepRig:
 
-; 475  : 
-; 476  :   PositionOfStep = Pos() + Facing().Perp() * StepDistance + Facing().Perp() * BRadius();
+; 478  : 
+; 479  :   PositionOfStep = Pos() + Facing().Perp() * StepDistance + Facing().Perp() * BRadius();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -43298,8 +43628,8 @@ $LN1@canStepRig:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [edx+12], eax
 
-; 477  : 
-; 478  :   return canWalkTo(PositionOfStep);
+; 480  : 
+; 481  :   return canWalkTo(PositionOfStep);
 
 	mov	ecx, DWORD PTR _PositionOfStep$[ebp]
 	sub	esp, 16					; 00000010H
@@ -43315,7 +43645,7 @@ $LN1@canStepRig:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?canWalkTo@Raven_Bot@@QBE_NUVector2D@@@Z ; Raven_Bot::canWalkTo
 
-; 479  : }
+; 482  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -43363,7 +43693,7 @@ _PositionOfStep$ = 8					; size = 4
 ?canStepLeft@Raven_Bot@@QBE_NAAUVector2D@@@Z PROC	; Raven_Bot::canStepLeft
 ; _this$ = ecx
 
-; 464  : {
+; 467  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43386,7 +43716,7 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 465  :   static const double StepDistance = BRadius() * 2;
+; 468  :   static const double StepDistance = BRadius() * 2;
 
 	mov	eax, DWORD PTR ?$S1@?1??canStepLeft@Raven_Bot@@QBE_NAAUVector2D@@@Z@4IA
 	and	eax, 1
@@ -43404,8 +43734,8 @@ _PositionOfStep$ = 8					; size = 4
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 $LN1@canStepLef:
 
-; 466  : 
-; 467  :   PositionOfStep = Pos() - Facing().Perp() * StepDistance - Facing().Perp() * BRadius();
+; 469  : 
+; 470  :   PositionOfStep = Pos() - Facing().Perp() * StepDistance - Facing().Perp() * BRadius();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -43466,8 +43796,8 @@ $LN1@canStepLef:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [edx+12], eax
 
-; 468  : 
-; 469  :   return canWalkTo(PositionOfStep);
+; 471  : 
+; 472  :   return canWalkTo(PositionOfStep);
 
 	mov	ecx, DWORD PTR _PositionOfStep$[ebp]
 	sub	esp, 16					; 00000010H
@@ -43483,7 +43813,7 @@ $LN1@canStepLef:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?canWalkTo@Raven_Bot@@QBE_NUVector2D@@@Z ; Raven_Bot::canWalkTo
 
-; 470  : }
+; 473  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -43522,7 +43852,7 @@ _to$ = 24						; size = 16
 ?canWalkBetween@Raven_Bot@@QBE_NUVector2D@@0@Z PROC	; Raven_Bot::canWalkBetween
 ; _this$ = ecx
 
-; 454  : {
+; 457  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43531,7 +43861,7 @@ _to$ = 24						; size = 16
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 455  :  return !m_pWorld->isPathObstructed(from, to, BRadius());
+; 458  :  return !m_pWorld->isPathObstructed(from, to, BRadius());
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -43570,7 +43900,7 @@ $LN3@canWalkBet:
 $LN4@canWalkBet:
 	mov	al, BYTE PTR tv78[ebp]
 
-; 456  : }
+; 459  : }
 
 	add	esp, 8
 	cmp	ebp, esp
@@ -43590,7 +43920,7 @@ _pos$ = 8						; size = 16
 ?canWalkTo@Raven_Bot@@QBE_NUVector2D@@@Z PROC		; Raven_Bot::canWalkTo
 ; _this$ = ecx
 
-; 447  : {
+; 450  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43604,7 +43934,7 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 448  :   return !m_pWorld->isPathObstructed(Pos(), pos, BRadius());
+; 451  :   return !m_pWorld->isPathObstructed(Pos(), pos, BRadius());
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
@@ -43647,7 +43977,7 @@ $LN3@canWalkTo:
 $LN4@canWalkTo:
 	mov	al, BYTE PTR tv85[ebp]
 
-; 449  : }
+; 452  : }
 
 	add	esp, 24					; 00000018H
 	cmp	ebp, esp
@@ -43666,7 +43996,7 @@ _pos$ = 8						; size = 16
 ?hasLOSto@Raven_Bot@@QBE_NUVector2D@@@Z PROC		; Raven_Bot::hasLOSto
 ; _this$ = ecx
 
-; 440  : {
+; 443  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43679,7 +44009,7 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 441  :   return m_pWorld->isLOSOkay(Pos(), pos);
+; 444  :   return m_pWorld->isLOSOkay(Pos(), pos);
 
 	sub	esp, 16					; 00000010H
 	mov	eax, esp
@@ -43709,7 +44039,7 @@ _pos$ = 8						; size = 16
 	mov	ecx, DWORD PTR [ecx+148]
 	call	?isLOSOkay@Raven_Game@@QBE_NUVector2D@@0@Z ; Raven_Game::isLOSOkay
 
-; 442  : }
+; 445  : }
 
 	add	esp, 20					; 00000014H
 	cmp	ebp, esp
@@ -43726,7 +44056,7 @@ _this$ = -4						; size = 4
 ?isReadyForTriggerUpdate@Raven_Bot@@QBE_NXZ PROC	; Raven_Bot::isReadyForTriggerUpdate
 ; _this$ = ecx
 
-; 220  : {
+; 223  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43734,13 +44064,13 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 221  :   return m_pTriggerTestRegulator->isReady();
+; 224  :   return m_pTriggerTestRegulator->isReady();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+188]
 	call	?isReady@Regulator@@QAE_NXZ		; Regulator::isReady
 
-; 222  : }
+; 225  : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -43758,7 +44088,7 @@ _pos$ = 8						; size = 16
 ?Spawn@Raven_Bot@@QAEXUVector2D@@@Z PROC		; Raven_Bot::Spawn
 ; _this$ = ecx
 
-; 116  : {
+; 118  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43766,24 +44096,24 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 117  :     SetAlive();
+; 119  :     SetAlive();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?SetAlive@Raven_Bot@@QAEXXZ		; Raven_Bot::SetAlive
 
-; 118  :     m_pBrain->RemoveAllSubgoals();
+; 120  :     m_pBrain->RemoveAllSubgoals();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+152]
 	call	?RemoveAllSubgoals@?$Goal_Composite@VRaven_Bot@@@@QAEXXZ ; Goal_Composite<Raven_Bot>::RemoveAllSubgoals
 
-; 119  :     m_pTargSys->ClearTarget();
+; 121  :     m_pTargSys->ClearTarget();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+168]
 	call	?ClearTarget@Raven_TargetingSystem@@QAEXXZ ; Raven_TargetingSystem::ClearTarget
 
-; 120  :     SetPos(pos);
+; 122  :     SetPos(pos);
 
 	sub	esp, 16					; 00000010H
 	mov	edx, esp
@@ -43798,18 +44128,18 @@ _pos$ = 8						; size = 16
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?SetPos@BaseGameEntity@@QAEXUVector2D@@@Z ; BaseGameEntity::SetPos
 
-; 121  :     m_pWeaponSys->Initialize();
+; 123  :     m_pWeaponSys->Initialize();
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [edx+172]
 	call	?Initialize@Raven_WeaponSystem@@QAEXXZ	; Raven_WeaponSystem::Initialize
 
-; 122  :     RestoreHealthToMaximum();
+; 124  :     RestoreHealthToMaximum();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?RestoreHealthToMaximum@Raven_Bot@@QAEXXZ ; Raven_Bot::RestoreHealthToMaximum
 
-; 123  : }
+; 125  : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -43827,7 +44157,7 @@ _this$ = -4						; size = 4
 ?Exorcise@Raven_Bot@@QAEXXZ PROC			; Raven_Bot::Exorcise
 ; _this$ = ecx
 
-; 372  : {
+; 375  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43836,29 +44166,29 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 373  :   m_bPossessed = false;
+; 376  :   m_bPossessed = false;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	BYTE PTR [eax+237], 0
 
-; 374  : 
-; 375  :   //when the player is exorcised then the bot should resume normal service
-; 376  :   m_pBrain->AddGoal_Explore();
+; 377  : 
+; 378  :   //when the player is exorcised then the bot should resume normal service
+; 379  :   m_pBrain->AddGoal_Explore();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+152]
 	call	?AddGoal_Explore@Goal_Think@@QAEXXZ	; Goal_Think::AddGoal_Explore
 
-; 377  :   
-; 378  :   debug_con << "Player is exorcised from bot " << this->ID() << "";
+; 380  :   
+; 381  :   debug_con << "Player is exorcised from bot " << this->ID() << "";
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG170827
+	push	OFFSET $SG170833
 	lea	edx, DWORD PTR $T1[ebp]
 	push	edx
-	push	OFFSET $SG170826
+	push	OFFSET $SG170832
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BO@$$CBD@DebugConsole@@QAEAAV0@AAY0BO@$$CBD@Z ; DebugConsole::operator<<<char const [30]>
@@ -43867,7 +44197,7 @@ _this$ = -4						; size = 4
 	mov	ecx, eax
 	call	??$?6$$BY00$$CBD@DebugConsole@@QAEAAV0@AAY00$$CBD@Z ; DebugConsole::operator<<<char const [1]>
 
-; 379  : }
+; 382  : }
 
 	add	esp, 8
 	cmp	ebp, esp
@@ -43885,7 +44215,7 @@ _this$ = -4						; size = 4
 ?TakePossession@Raven_Bot@@QAEXXZ PROC			; Raven_Bot::TakePossession
 ; _this$ = ecx
 
-; 359  : {
+; 362  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43894,7 +44224,7 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 360  :   if ( !(isSpawning() || isDead()))
+; 363  :   if ( !(isSpawning() || isDead()))
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isSpawning@Raven_Bot@@QBE_NXZ		; Raven_Bot::isSpawning
@@ -43907,22 +44237,22 @@ _this$ = -4						; size = 4
 	test	ecx, ecx
 	jne	SHORT $LN2@TakePosses
 
-; 361  :   {
-; 362  :     m_bPossessed = true;
+; 364  :   {
+; 365  :     m_bPossessed = true;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	BYTE PTR [edx+237], 1
 
-; 363  : 
-; 364  :     debug_con << "Player Possesses bot " << this->ID() << "";
+; 366  : 
+; 367  :     debug_con << "Player Possesses bot " << this->ID() << "";
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG170818
+	push	OFFSET $SG170824
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG170817
+	push	OFFSET $SG170823
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BG@$$CBD@DebugConsole@@QAEAAV0@AAY0BG@$$CBD@Z ; DebugConsole::operator<<<char const [22]>
@@ -43932,8 +44262,8 @@ _this$ = -4						; size = 4
 	call	??$?6$$BY00$$CBD@DebugConsole@@QAEAAV0@AAY00$$CBD@Z ; DebugConsole::operator<<<char const [1]>
 $LN2@TakePosses:
 
-; 365  :   }
-; 366  : }
+; 368  :   }
+; 369  : }
 
 	add	esp, 8
 	cmp	ebp, esp
@@ -43951,7 +44281,7 @@ _type$ = 8						; size = 4
 ?ChangeWeapon@Raven_Bot@@QAEXI@Z PROC			; Raven_Bot::ChangeWeapon
 ; _this$ = ecx
 
-; 384  : {
+; 387  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -43959,7 +44289,7 @@ _type$ = 8						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 385  :   m_pWeaponSys->ChangeWeapon(type);
+; 388  :   m_pWeaponSys->ChangeWeapon(type);
 
 	mov	eax, DWORD PTR _type$[ebp]
 	push	eax
@@ -43967,7 +44297,7 @@ _type$ = 8						; size = 4
 	mov	ecx, DWORD PTR [ecx+172]
 	call	?ChangeWeapon@Raven_WeaponSystem@@QAEXI@Z ; Raven_WeaponSystem::ChangeWeapon
 
-; 386  : }
+; 389  : }
 
 	add	esp, 4
 	cmp	ebp, esp
@@ -44000,7 +44330,7 @@ _pos$ = 8						; size = 16
 ?FireWeapon@Raven_Bot@@QAEXUVector2D@@@Z PROC		; Raven_Bot::FireWeapon
 ; _this$ = ecx
 
-; 394  : {
+; 397  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44024,8 +44354,8 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 395  : 	
-; 396  : 		double distanceToTarget = Vec2DDistance(Pos(), GetTargetBot()->Pos());
+; 398  : 	
+; 399  : 		double distanceToTarget = Vec2DDistance(Pos(), GetTargetBot()->Pos());
 
 	lea	eax, DWORD PTR $T5[ebp]
 	push	eax
@@ -44043,7 +44373,7 @@ _pos$ = 8						; size = 16
 	add	esp, 8
 	fstp	QWORD PTR _distanceToTarget$[ebp]
 
-; 397  : 		double targetVisibility = m_pSensoryMem->GetTimeOpponentHasBeenVisible(GetTargetBot());
+; 400  : 		double targetVisibility = m_pSensoryMem->GetTimeOpponentHasBeenVisible(GetTargetBot());
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?GetTargetBot@Raven_Bot@@QBEQAV1@XZ	; Raven_Bot::GetTargetBot
@@ -44053,7 +44383,7 @@ _pos$ = 8						; size = 16
 	call	?GetTimeOpponentHasBeenVisible@Raven_SensoryMemory@@QBENPAVRaven_Bot@@@Z ; Raven_SensoryMemory::GetTimeOpponentHasBeenVisible
 	fstp	QWORD PTR _targetVisibility$[ebp]
 
-; 398  : 		double targetVelocity = Vec2DLength(GetTargetBot()->Velocity());
+; 401  : 		double targetVelocity = Vec2DLength(GetTargetBot()->Velocity());
 
 	lea	eax, DWORD PTR $T3[ebp]
 	push	eax
@@ -44066,14 +44396,14 @@ _pos$ = 8						; size = 16
 	add	esp, 4
 	fstp	QWORD PTR _targetVelocity$[ebp]
 
-; 399  : 
-; 400  : #ifdef LOG_CREATIONAL_STUFF
-; 401  : 		debug_con << "Targetvisibility" << ttos(targetVisibility) << "";
-; 402  : #endif
-; 403  : 
-; 404  : 		m_FuzzyModule.Fuzzify("DistToTarget", distanceToTarget);
+; 402  : 
+; 403  : #ifdef LOG_CREATIONAL_STUFF
+; 404  : 		debug_con << "Targetvisibility" << ttos(targetVisibility) << "";
+; 405  : #endif
+; 406  : 		
+; 407  : 		m_FuzzyModule.Fuzzify("DistToTarget", distanceToTarget);
 
-	push	OFFSET $SG170843
+	push	OFFSET $SG170849
 	lea	ecx, DWORD PTR $T9[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
@@ -44089,9 +44419,9 @@ _pos$ = 8						; size = 16
 	lea	ecx, DWORD PTR $T9[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 405  : 		m_FuzzyModule.Fuzzify("TargetVisilibity", targetVisibility);
+; 408  : 		m_FuzzyModule.Fuzzify("TargetVisilibity", targetVisibility);
 
-	push	OFFSET $SG170845
+	push	OFFSET $SG170851
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
@@ -44107,9 +44437,9 @@ _pos$ = 8						; size = 16
 	lea	ecx, DWORD PTR $T8[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 406  : 		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
+; 409  : 		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
 
-	push	OFFSET $SG170847
+	push	OFFSET $SG170853
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
@@ -44125,10 +44455,10 @@ _pos$ = 8						; size = 16
 	lea	ecx, DWORD PTR $T7[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 407  : 
-; 408  : 		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
+; 410  : 
+; 411  : 		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
 
-	push	OFFSET $SG170850
+	push	OFFSET $SG170856
 	lea	ecx, DWORD PTR $T6[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 3
@@ -44143,7 +44473,7 @@ _pos$ = 8						; size = 16
 	lea	ecx, DWORD PTR $T6[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 
-; 409  : 		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
+; 412  : 		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR _shotDeviation$[ebp]
@@ -44154,7 +44484,7 @@ _pos$ = 8						; size = 16
 	lea	ecx, DWORD PTR _vShotDeviation$[ebp]
 	call	??0Vector2D@@QAE@NN@Z			; Vector2D::Vector2D
 
-; 410  : 		m_pWeaponSys->ShootAt(pos + vShotDeviation);
+; 413  : 		m_pWeaponSys->ShootAt(pos + vShotDeviation);
 
 	lea	edx, DWORD PTR _vShotDeviation$[ebp]
 	push	edx
@@ -44177,8 +44507,8 @@ _pos$ = 8						; size = 16
 	mov	ecx, DWORD PTR [ecx+172]
 	call	?ShootAt@Raven_WeaponSystem@@QBEXUVector2D@@@Z ; Raven_WeaponSystem::ShootAt
 
-; 411  : 	
-; 412  : }
+; 414  : 		
+; 415  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -44262,7 +44592,7 @@ _pos$ = 8						; size = 16
 ?isAtPosition@Raven_Bot@@QBE_NUVector2D@@@Z PROC	; Raven_Bot::isAtPosition
 ; _this$ = ecx
 
-; 429  : {
+; 432  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44278,9 +44608,9 @@ _pos$ = 8						; size = 16
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 430  :   const static double tolerance = 10.0;
-; 431  :   
-; 432  :   return Vec2DDistanceSq(Pos(), pos) < tolerance * tolerance;
+; 433  :   const static double tolerance = 10.0;
+; 434  :   
+; 435  :   return Vec2DDistanceSq(Pos(), pos) < tolerance * tolerance;
 
 	lea	eax, DWORD PTR _pos$[ebp]
 	push	eax
@@ -44303,7 +44633,7 @@ $LN3@isAtPositi:
 $LN4@isAtPositi:
 	mov	al, BYTE PTR tv76[ebp]
 
-; 433  : }
+; 436  : }
 
 	add	esp, 32					; 00000020H
 	cmp	ebp, esp
@@ -44326,7 +44656,7 @@ _pos$ = 8						; size = 16
 ?CalculateTimeToReachPosition@Raven_Bot@@QBENUVector2D@@@Z PROC ; Raven_Bot::CalculateTimeToReachPosition
 ; _this$ = ecx
 
-; 420  : {
+; 423  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44340,7 +44670,7 @@ _pos$ = 8						; size = 16
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 421  :   return Vec2DDistance(Pos(), pos) / (MaxSpeed() * FrameRate);
+; 424  :   return Vec2DDistance(Pos(), pos) / (MaxSpeed() * FrameRate);
 
 	lea	eax, DWORD PTR _pos$[ebp]
 	push	eax
@@ -44364,7 +44694,7 @@ _pos$ = 8						; size = 16
 	movsd	QWORD PTR tv129[ebp], xmm1
 	fld	QWORD PTR tv129[ebp]
 
-; 422  : }
+; 425  : }
 
 	pop	edi
 	add	esp, 52					; 00000034H
@@ -44383,7 +44713,7 @@ _this$ = -4						; size = 4
 ?SetAlive@Raven_Bot@@QAEXXZ PROC			; Raven_Bot::SetAlive, COMDAT
 ; _this$ = ecx
 
-; 168  :   void          SetAlive(){m_Status = alive;}
+; 171  :   void          SetAlive(){m_Status = alive;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44405,7 +44735,7 @@ _this$ = -4						; size = 4
 ?SetDead@Raven_Bot@@QAEXXZ PROC				; Raven_Bot::SetDead, COMDAT
 ; _this$ = ecx
 
-; 167  :   void          SetDead(){m_Status = dead;}
+; 170  :   void          SetDead(){m_Status = dead;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44428,7 +44758,7 @@ _this$ = -4						; size = 4
 ?isSpawning@Raven_Bot@@QBE_NXZ PROC			; Raven_Bot::isSpawning, COMDAT
 ; _this$ = ecx
 
-; 164  :   bool          isSpawning()const{return m_Status == spawning;}
+; 167  :   bool          isSpawning()const{return m_Status == spawning;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44459,7 +44789,7 @@ _this$ = -4						; size = 4
 ?isDead@Raven_Bot@@QBE_NXZ PROC				; Raven_Bot::isDead, COMDAT
 ; _this$ = ecx
 
-; 162  :   bool          isDead()const{return m_Status == dead;}
+; 165  :   bool          isDead()const{return m_Status == dead;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44489,7 +44819,7 @@ _this$ = -4						; size = 4
 ?isPossessed@Raven_Bot@@QBE_NXZ PROC			; Raven_Bot::isPossessed, COMDAT
 ; _this$ = ecx
 
-; 161  :   bool          isPossessed()const{return m_bPossessed;}
+; 164  :   bool          isPossessed()const{return m_bPossessed;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44512,7 +44842,7 @@ ___$ReturnUdt$ = 8					; size = 4
 ?Facing@Raven_Bot@@QBE?AUVector2D@@XZ PROC		; Raven_Bot::Facing, COMDAT
 ; _this$ = ecx
 
-; 158  :   Vector2D      Facing()const{return m_vFacing;}
+; 161  :   Vector2D      Facing()const{return m_vFacing;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44544,7 +44874,7 @@ _this$ = -4						; size = 4
 ?IncrementScore@Raven_Bot@@QAEXXZ PROC			; Raven_Bot::IncrementScore, COMDAT
 ; _this$ = ecx
 
-; 156  :   void          IncrementScore(){++m_iScore;}
+; 159  :   void          IncrementScore(){++m_iScore;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44569,7 +44899,7 @@ _this$ = -4						; size = 4
 ?Score@Raven_Bot@@QBEHXZ PROC				; Raven_Bot::Score, COMDAT
 ; _this$ = ecx
 
-; 155  :   int           Score()const{return m_iScore;}
+; 158  :   int           Score()const{return m_iScore;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44590,7 +44920,7 @@ _this$ = -4						; size = 4
 ?RestoreHealthToMaximum@Raven_Bot@@QAEXXZ PROC		; Raven_Bot::RestoreHealthToMaximum
 ; _this$ = ecx
 
-; 597  : void Raven_Bot::RestoreHealthToMaximum(){m_iHealth = m_iMaxHealth;}
+; 614  : void Raven_Bot::RestoreHealthToMaximum(){m_iHealth = m_iMaxHealth;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44615,7 +44945,7 @@ _val$ = 8						; size = 4
 ?IncreaseHealth@Raven_Bot@@QAEXI@Z PROC			; Raven_Bot::IncreaseHealth
 ; _this$ = ecx
 
-; 600  : {
+; 617  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44624,7 +44954,7 @@ _val$ = 8						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 601  :   m_iHealth+=val; 
+; 618  :   m_iHealth+=val; 
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+196]
@@ -44632,7 +44962,7 @@ _val$ = 8						; size = 4
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+196], ecx
 
-; 602  :   Clamp(m_iHealth, 0, m_iMaxHealth);
+; 619  :   Clamp(m_iHealth, 0, m_iMaxHealth);
 
 	mov	DWORD PTR $T1[ebp], 0
 	mov	eax, DWORD PTR _this$[ebp]
@@ -44646,7 +44976,7 @@ _val$ = 8						; size = 4
 	call	??$Clamp@HHH@@YAXAAHABH1@Z		; Clamp<int,int,int>
 	add	esp, 12					; 0000000cH
 
-; 603  : }
+; 620  : }
 
 	add	esp, 8
 	cmp	ebp, esp
@@ -44665,7 +44995,7 @@ _val$ = 8						; size = 4
 ?ReduceHealth@Raven_Bot@@QAEXI@Z PROC			; Raven_Bot::ReduceHealth
 ; _this$ = ecx
 
-; 341  : {
+; 344  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44675,7 +45005,7 @@ _val$ = 8						; size = 4
 	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 342  :   m_iHealth -= val;
+; 345  :   m_iHealth -= val;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+196]
@@ -44683,31 +45013,31 @@ _val$ = 8						; size = 4
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+196], ecx
 
-; 343  : 
-; 344  :   if (m_iHealth <= 0)
+; 346  : 
+; 347  :   if (m_iHealth <= 0)
 
 	mov	eax, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [eax+196], 0
 	jg	SHORT $LN1@ReduceHeal
 
-; 345  :   {
-; 346  :     SetDead();
+; 348  :   {
+; 349  :     SetDead();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?SetDead@Raven_Bot@@QAEXXZ		; Raven_Bot::SetDead
 $LN1@ReduceHeal:
 
-; 347  :   }
-; 348  : 
-; 349  :   m_bHit = true;
+; 350  :   }
+; 351  : 
+; 352  :   m_bHit = true;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	BYTE PTR [ecx+236], 1
 
-; 350  : 
-; 351  :   m_iNumUpdatesHitPersistant = (int)(FrameRate * script->GetDouble("HitFlashTime"));
+; 353  : 
+; 354  :   m_iNumUpdatesHitPersistant = (int)(FrameRate * script->GetDouble("HitFlashTime"));
 
-	push	OFFSET $SG170808
+	push	OFFSET $SG170814
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -44718,7 +45048,7 @@ $LN1@ReduceHeal:
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [eax+232], edx
 
-; 352  : }
+; 355  : }
 
 	add	esp, 12					; 0000000cH
 	cmp	ebp, esp
@@ -44736,7 +45066,7 @@ _this$ = -4						; size = 4
 ?Health@Raven_Bot@@QBEHXZ PROC				; Raven_Bot::Health, COMDAT
 ; _this$ = ecx
 
-; 149  :   int           Health()const{return m_iHealth;}
+; 152  :   int           Health()const{return m_iHealth;}
 
 	push	ebp
 	mov	ebp, esp
@@ -44766,7 +45096,7 @@ _target$ = 8						; size = 16
 ?RotateFacingTowardPosition@Raven_Bot@@QAE_NUVector2D@@@Z PROC ; Raven_Bot::RotateFacingTowardPosition
 ; _this$ = ecx
 
-; 300  : {
+; 303  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -44780,7 +45110,7 @@ _target$ = 8						; size = 16
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 301  :   Vector2D toTarget = Vec2DNormalize(target - m_vPosition);
+; 304  :   Vector2D toTarget = Vec2DNormalize(target - m_vPosition);
 
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 24					; 00000018H
@@ -44797,8 +45127,8 @@ _target$ = 8						; size = 16
 	call	?Vec2DNormalize@@YA?AUVector2D@@ABU1@@Z	; Vec2DNormalize
 	add	esp, 8
 
-; 302  : 
-; 303  :   double dot = m_vFacing.Dot(toTarget);
+; 305  : 
+; 306  :   double dot = m_vFacing.Dot(toTarget);
 
 	lea	ecx, DWORD PTR _toTarget$[ebp]
 	push	ecx
@@ -44807,9 +45137,9 @@ _target$ = 8						; size = 16
 	call	?Dot@Vector2D@@QBENABU1@@Z		; Vector2D::Dot
 	fstp	QWORD PTR _dot$[ebp]
 
-; 304  : 
-; 305  :   //clamp to rectify any rounding errors
-; 306  :   Clamp(dot, -1, 1);
+; 307  : 
+; 308  :   //clamp to rectify any rounding errors
+; 309  :   Clamp(dot, -1, 1);
 
 	mov	DWORD PTR $T2[ebp], 1
 	mov	DWORD PTR $T1[ebp], -1
@@ -44822,9 +45152,9 @@ _target$ = 8						; size = 16
 	call	??$Clamp@NHH@@YAXAANABH1@Z		; Clamp<double,int,int>
 	add	esp, 12					; 0000000cH
 
-; 307  : 
-; 308  :   //determine the angle between the heading vector and the target
-; 309  :   double angle = acos(dot);
+; 310  : 
+; 311  :   //determine the angle between the heading vector and the target
+; 312  :   double angle = acos(dot);
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR _dot$[ebp]
@@ -44833,23 +45163,23 @@ _target$ = 8						; size = 16
 	add	esp, 8
 	fstp	QWORD PTR _angle$[ebp]
 
-; 310  : 
-; 311  :   //return true if the bot's facing is within WeaponAimTolerance degs of
-; 312  :   //facing the target
-; 313  :   const double WeaponAimTolerance = 0.01; //2 degs approx
+; 313  : 
+; 314  :   //return true if the bot's facing is within WeaponAimTolerance degs of
+; 315  :   //facing the target
+; 316  :   const double WeaponAimTolerance = 0.01; //2 degs approx
 
 	movsd	xmm0, QWORD PTR __real@3f847ae147ae147b
 	movsd	QWORD PTR _WeaponAimTolerance$[ebp], xmm0
 
-; 314  : 
-; 315  :   if (angle < WeaponAimTolerance)
+; 317  : 
+; 318  :   if (angle < WeaponAimTolerance)
 
 	movsd	xmm0, QWORD PTR _WeaponAimTolerance$[ebp]
 	comisd	xmm0, QWORD PTR _angle$[ebp]
 	jbe	SHORT $LN2@RotateFaci
 
-; 316  :   {
-; 317  :     m_vFacing = toTarget;
+; 319  :   {
+; 320  :     m_vFacing = toTarget;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 208				; 000000d0H
@@ -44862,16 +45192,16 @@ _target$ = 8						; size = 16
 	mov	ecx, DWORD PTR _toTarget$[ebp+12]
 	mov	DWORD PTR [edx+12], ecx
 
-; 318  :     return true;
+; 321  :     return true;
 
 	mov	al, 1
 	jmp	SHORT $LN3@RotateFaci
 $LN2@RotateFaci:
 
-; 319  :   }
-; 320  : 
-; 321  :   //clamp the amount to turn to the max turn rate
-; 322  :   if (angle > m_dMaxTurnRate) angle = m_dMaxTurnRate;
+; 322  :   }
+; 323  : 
+; 324  :   //clamp the amount to turn to the max turn rate
+; 325  :   if (angle > m_dMaxTurnRate) angle = m_dMaxTurnRate;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	movsd	xmm0, QWORD PTR _angle$[ebp]
@@ -44882,18 +45212,18 @@ $LN2@RotateFaci:
 	movsd	QWORD PTR _angle$[ebp], xmm0
 $LN1@RotateFaci:
 
-; 323  :   
-; 324  :   //The next few lines use a rotation matrix to rotate the player's facing
-; 325  :   //vector accordingly
-; 326  :   C2DMatrix RotationMatrix;
+; 326  :   
+; 327  :   //The next few lines use a rotation matrix to rotate the player's facing
+; 328  :   //vector accordingly
+; 329  :   C2DMatrix RotationMatrix;
 
 	lea	ecx, DWORD PTR _RotationMatrix$[ebp]
 	call	??0C2DMatrix@@QAE@XZ			; C2DMatrix::C2DMatrix
 
-; 327  :   
-; 328  :   //notice how the direction of rotation has to be determined when creating
-; 329  :   //the rotation matrix
-; 330  :   RotationMatrix.Rotate(angle * m_vFacing.Sign(toTarget));	
+; 330  :   
+; 331  :   //notice how the direction of rotation has to be determined when creating
+; 332  :   //the rotation matrix
+; 333  :   RotationMatrix.Rotate(angle * m_vFacing.Sign(toTarget));	
 
 	lea	ecx, DWORD PTR _toTarget$[ebp]
 	push	ecx
@@ -44907,7 +45237,7 @@ $LN1@RotateFaci:
 	lea	ecx, DWORD PTR _RotationMatrix$[ebp]
 	call	?Rotate@C2DMatrix@@QAEXN@Z		; C2DMatrix::Rotate
 
-; 331  :   RotationMatrix.TransformVector2Ds(m_vFacing);
+; 334  :   RotationMatrix.TransformVector2Ds(m_vFacing);
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 208				; 000000d0H
@@ -44915,13 +45245,13 @@ $LN1@RotateFaci:
 	lea	ecx, DWORD PTR _RotationMatrix$[ebp]
 	call	?TransformVector2Ds@C2DMatrix@@QAEXAAUVector2D@@@Z ; C2DMatrix::TransformVector2Ds
 
-; 332  : 
-; 333  :   return false;
+; 335  : 
+; 336  :   return false;
 
 	xor	al, al
 $LN3@RotateFaci:
 
-; 334  : }
+; 337  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -44993,7 +45323,7 @@ _is$ = 8						; size = 4
 ?Read@Raven_Bot@@UAEXAAV?$basic_ifstream@DU?$char_traits@D@std@@@std@@@Z PROC ; Raven_Bot::Read, COMDAT
 ; _this$ = ecx
 
-; 142  :   void         Read (std::ifstream& is){/*not implemented*/}
+; 145  :   void         Read (std::ifstream& is){/*not implemented*/}
 
 	push	ebp
 	mov	ebp, esp
@@ -45014,7 +45344,7 @@ _os$ = 8						; size = 4
 ?Write@Raven_Bot@@UBEXAAV?$basic_ostream@DU?$char_traits@D@std@@@std@@@Z PROC ; Raven_Bot::Write, COMDAT
 ; _this$ = ecx
 
-; 141  :   void         Write(std::ostream&  os)const{/*not implemented*/}
+; 144  :   void         Write(std::ostream&  os)const{/*not implemented*/}
 
 	push	ebp
 	mov	ebp, esp
@@ -45037,7 +45367,7 @@ _msg$ = 8						; size = 4
 ?HandleMessage@Raven_Bot@@UAE_NABUTelegram@@@Z PROC	; Raven_Bot::HandleMessage
 ; _this$ = ecx
 
-; 227  : {
+; 230  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -45050,8 +45380,8 @@ _msg$ = 8						; size = 4
 	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 228  :   //first see if the current goal accepts the message
-; 229  :   if (GetBrain()->HandleMessage(msg)) return true;
+; 231  :   //first see if the current goal accepts the message
+; 232  :   if (GetBrain()->HandleMessage(msg)) return true;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?GetBrain@Raven_Bot@@QAEQAVGoal_Think@@XZ ; Raven_Bot::GetBrain
@@ -45073,9 +45403,9 @@ _msg$ = 8						; size = 4
 	jmp	$LN10@HandleMess
 $LN12@HandleMess:
 
-; 230  :  
-; 231  :   //handle any messages not handles by the goals
-; 232  :   switch(msg.Msg)
+; 233  :  
+; 234  :   //handle any messages not handles by the goals
+; 235  :   switch(msg.Msg)
 
 	mov	edx, DWORD PTR _msg$[ebp]
 	mov	eax, DWORD PTR [edx+8]
@@ -45089,11 +45419,11 @@ $LN12@HandleMess:
 	jmp	DWORD PTR $LN15@HandleMess[edx*4]
 $LN9@HandleMess:
 
-; 233  :   {
-; 234  :   case Msg_TakeThatMF:
-; 235  : 
-; 236  :     //just return if already dead or spawning
-; 237  :     if (isDead() || isSpawning()) return true;
+; 236  :   {
+; 237  :   case Msg_TakeThatMF:
+; 238  : 
+; 239  :     //just return if already dead or spawning
+; 240  :     if (isDead() || isSpawning()) return true;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isDead@Raven_Bot@@QBE_NXZ		; Raven_Bot::isDead
@@ -45110,9 +45440,9 @@ $LN7@HandleMess:
 	jmp	$LN10@HandleMess
 $LN8@HandleMess:
 
-; 238  : 
-; 239  :     //the extra info field of the telegram carries the amount of damage
-; 240  :     ReduceHealth(DereferenceToType<int>(msg.ExtraInfo));
+; 241  : 
+; 242  :     //the extra info field of the telegram carries the amount of damage
+; 243  :     ReduceHealth(DereferenceToType<int>(msg.ExtraInfo));
 
 	mov	edx, DWORD PTR _msg$[ebp]
 	mov	eax, DWORD PTR [edx+24]
@@ -45123,9 +45453,9 @@ $LN8@HandleMess:
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ReduceHealth@Raven_Bot@@QAEXI@Z	; Raven_Bot::ReduceHealth
 
-; 241  : 
-; 242  :     //if this bot is now dead let the shooter know
-; 243  :     if (isDead())
+; 244  : 
+; 245  :     //if this bot is now dead let the shooter know
+; 246  :     if (isDead())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isDead@Raven_Bot@@QBE_NXZ		; Raven_Bot::isDead
@@ -45133,12 +45463,12 @@ $LN8@HandleMess:
 	test	ecx, ecx
 	je	SHORT $LN6@HandleMess
 
-; 244  :     {
-; 245  :       Dispatcher->DispatchMsg(SEND_MSG_IMMEDIATELY,
-; 246  :                               ID(),
-; 247  :                               msg.Sender,
-; 248  :                               Msg_YouGotMeYouSOB,
-; 249  :                               NO_ADDITIONAL_INFO);
+; 247  :     {
+; 248  :       Dispatcher->DispatchMsg(SEND_MSG_IMMEDIATELY,
+; 249  :                               ID(),
+; 250  :                               msg.Sender,
+; 251  :                               Msg_YouGotMeYouSOB,
+; 252  :                               NO_ADDITIONAL_INFO);
 
 	push	0
 	push	4
@@ -45156,42 +45486,42 @@ $LN8@HandleMess:
 	call	?DispatchMsg@MessageDispatcher@@QAEXNHHHPAX@Z ; MessageDispatcher::DispatchMsg
 $LN6@HandleMess:
 
-; 250  :     }
-; 251  : 
-; 252  :     return true;
+; 253  :     }
+; 254  : 
+; 255  :     return true;
 
 	mov	al, 1
 	jmp	SHORT $LN10@HandleMess
 $LN5@HandleMess:
 
-; 253  : 
-; 254  :   case Msg_YouGotMeYouSOB:
-; 255  :     
-; 256  :     IncrementScore();
+; 256  : 
+; 257  :   case Msg_YouGotMeYouSOB:
+; 258  :     
+; 259  :     IncrementScore();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?IncrementScore@Raven_Bot@@QAEXXZ	; Raven_Bot::IncrementScore
 
-; 257  :     
-; 258  :     //the bot this bot has just killed should be removed as the target
-; 259  :     m_pTargSys->ClearTarget();
+; 260  :     
+; 261  :     //the bot this bot has just killed should be removed as the target
+; 262  :     m_pTargSys->ClearTarget();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+168]
 	call	?ClearTarget@Raven_TargetingSystem@@QAEXXZ ; Raven_TargetingSystem::ClearTarget
 
-; 260  : 
-; 261  :     return true;
+; 263  : 
+; 264  :     return true;
 
 	mov	al, 1
 	jmp	SHORT $LN10@HandleMess
 $LN4@HandleMess:
 
-; 262  : 
-; 263  :   case Msg_GunshotSound:
-; 264  : 
-; 265  :     //add the source of this sound to the bot's percepts
-; 266  :     GetSensoryMem()->UpdateWithSoundSource((Raven_Bot*)msg.ExtraInfo);
+; 265  : 
+; 266  :   case Msg_GunshotSound:
+; 267  : 
+; 268  :     //add the source of this sound to the bot's percepts
+; 269  :     GetSensoryMem()->UpdateWithSoundSource((Raven_Bot*)msg.ExtraInfo);
 
 	mov	edx, DWORD PTR _msg$[ebp]
 	mov	eax, DWORD PTR [edx+24]
@@ -45201,25 +45531,25 @@ $LN4@HandleMess:
 	mov	ecx, eax
 	call	?UpdateWithSoundSource@Raven_SensoryMemory@@QAEXPAVRaven_Bot@@@Z ; Raven_SensoryMemory::UpdateWithSoundSource
 
-; 267  : 
-; 268  :     return true;
+; 270  : 
+; 271  :     return true;
 
 	mov	al, 1
 	jmp	SHORT $LN10@HandleMess
 $LN3@HandleMess:
 
-; 269  : 
-; 270  :   case Msg_UserHasRemovedBot:
-; 271  :     {
 ; 272  : 
-; 273  :       Raven_Bot* pRemovedBot = (Raven_Bot*)msg.ExtraInfo;
+; 273  :   case Msg_UserHasRemovedBot:
+; 274  :     {
+; 275  : 
+; 276  :       Raven_Bot* pRemovedBot = (Raven_Bot*)msg.ExtraInfo;
 
 	mov	ecx, DWORD PTR _msg$[ebp]
 	mov	edx, DWORD PTR [ecx+24]
 	mov	DWORD PTR _pRemovedBot$1[ebp], edx
 
-; 274  : 
-; 275  :       GetSensoryMem()->RemoveBotFromMemory(pRemovedBot);
+; 277  : 
+; 278  :       GetSensoryMem()->RemoveBotFromMemory(pRemovedBot);
 
 	mov	eax, DWORD PTR _pRemovedBot$1[ebp]
 	push	eax
@@ -45228,9 +45558,9 @@ $LN3@HandleMess:
 	mov	ecx, eax
 	call	?RemoveBotFromMemory@Raven_SensoryMemory@@QAEXPAVRaven_Bot@@@Z ; Raven_SensoryMemory::RemoveBotFromMemory
 
-; 276  : 
-; 277  :       //if the removed bot is the target, make sure the target is cleared
-; 278  :       if (pRemovedBot == GetTargetSys()->GetTarget())
+; 279  : 
+; 280  :       //if the removed bot is the target, make sure the target is cleared
+; 281  :       if (pRemovedBot == GetTargetSys()->GetTarget())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ ; Raven_Bot::GetTargetSys
@@ -45239,8 +45569,8 @@ $LN3@HandleMess:
 	cmp	DWORD PTR _pRemovedBot$1[ebp], eax
 	jne	SHORT $LN2@HandleMess
 
-; 279  :       {
-; 280  :         GetTargetSys()->ClearTarget();
+; 282  :       {
+; 283  :         GetTargetSys()->ClearTarget();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?GetTargetSys@Raven_Bot@@QAEQAVRaven_TargetingSystem@@XZ ; Raven_Bot::GetTargetSys
@@ -45248,24 +45578,24 @@ $LN3@HandleMess:
 	call	?ClearTarget@Raven_TargetingSystem@@QAEXXZ ; Raven_TargetingSystem::ClearTarget
 $LN2@HandleMess:
 
-; 281  :       }
-; 282  : 
-; 283  :       return true;
+; 284  :       }
+; 285  : 
+; 286  :       return true;
 
 	mov	al, 1
 	jmp	SHORT $LN10@HandleMess
 $LN1@HandleMess:
 
-; 284  :     }
-; 285  : 
-; 286  : 
-; 287  :   default: return false;
+; 287  :     }
+; 288  : 
+; 289  : 
+; 290  :   default: return false;
 
 	xor	al, al
 $LN10@HandleMess:
 
-; 288  :   }
-; 289  : }
+; 291  :   }
+; 292  : }
 
 	pop	esi
 	add	esp, 16					; 00000010H
@@ -45287,23 +45617,29 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.cpp
 _TEXT	SEGMENT
+$T1 = -20						; size = 16
 _this$ = -4						; size = 4
 ?Update@Raven_Bot@@UAEXXZ PROC				; Raven_Bot::Update
 ; _this$ = ecx
 
-; 128  : {
+; 130  : {
 
 	push	ebp
 	mov	ebp, esp
-	push	ecx
+	sub	esp, 20					; 00000014H
 	push	esi
-	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	eax, -858993460				; ccccccccH
+	mov	DWORD PTR [ebp-20], eax
+	mov	DWORD PTR [ebp-16], eax
+	mov	DWORD PTR [ebp-12], eax
+	mov	DWORD PTR [ebp-8], eax
+	mov	DWORD PTR [ebp-4], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 129  :   //process the currently active goal. Note this is required even if the bot
-; 130  :   //is under user control. This is because a goal is created whenever a user 
-; 131  :   //clicks on an area of the map that necessitates a path planning request.
-; 132  :   m_pBrain->Process();
+; 131  :   //process the currently active goal. Note this is required even if the bot
+; 132  :   //is under user control. This is because a goal is created whenever a user 
+; 133  :   //clicks on an area of the map that necessitates a path planning request.
+; 134  :   m_pBrain->Process();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+152]
@@ -45316,16 +45652,16 @@ _this$ = -4						; size = 4
 	cmp	esi, esp
 	call	__RTC_CheckEsp
 
-; 133  :   
-; 134  :   //Calculate the steering force and update the bot's velocity and position
-; 135  :   UpdateMovement();
+; 135  :   
+; 136  :   //Calculate the steering force and update the bot's velocity and position
+; 137  :   UpdateMovement();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?UpdateMovement@Raven_Bot@@AAEXXZ	; Raven_Bot::UpdateMovement
 
-; 136  : 
-; 137  :   //if the bot is under AI control but not scripted
-; 138  :   if (!isPossessed())
+; 138  : 
+; 139  :   //if the bot is under AI control but not scripted
+; 140  :   if (!isPossessed())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isPossessed@Raven_Bot@@QBE_NXZ		; Raven_Bot::isPossessed
@@ -45333,10 +45669,10 @@ _this$ = -4						; size = 4
 	test	eax, eax
 	jne	$LN6@Update
 
-; 139  :   {           
-; 140  :     //examine all the opponents in the bots sensory memory and select one
-; 141  :     //to be the current target
-; 142  :     if (m_pTargetSelectionRegulator->isReady())
+; 141  :   {           
+; 142  :     //examine all the opponents in the bots sensory memory and select one
+; 143  :     //to be the current target
+; 144  :     if (m_pTargetSelectionRegulator->isReady())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+184]
@@ -45345,20 +45681,20 @@ _this$ = -4						; size = 4
 	test	edx, edx
 	je	SHORT $LN4@Update
 
-; 143  :     {
-; 144  : 		
-; 145  : 		m_pTargSys->Update();
+; 145  :     {
+; 146  : 		
+; 147  : 		m_pTargSys->Update();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+168]
 	call	?Update@Raven_TargetingSystem@@QAEXXZ	; Raven_TargetingSystem::Update
 $LN4@Update:
 
-; 146  : 		
-; 147  :     }
-; 148  : 
-; 149  :     //appraise and arbitrate between all possible high level goals
-; 150  :     if (m_pGoalArbitrationRegulator->isReady())
+; 148  : 		
+; 149  :     }
+; 150  : 
+; 151  :     //appraise and arbitrate between all possible high level goals
+; 152  :     if (m_pGoalArbitrationRegulator->isReady())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+180]
@@ -45367,18 +45703,18 @@ $LN4@Update:
 	test	edx, edx
 	je	SHORT $LN3@Update
 
-; 151  :     {
-; 152  :        m_pBrain->Arbitrate(); 
+; 153  :     {
+; 154  :        m_pBrain->Arbitrate(); 
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+152]
 	call	?Arbitrate@Goal_Think@@QAEXXZ		; Goal_Think::Arbitrate
 $LN3@Update:
 
-; 153  :     }
-; 154  : 
-; 155  :     //update the sensory memory with any visual stimulus
-; 156  :     if (m_pVisionUpdateRegulator->isReady())
+; 155  :     }
+; 156  : 
+; 157  :     //update the sensory memory with any visual stimulus
+; 158  :     if (m_pVisionUpdateRegulator->isReady())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+192]
@@ -45387,19 +45723,19 @@ $LN3@Update:
 	test	edx, edx
 	je	SHORT $LN2@Update
 
-; 157  :     {
-; 158  :       m_pSensoryMem->UpdateVision();
+; 159  :     {
+; 160  :       m_pSensoryMem->UpdateVision();
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+156]
 	call	?UpdateVision@Raven_SensoryMemory@@QAEXXZ ; Raven_SensoryMemory::UpdateVision
 $LN2@Update:
 
-; 159  :     }
-; 160  :   
-; 161  :     //select the appropriate weapon to use from the weapons currently in
-; 162  :     //the inventory
-; 163  :     if (m_pWeaponSelectionRegulator->isReady())
+; 161  :     }
+; 162  :   
+; 163  :     //select the appropriate weapon to use from the weapons currently in
+; 164  :     //the inventory
+; 165  :     if (m_pWeaponSelectionRegulator->isReady())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+176]
@@ -45408,30 +45744,59 @@ $LN2@Update:
 	test	edx, edx
 	je	SHORT $LN1@Update
 
-; 164  :     {       
-; 165  :       m_pWeaponSys->SelectWeapon();       
+; 166  :     {       
+; 167  :       m_pWeaponSys->SelectWeapon();       
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+172]
 	call	?SelectWeapon@Raven_WeaponSystem@@QAEXXZ ; Raven_WeaponSystem::SelectWeapon
 $LN1@Update:
 
-; 166  :     }
-; 167  : 
-; 168  :     //this method aims the bot's current weapon at the current target
-; 169  :     //and takes a shot if a shot is possible
-; 170  :     m_pWeaponSys->TakeAimAndShoot();
+; 168  :     }
+; 169  : 
+; 170  : 	vShotDeviation = addDeviation();
+
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?addDeviation@Raven_Bot@@QAE?AUVector2D@@XZ ; Raven_Bot::addDeviation
+	mov	edx, DWORD PTR _this$[ebp]
+	add	edx, 328				; 00000148H
+	mov	ecx, DWORD PTR [eax]
+	mov	DWORD PTR [edx], ecx
+	mov	ecx, DWORD PTR [eax+4]
+	mov	DWORD PTR [edx+4], ecx
+	mov	ecx, DWORD PTR [eax+8]
+	mov	DWORD PTR [edx+8], ecx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [edx+12], eax
+
+; 171  :     //this method aims the bot's current weapon at the current target
+; 172  :     //and takes a shot if a shot is possible
+; 173  :     m_pWeaponSys->TakeAimAndShoot(vShotDeviation);
 
 	mov	ecx, DWORD PTR _this$[ebp]
-	mov	ecx, DWORD PTR [ecx+172]
-	call	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXXZ ; Raven_WeaponSystem::TakeAimAndShoot
+	add	ecx, 328				; 00000148H
+	sub	esp, 16					; 00000010H
+	mov	edx, esp
+	mov	eax, DWORD PTR [ecx]
+	mov	DWORD PTR [edx], eax
+	mov	eax, DWORD PTR [ecx+4]
+	mov	DWORD PTR [edx+4], eax
+	mov	eax, DWORD PTR [ecx+8]
+	mov	DWORD PTR [edx+8], eax
+	mov	ecx, DWORD PTR [ecx+12]
+	mov	DWORD PTR [edx+12], ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [edx+172]
+	call	?TakeAimAndShoot@Raven_WeaponSystem@@QBEXUVector2D@@@Z ; Raven_WeaponSystem::TakeAimAndShoot
 $LN6@Update:
 
-; 171  :   }
-; 172  : }
+; 174  :   }
+; 175  : }
 
 	pop	esi
-	add	esp, 4
+	add	esp, 20					; 00000014H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -45442,48 +45807,50 @@ _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.cpp
 _TEXT	SEGMENT
-tv339 = -452						; size = 4
-tv345 = -448						; size = 4
-tv337 = -444						; size = 4
-tv344 = -440						; size = 4
-tv335 = -436						; size = 4
-tv343 = -432						; size = 4
-tv333 = -428						; size = 4
-tv342 = -424						; size = 4
-tv331 = -420						; size = 4
-tv341 = -416						; size = 4
-tv400 = -412						; size = 8
-tv329 = -404						; size = 4
-tv340 = -400						; size = 4
-$T2 = -396						; size = 16
-$T3 = -380						; size = 16
-$T4 = -364						; size = 4
-$T5 = -360						; size = 16
-$T6 = -344						; size = 16
-$T7 = -328						; size = 4
-$T8 = -324						; size = 16
-$T9 = -308						; size = 16
-$T10 = -292						; size = 4
-$T11 = -288						; size = 16
-$T12 = -272						; size = 16
-$T13 = -256						; size = 16
-$T14 = -240						; size = 16
-$T15 = -224						; size = 16
-$T16 = -208						; size = 16
-$T17 = -192						; size = 16
-$T18 = -176						; size = 16
-$T19 = -160						; size = 28
-$T20 = -132						; size = 28
-$T21 = -104						; size = 28
-$T22 = -76						; size = 28
-$T23 = -48						; size = 28
+tv373 = -484						; size = 4
+tv379 = -480						; size = 4
+tv371 = -476						; size = 4
+tv378 = -472						; size = 4
+tv369 = -468						; size = 4
+tv377 = -464						; size = 4
+tv367 = -460						; size = 4
+tv376 = -456						; size = 4
+tv365 = -452						; size = 4
+tv375 = -448						; size = 4
+tv460 = -444						; size = 8
+tv363 = -436						; size = 4
+tv374 = -432						; size = 4
+$T2 = -428						; size = 16
+$T3 = -412						; size = 16
+$T4 = -396						; size = 4
+$T5 = -392						; size = 16
+$T6 = -376						; size = 16
+$T7 = -360						; size = 4
+$T8 = -356						; size = 16
+$T9 = -340						; size = 16
+$T10 = -324						; size = 4
+$T11 = -320						; size = 16
+$T12 = -304						; size = 16
+$T13 = -288						; size = 16
+$T14 = -272						; size = 16
+$T15 = -256						; size = 16
+$T16 = -240						; size = 16
+$T17 = -224						; size = 16
+$T18 = -208						; size = 16
+$T19 = -192						; size = 16
+$T20 = -176						; size = 16
+$T21 = -160						; size = 28
+$T22 = -132						; size = 28
+$T23 = -104						; size = 28
+$T24 = -76						; size = 28
+$T25 = -48						; size = 28
 _this$ = -20						; size = 4
 __$ArrayPad$ = -16					; size = 4
 __$EHRec$ = -12						; size = 12
 ?Render@Raven_Bot@@UAEXXZ PROC				; Raven_Bot::Render
 ; _this$ = ecx
 
-; 503  : {
+; 506  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -45491,11 +45858,11 @@ __$EHRec$ = -12						; size = 12
 	push	__ehhandler$?Render@Raven_Bot@@UAEXXZ
 	mov	eax, DWORD PTR fs:0
 	push	eax
-	sub	esp, 440				; 000001b8H
+	sub	esp, 472				; 000001d8H
 	push	edi
 	push	ecx
-	lea	edi, DWORD PTR [ebp-452]
-	mov	ecx, 110				; 0000006eH
+	lea	edi, DWORD PTR [ebp-484]
+	mov	ecx, 118				; 00000076H
 	mov	eax, -858993460				; ccccccccH
 	rep stosd
 	pop	ecx
@@ -45507,11 +45874,11 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 504  :   //when a bot is hit by a projectile this value is set to a constant user
-; 505  :   //defined value which dictates how long the bot should have a thick red
-; 506  :   //circle drawn around it (to indicate it's been hit) The circle is drawn
-; 507  :   //as long as this value is positive. (see Render)
-; 508  :   m_iNumUpdatesHitPersistant--;
+; 507  :   //when a bot is hit by a projectile this value is set to a constant user
+; 508  :   //defined value which dictates how long the bot should have a thick red
+; 509  :   //circle drawn around it (to indicate it's been hit) The circle is drawn
+; 510  :   //as long as this value is positive. (see Render)
+; 511  :   m_iNumUpdatesHitPersistant--;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+232]
@@ -45519,58 +45886,63 @@ __$EHRec$ = -12						; size = 12
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+232], ecx
 
-; 509  : 
-; 510  : 
-; 511  :   if (isDead() || isSpawning()) return;
+; 512  : 
+; 513  : 
+; 514  :   if (isDead() || isSpawning()) return;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isDead@Raven_Bot@@QBE_NXZ		; Raven_Bot::isDead
 	movzx	eax, al
 	test	eax, eax
-	jne	SHORT $LN6@Render
+	jne	SHORT $LN9@Render
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?isSpawning@Raven_Bot@@QBE_NXZ		; Raven_Bot::isSpawning
 	movzx	ecx, al
 	test	ecx, ecx
-	je	SHORT $LN7@Render
-$LN6@Render:
-	jmp	$LN8@Render
-$LN7@Render:
+	je	SHORT $LN10@Render
+$LN9@Render:
+	jmp	$LN11@Render
+$LN10@Render:
 
-; 512  :   
-; 513  :   gdi->BluePen();
+; 515  :   
+; 516  :   
+; 517  : 	  gdi->BluePen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?BluePen@Cgdi@@QAEXXZ			; Cgdi::BluePen
 
-; 514  :   
-; 515  :   m_vecBotVBTrans = WorldTransform(m_vecBotVB,
-; 516  :                                    Pos(),
-; 517  :                                    Facing(),
-; 518  :                                    Facing().Perp(),
-; 519  :                                    Scale());
+; 518  :   
+; 519  :  
+; 520  : 	  
+; 521  :   
+; 522  :   
+; 523  :   m_vecBotVBTrans = WorldTransform(m_vecBotVB,
+; 524  :                                    Pos(),
+; 525  :                                    Facing(),
+; 526  :                                    Facing().Perp(),
+; 527  :                                    Scale());
 
-	lea	edx, DWORD PTR $T18[ebp]
+	lea	edx, DWORD PTR $T20[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Scale@BaseGameEntity@@QBE?AUVector2D@@XZ ; BaseGameEntity::Scale
 	push	eax
-	lea	eax, DWORD PTR $T16[ebp]
+	lea	eax, DWORD PTR $T18[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T17[ebp]
+	lea	ecx, DWORD PTR $T19[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ	; Raven_Bot::Facing
 	mov	ecx, eax
 	call	?Perp@Vector2D@@QBE?AU1@XZ		; Vector2D::Perp
 	push	eax
-	lea	edx, DWORD PTR $T15[ebp]
+	lea	edx, DWORD PTR $T17[ebp]
 	push	edx
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Facing@Raven_Bot@@QBE?AUVector2D@@XZ	; Raven_Bot::Facing
 	push	eax
-	lea	eax, DWORD PTR $T14[ebp]
+	lea	eax, DWORD PTR $T16[ebp]
 	push	eax
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
@@ -45578,25 +45950,25 @@ $LN7@Render:
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 240				; 000000f0H
 	push	ecx
-	lea	edx, DWORD PTR $T13[ebp]
+	lea	edx, DWORD PTR $T15[ebp]
 	push	edx
 	call	?WorldTransform@@YA?AV?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@AAV12@ABUVector2D@@111@Z ; WorldTransform
 	add	esp, 24					; 00000018H
-	mov	DWORD PTR tv340[ebp], eax
-	mov	eax, DWORD PTR tv340[ebp]
-	mov	DWORD PTR tv329[ebp], eax
+	mov	DWORD PTR tv374[ebp], eax
+	mov	eax, DWORD PTR tv374[ebp]
+	mov	DWORD PTR tv363[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
-	mov	ecx, DWORD PTR tv329[ebp]
+	mov	ecx, DWORD PTR tv363[ebp]
 	push	ecx
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 256				; 00000100H
 	call	??4?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAEAAV01@$$QAV01@@Z ; std::vector<Vector2D,std::allocator<Vector2D> >::operator=
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	lea	ecx, DWORD PTR $T13[ebp]
+	lea	ecx, DWORD PTR $T15[ebp]
 	call	??1?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAE@XZ ; std::vector<Vector2D,std::allocator<Vector2D> >::~vector<Vector2D,std::allocator<Vector2D> >
 
-; 520  : 
-; 521  :   gdi->ClosedShape(m_vecBotVBTrans);
+; 528  : 
+; 529  :   gdi->ClosedShape(m_vecBotVBTrans);
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 256				; 00000100H
@@ -45605,15 +45977,78 @@ $LN7@Render:
 	mov	ecx, eax
 	call	?ClosedShape@Cgdi@@QAEXABV?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@@Z ; Cgdi::ClosedShape
 
-; 522  :   
-; 523  :   //draw the head
-; 524  :   gdi->BrownBrush();
+; 530  :   
+; 531  :   //draw the head
+; 532  :   if (team == "Blue")
+
+	push	OFFSET $SG171009
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 300				; 0000012cH
+	push	eax
+	call	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+	add	esp, 8
+	movzx	ecx, al
+	test	ecx, ecx
+	je	SHORT $LN8@Render
+
+; 533  :   {
+; 534  : 	  gdi->BlueBrush();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
-	call	?BrownBrush@Cgdi@@QAEXXZ		; Cgdi::BrownBrush
+	call	?BlueBrush@Cgdi@@QAEXXZ			; Cgdi::BlueBrush
 
-; 525  :   gdi->Circle(Pos(), 6.0 * Scale().x);
+; 535  : 	  gdi->Circle(Pos(), 6.0 * Scale().x);
+
+	lea	edx, DWORD PTR $T14[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Scale@BaseGameEntity@@QBE?AUVector2D@@XZ ; BaseGameEntity::Scale
+	movsd	xmm0, QWORD PTR __real@4018000000000000
+	mulsd	xmm0, QWORD PTR [eax]
+	sub	esp, 8
+	movsd	QWORD PTR [esp], xmm0
+	lea	eax, DWORD PTR $T13[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
+	sub	esp, 16					; 00000010H
+	mov	ecx, esp
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR [ecx], edx
+	mov	edx, DWORD PTR [eax+4]
+	mov	DWORD PTR [ecx+4], edx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR [ecx+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR [ecx+12], eax
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?Circle@Cgdi@@QAEXUVector2D@@N@Z	; Cgdi::Circle
+	jmp	$LN6@Render
+$LN8@Render:
+
+; 536  :   }
+; 537  :   else if (team == "Red")
+
+	push	OFFSET $SG171030
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 300				; 0000012cH
+	push	ecx
+	call	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+	add	esp, 8
+	movzx	edx, al
+	test	edx, edx
+	je	SHORT $LN6@Render
+
+; 538  :   {
+; 539  : 	  gdi->RedBrush();
+
+	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
+	mov	ecx, eax
+	call	?RedBrush@Cgdi@@QAEXXZ			; Cgdi::RedBrush
+
+; 540  : 	  gdi->Circle(Pos(), 6.0 * Scale().x);
 
 	lea	eax, DWORD PTR $T12[ebp]
 	push	eax
@@ -45640,44 +46075,47 @@ $LN7@Render:
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?Circle@Cgdi@@QAEXUVector2D@@N@Z	; Cgdi::Circle
+$LN6@Render:
 
-; 526  : 
-; 527  : 
-; 528  :   //render the bot's weapon
-; 529  :   m_pWeaponSys->RenderCurrentWeapon();
+; 541  :   }
+; 542  :  
+; 543  : 
+; 544  : 
+; 545  :   //render the bot's weapon
+; 546  :   m_pWeaponSys->RenderCurrentWeapon();
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [ecx+172]
 	call	?RenderCurrentWeapon@Raven_WeaponSystem@@QBEXXZ ; Raven_WeaponSystem::RenderCurrentWeapon
 
-; 530  : 
-; 531  :   //render a thick red circle if the bot gets hit by a weapon
-; 532  :   if (m_bHit)
+; 547  : 
+; 548  :   //render a thick red circle if the bot gets hit by a weapon
+; 549  :   if (m_bHit)
 
 	mov	edx, DWORD PTR _this$[ebp]
 	movzx	eax, BYTE PTR [edx+236]
 	test	eax, eax
 	je	$LN4@Render
 
-; 533  :   {
-; 534  :     gdi->ThickRedPen();
+; 550  :   {
+; 551  :     gdi->ThickRedPen();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?ThickRedPen@Cgdi@@QAEXXZ		; Cgdi::ThickRedPen
 
-; 535  :     gdi->HollowBrush();
+; 552  :     gdi->HollowBrush();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?HollowBrush@Cgdi@@QAEXXZ		; Cgdi::HollowBrush
 
-; 536  :     gdi->Circle(m_vPosition, BRadius()+1);
+; 553  :     gdi->Circle(m_vPosition, BRadius()+1);
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?BRadius@BaseGameEntity@@QBENXZ		; BaseGameEntity::BRadius
-	fstp	QWORD PTR tv400[ebp]
-	movsd	xmm0, QWORD PTR tv400[ebp]
+	fstp	QWORD PTR tv460[ebp]
+	movsd	xmm0, QWORD PTR tv460[ebp]
 	addsd	xmm0, QWORD PTR __real@3ff0000000000000
 	sub	esp, 8
 	movsd	QWORD PTR [esp], xmm0
@@ -45697,30 +46135,30 @@ $LN7@Render:
 	mov	ecx, eax
 	call	?Circle@Cgdi@@QAEXUVector2D@@N@Z	; Cgdi::Circle
 
-; 537  : 
-; 538  :     if (m_iNumUpdatesHitPersistant <= 0)
+; 554  : 
+; 555  :     if (m_iNumUpdatesHitPersistant <= 0)
 
 	mov	edx, DWORD PTR _this$[ebp]
 	cmp	DWORD PTR [edx+232], 0
 	jg	SHORT $LN4@Render
 
-; 539  :     {
-; 540  :       m_bHit = false;
+; 556  :     {
+; 557  :       m_bHit = false;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	BYTE PTR [eax+236], 0
 $LN4@Render:
 
-; 541  :     }
-; 542  :   }
-; 543  : 
-; 544  :   gdi->TransparentText();
+; 558  :     }
+; 559  :   }
+; 560  : 
+; 561  :   gdi->TransparentText();
 
 	call	?Instance@Cgdi@@SAPAV1@XZ		; Cgdi::Instance
 	mov	ecx, eax
 	call	?TransparentText@Cgdi@@QAEXXZ		; Cgdi::TransparentText
 
-; 545  :   gdi->TextColor(0,255,0);
+; 562  :   gdi->TextColor(0,255,0);
 
 	push	0
 	push	255					; 000000ffH
@@ -45729,16 +46167,16 @@ $LN4@Render:
 	mov	ecx, eax
 	call	?TextColor@Cgdi@@QAEXHHH@Z		; Cgdi::TextColor
 
-; 546  : 
-; 547  :   if (UserOptions->m_bShowBotIDs)
+; 563  : 
+; 564  :   if (UserOptions->m_bShowBotIDs)
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	ecx, BYTE PTR [eax+11]
 	test	ecx, ecx
 	je	$LN3@Render
 
-; 548  :   {
-; 549  :     gdi->TextAtPos(Pos().x -10, Pos().y-20, ttos(ID()));
+; 565  :   {
+; 566  :     gdi->TextAtPos(Pos().x -10, Pos().y-20, ttos(ID()));
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
@@ -45746,15 +46184,15 @@ $LN4@Render:
 	push	2
 	lea	edx, DWORD PTR $T10[ebp]
 	push	edx
-	lea	eax, DWORD PTR $T23[ebp]
+	lea	eax, DWORD PTR $T25[ebp]
 	push	eax
 	call	??$ttos@H@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABHH@Z ; ttos<int>
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR tv341[ebp], eax
-	mov	ecx, DWORD PTR tv341[ebp]
-	mov	DWORD PTR tv331[ebp], ecx
+	mov	DWORD PTR tv375[ebp], eax
+	mov	ecx, DWORD PTR tv375[ebp]
+	mov	DWORD PTR tv365[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
-	mov	edx, DWORD PTR tv331[ebp]
+	mov	edx, DWORD PTR tv365[ebp]
 	push	edx
 	lea	eax, DWORD PTR $T9[ebp]
 	push	eax
@@ -45776,21 +46214,21 @@ $LN4@Render:
 	mov	ecx, eax
 	call	?TextAtPos@Cgdi@@QAEXNNABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; Cgdi::TextAtPos
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	lea	ecx, DWORD PTR $T23[ebp]
+	lea	ecx, DWORD PTR $T25[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN3@Render:
 
-; 550  :   }
-; 551  : 
-; 552  :   if (UserOptions->m_bShowBotHealth)
+; 567  :   }
+; 568  : 
+; 569  :   if (UserOptions->m_bShowBotHealth)
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	edx, BYTE PTR [eax+12]
 	test	edx, edx
 	je	$LN2@Render
 
-; 553  :   {
-; 554  :     gdi->TextAtPos(Pos().x-40, Pos().y-5, "H:"+ ttos(Health()));
+; 570  :   {
+; 571  :     gdi->TextAtPos(Pos().x-40, Pos().y-5, "H:"+ ttos(Health()));
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Health@Raven_Bot@@QBEHXZ		; Raven_Bot::Health
@@ -45798,26 +46236,26 @@ $LN3@Render:
 	push	2
 	lea	eax, DWORD PTR $T7[ebp]
 	push	eax
-	lea	ecx, DWORD PTR $T22[ebp]
+	lea	ecx, DWORD PTR $T24[ebp]
 	push	ecx
 	call	??$ttos@H@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABHH@Z ; ttos<int>
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR tv342[ebp], eax
-	mov	edx, DWORD PTR tv342[ebp]
-	mov	DWORD PTR tv333[ebp], edx
+	mov	DWORD PTR tv376[ebp], eax
+	mov	edx, DWORD PTR tv376[ebp]
+	mov	DWORD PTR tv367[ebp], edx
 	mov	DWORD PTR __$EHRec$[ebp+8], 2
-	mov	eax, DWORD PTR tv333[ebp]
+	mov	eax, DWORD PTR tv367[ebp]
 	push	eax
-	push	OFFSET $SG170975
-	lea	ecx, DWORD PTR $T21[ebp]
+	push	OFFSET $SG171046
+	lea	ecx, DWORD PTR $T23[ebp]
 	push	ecx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR tv343[ebp], eax
-	mov	edx, DWORD PTR tv343[ebp]
-	mov	DWORD PTR tv335[ebp], edx
+	mov	DWORD PTR tv377[ebp], eax
+	mov	edx, DWORD PTR tv377[ebp]
+	mov	DWORD PTR tv369[ebp], edx
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
-	mov	eax, DWORD PTR tv335[ebp]
+	mov	eax, DWORD PTR tv369[ebp]
 	push	eax
 	lea	ecx, DWORD PTR $T6[ebp]
 	push	ecx
@@ -45839,24 +46277,24 @@ $LN3@Render:
 	mov	ecx, eax
 	call	?TextAtPos@Cgdi@@QAEXNNABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; Cgdi::TextAtPos
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
-	lea	ecx, DWORD PTR $T21[ebp]
+	lea	ecx, DWORD PTR $T23[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	lea	ecx, DWORD PTR $T22[ebp]
+	lea	ecx, DWORD PTR $T24[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN2@Render:
 
-; 555  :   }
-; 556  : 
-; 557  :   if (UserOptions->m_bShowScore)
+; 572  :   }
+; 573  : 
+; 574  :   if (UserOptions->m_bShowScore)
 
 	call	?Instance@Raven_UserOptions@@SAPAV1@XZ	; Raven_UserOptions::Instance
 	movzx	eax, BYTE PTR [eax+13]
 	test	eax, eax
 	je	$LN1@Render
 
-; 558  :   {
-; 559  :     gdi->TextAtPos(Pos().x-40, Pos().y+10, "Scr:"+ ttos(Score()));
+; 575  :   {
+; 576  :     gdi->TextAtPos(Pos().x-40, Pos().y+10, "Scr:"+ ttos(Score()));
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?Score@Raven_Bot@@QBEHXZ		; Raven_Bot::Score
@@ -45864,26 +46302,26 @@ $LN2@Render:
 	push	2
 	lea	ecx, DWORD PTR $T4[ebp]
 	push	ecx
-	lea	edx, DWORD PTR $T20[ebp]
+	lea	edx, DWORD PTR $T22[ebp]
 	push	edx
 	call	??$ttos@H@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@ABHH@Z ; ttos<int>
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR tv344[ebp], eax
-	mov	eax, DWORD PTR tv344[ebp]
-	mov	DWORD PTR tv337[ebp], eax
+	mov	DWORD PTR tv378[ebp], eax
+	mov	eax, DWORD PTR tv378[ebp]
+	mov	DWORD PTR tv371[ebp], eax
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
-	mov	ecx, DWORD PTR tv337[ebp]
+	mov	ecx, DWORD PTR tv371[ebp]
 	push	ecx
-	push	OFFSET $SG170982
-	lea	edx, DWORD PTR $T19[ebp]
+	push	OFFSET $SG171053
+	lea	edx, DWORD PTR $T21[ebp]
 	push	edx
 	call	??$?HDU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@PBD$$QAV10@@Z ; std::operator+<char,std::char_traits<char>,std::allocator<char> >
 	add	esp, 12					; 0000000cH
-	mov	DWORD PTR tv345[ebp], eax
-	mov	eax, DWORD PTR tv345[ebp]
-	mov	DWORD PTR tv339[ebp], eax
+	mov	DWORD PTR tv379[ebp], eax
+	mov	eax, DWORD PTR tv379[ebp]
+	mov	DWORD PTR tv373[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
-	mov	ecx, DWORD PTR tv339[ebp]
+	mov	ecx, DWORD PTR tv373[ebp]
 	push	ecx
 	lea	edx, DWORD PTR $T3[ebp]
 	push	edx
@@ -45905,16 +46343,16 @@ $LN2@Render:
 	mov	ecx, eax
 	call	?TextAtPos@Cgdi@@QAEXNNABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z ; Cgdi::TextAtPos
 	mov	BYTE PTR __$EHRec$[ebp+8], 4
-	lea	ecx, DWORD PTR $T19[ebp]
+	lea	ecx, DWORD PTR $T21[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
-	lea	ecx, DWORD PTR $T20[ebp]
+	lea	ecx, DWORD PTR $T22[ebp]
 	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 $LN1@Render:
-$LN8@Render:
+$LN11@Render:
 
-; 560  :   }    
-; 561  : }
+; 577  :   }    
+; 578  : }
 
 	mov	ecx, DWORD PTR __$EHRec$[ebp]
 	mov	DWORD PTR fs:0, ecx
@@ -45923,7 +46361,7 @@ $LN8@Render:
 	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
 	xor	ecx, ebp
 	call	@__security_check_cookie@4
-	add	esp, 452				; 000001c4H
+	add	esp, 484				; 000001e4H
 	cmp	ebp, esp
 	call	__RTC_CheckEsp
 	mov	esp, ebp
@@ -45932,27 +46370,27 @@ $LN8@Render:
 _TEXT	ENDS
 text$x	SEGMENT
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$0:
-	lea	ecx, DWORD PTR $T13[ebp]
+	lea	ecx, DWORD PTR $T15[ebp]
 	jmp	??1?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAE@XZ ; std::vector<Vector2D,std::allocator<Vector2D> >::~vector<Vector2D,std::allocator<Vector2D> >
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$1:
-	lea	ecx, DWORD PTR $T23[ebp]
+	lea	ecx, DWORD PTR $T25[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$2:
-	lea	ecx, DWORD PTR $T22[ebp]
+	lea	ecx, DWORD PTR $T24[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$3:
-	lea	ecx, DWORD PTR $T21[ebp]
+	lea	ecx, DWORD PTR $T23[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$4:
-	lea	ecx, DWORD PTR $T20[ebp]
+	lea	ecx, DWORD PTR $T22[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __unwindfunclet$?Render@Raven_Bot@@UAEXXZ$5:
-	lea	ecx, DWORD PTR $T19[ebp]
+	lea	ecx, DWORD PTR $T21[ebp]
 	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
 __ehhandler$?Render@Raven_Bot@@UAEXXZ:
 	mov	edx, DWORD PTR [esp+8]
 	lea	eax, DWORD PTR [edx+12]
-	mov	ecx, DWORD PTR [edx-448]
+	mov	ecx, DWORD PTR [edx-480]
 	xor	ecx, eax
 	call	@__security_check_cookie@4
 	mov	ecx, DWORD PTR [edx-4]
@@ -45992,7 +46430,7 @@ __$EHRec$ = -12						; size = 12
 ??1Raven_Bot@@UAE@XZ PROC				; Raven_Bot::~Raven_Bot
 ; _this$ = ecx
 
-; 95   : {
+; 97   : {
 
 	push	ebp
 	mov	ebp, esp
@@ -46019,16 +46457,16 @@ __$EHRec$ = -12						; size = 12
 	mov	DWORD PTR [eax], OFFSET ??_7Raven_Bot@@6B@
 	mov	DWORD PTR __$EHRec$[ebp+8], 4
 
-; 96   :   debug_con << "deleting raven bot (id = " << ID() << ")" << "";
+; 98   :   debug_con << "deleting raven bot (id = " << ID() << ")" << "";
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T18[ebp], eax
-	push	OFFSET $SG170699
-	push	OFFSET $SG170698
+	push	OFFSET $SG170704
+	push	OFFSET $SG170703
 	lea	ecx, DWORD PTR $T18[ebp]
 	push	ecx
-	push	OFFSET $SG170697
+	push	OFFSET $SG170702
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0BK@$$CBD@DebugConsole@@QAEAAV0@AAY0BK@$$CBD@Z ; DebugConsole::operator<<<char const [26]>
@@ -46039,8 +46477,8 @@ __$EHRec$ = -12						; size = 12
 	mov	ecx, eax
 	call	??$?6$$BY00$$CBD@DebugConsole@@QAEAAV0@AAY00$$CBD@Z ; DebugConsole::operator<<<char const [1]>
 
-; 97   :   
-; 98   :   delete m_pBrain;
+; 99   :   
+; 100  :   delete m_pBrain;
 
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	eax, DWORD PTR [edx+152]
@@ -46064,7 +46502,7 @@ $LN3@Raven_Bot:
 	mov	DWORD PTR tv143[ebp], 0
 $LN4@Raven_Bot:
 
-; 99   :   delete m_pPathPlanner;
+; 101  :   delete m_pPathPlanner;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+164]
@@ -46082,7 +46520,7 @@ $LN5@Raven_Bot:
 	mov	DWORD PTR tv149[ebp], 0
 $LN6@Raven_Bot:
 
-; 100  :   delete m_pSteering;
+; 102  :   delete m_pSteering;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	mov	ecx, DWORD PTR [eax+160]
@@ -46106,7 +46544,7 @@ $LN7@Raven_Bot:
 	mov	DWORD PTR tv157[ebp], 0
 $LN8@Raven_Bot:
 
-; 101  :   delete m_pWeaponSelectionRegulator;
+; 103  :   delete m_pWeaponSelectionRegulator;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+176]
@@ -46116,7 +46554,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 102  :   delete m_pTargSys;
+; 104  :   delete m_pTargSys;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+168]
@@ -46126,7 +46564,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 103  :   delete m_pGoalArbitrationRegulator;
+; 105  :   delete m_pGoalArbitrationRegulator;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+180]
@@ -46136,7 +46574,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 104  :   delete m_pTargetSelectionRegulator;
+; 106  :   delete m_pTargetSelectionRegulator;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+184]
@@ -46146,7 +46584,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 105  :   delete m_pTriggerTestRegulator;
+; 107  :   delete m_pTriggerTestRegulator;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+188]
@@ -46156,7 +46594,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 106  :   delete m_pVisionUpdateRegulator;
+; 108  :   delete m_pVisionUpdateRegulator;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+192]
@@ -46166,7 +46604,7 @@ $LN8@Raven_Bot:
 	call	??3@YAXPAX@Z				; operator delete
 	add	esp, 4
 
-; 107  :   delete m_pWeaponSys;
+; 109  :   delete m_pWeaponSys;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+172]
@@ -46184,7 +46622,7 @@ $LN9@Raven_Bot:
 	mov	DWORD PTR tv175[ebp], 0
 $LN10@Raven_Bot:
 
-; 108  :   delete m_pSensoryMem;
+; 110  :   delete m_pSensoryMem;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	edx, DWORD PTR [ecx+156]
@@ -46202,7 +46640,7 @@ $LN11@Raven_Bot:
 	mov	DWORD PTR tv181[ebp], 0
 $LN1@Raven_Bot:
 
-; 109  : }
+; 111  : }
 
 	mov	BYTE PTR __$EHRec$[ebp+8], 3
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46268,18 +46706,18 @@ text$x	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.cpp
 _TEXT	SEGMENT
-tv451 = -204						; size = 4
-tv433 = -200						; size = 4
-tv397 = -196						; size = 4
-tv388 = -192						; size = 4
-tv379 = -188						; size = 4
-tv362 = -184						; size = 4
-tv345 = -180						; size = 4
-tv328 = -176						; size = 4
-tv311 = -172						; size = 4
-tv294 = -168						; size = 4
-tv284 = -164						; size = 4
-tv662 = -160						; size = 8
+tv453 = -204						; size = 4
+tv435 = -200						; size = 4
+tv399 = -196						; size = 4
+tv390 = -192						; size = 4
+tv381 = -188						; size = 4
+tv364 = -184						; size = 4
+tv347 = -180						; size = 4
+tv330 = -176						; size = 4
+tv313 = -172						; size = 4
+tv296 = -168						; size = 4
+tv286 = -164						; size = 4
+tv665 = -160						; size = 8
 $T2 = -152						; size = 4
 $T3 = -148						; size = 4
 $T4 = -144						; size = 4
@@ -46336,25 +46774,25 @@ _t$ = 28						; size = 28
 	mov	DWORD PTR fs:0, eax
 	mov	DWORD PTR _this$[ebp], ecx
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
-	push	OFFSET $SG170609
+	push	OFFSET $SG170614
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG170610
+	push	OFFSET $SG170615
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG170611
+	push	OFFSET $SG170616
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG170612
+	push	OFFSET $SG170617
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46372,7 +46810,7 @@ _t$ = 28						; size = 28
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG170613
+	push	OFFSET $SG170618
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46396,7 +46834,7 @@ _t$ = 28						; size = 28
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG170614
+	push	OFFSET $SG170619
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46420,7 +46858,7 @@ _t$ = 28						; size = 28
 	mov	DWORD PTR [ecx+8], edx
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
-	push	OFFSET $SG170615
+	push	OFFSET $SG170620
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46452,13 +46890,13 @@ _t$ = 28						; size = 28
 	mov	DWORD PTR [eax+160], 0
 	mov	ecx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [ecx+164], 0
-	push	OFFSET $SG170616
+	push	OFFSET $SG170621
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
 	mov	edx, DWORD PTR _this$[ebp]
 	mov	DWORD PTR [edx+196], eax
-	push	OFFSET $SG170617
+	push	OFFSET $SG170622
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetInt@Scriptor@@QAEHPAD@Z		; Scriptor::GetInt
@@ -46469,7 +46907,7 @@ _t$ = 28						; size = 28
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 208				; 000000d0H
 	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
-	push	OFFSET $SG170618
+	push	OFFSET $SG170623
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46479,12 +46917,12 @@ _t$ = 28						; size = 28
 	add	esp, 8
 	mov	eax, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [eax+224]
-	push	OFFSET $SG170619
+	push	OFFSET $SG170624
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
-	fstp	QWORD PTR tv662[ebp]
-	movsd	xmm0, QWORD PTR tv662[ebp]
+	fstp	QWORD PTR tv665[ebp]
+	movsd	xmm0, QWORD PTR tv665[ebp]
 	mulsd	xmm0, QWORD PTR __real@404e000000000000
 	cvttsd2si ecx, xmm0
 	mov	edx, DWORD PTR _this$[ebp]
@@ -46509,6 +46947,9 @@ _t$ = 28						; size = 28
 	add	ecx, 300				; 0000012cH
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
+	mov	ecx, DWORD PTR _this$[ebp]
+	add	ecx, 328				; 00000148H
+	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
 
 ; 54   :   SetEntityType(type_bot);
 
@@ -46556,12 +46997,12 @@ _t$ = 28						; size = 28
 	push	eax
 	mov	ecx, DWORD PTR $T22[ebp]
 	call	??0Raven_PathPlanner@@QAE@PAVRaven_Bot@@@Z ; Raven_PathPlanner::Raven_PathPlanner
-	mov	DWORD PTR tv284[ebp], eax
+	mov	DWORD PTR tv286[ebp], eax
 	jmp	SHORT $LN4@Raven_Bot
 $LN3@Raven_Bot:
-	mov	DWORD PTR tv284[ebp], 0
+	mov	DWORD PTR tv286[ebp], 0
 $LN4@Raven_Bot:
-	mov	ecx, DWORD PTR tv284[ebp]
+	mov	ecx, DWORD PTR tv286[ebp]
 	mov	DWORD PTR $T23[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	edx, DWORD PTR _this$[ebp]
@@ -46585,12 +47026,12 @@ $LN4@Raven_Bot:
 	push	edx
 	mov	ecx, DWORD PTR $T20[ebp]
 	call	??0Raven_Steering@@QAE@PAVRaven_Game@@PAVRaven_Bot@@@Z ; Raven_Steering::Raven_Steering
-	mov	DWORD PTR tv294[ebp], eax
+	mov	DWORD PTR tv296[ebp], eax
 	jmp	SHORT $LN6@Raven_Bot
 $LN5@Raven_Bot:
-	mov	DWORD PTR tv294[ebp], 0
+	mov	DWORD PTR tv296[ebp], 0
 $LN6@Raven_Bot:
-	mov	eax, DWORD PTR tv294[ebp]
+	mov	eax, DWORD PTR tv296[ebp]
 	mov	DWORD PTR $T21[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46608,7 +47049,7 @@ $LN6@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 8
 	cmp	DWORD PTR $T18[ebp], 0
 	je	SHORT $LN7@Raven_Bot
-	push	OFFSET $SG170632
+	push	OFFSET $SG170637
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46616,12 +47057,12 @@ $LN6@Raven_Bot:
 	fstp	QWORD PTR [esp]
 	mov	ecx, DWORD PTR $T18[ebp]
 	call	??0Regulator@@QAE@N@Z			; Regulator::Regulator
-	mov	DWORD PTR tv311[ebp], eax
+	mov	DWORD PTR tv313[ebp], eax
 	jmp	SHORT $LN8@Raven_Bot
 $LN7@Raven_Bot:
-	mov	DWORD PTR tv311[ebp], 0
+	mov	DWORD PTR tv313[ebp], 0
 $LN8@Raven_Bot:
-	mov	eax, DWORD PTR tv311[ebp]
+	mov	eax, DWORD PTR tv313[ebp]
 	mov	DWORD PTR $T19[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46637,7 +47078,7 @@ $LN8@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 9
 	cmp	DWORD PTR $T16[ebp], 0
 	je	SHORT $LN9@Raven_Bot
-	push	OFFSET $SG170637
+	push	OFFSET $SG170642
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46645,12 +47086,12 @@ $LN8@Raven_Bot:
 	fstp	QWORD PTR [esp]
 	mov	ecx, DWORD PTR $T16[ebp]
 	call	??0Regulator@@QAE@N@Z			; Regulator::Regulator
-	mov	DWORD PTR tv328[ebp], eax
+	mov	DWORD PTR tv330[ebp], eax
 	jmp	SHORT $LN10@Raven_Bot
 $LN9@Raven_Bot:
-	mov	DWORD PTR tv328[ebp], 0
+	mov	DWORD PTR tv330[ebp], 0
 $LN10@Raven_Bot:
-	mov	eax, DWORD PTR tv328[ebp]
+	mov	eax, DWORD PTR tv330[ebp]
 	mov	DWORD PTR $T17[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46666,7 +47107,7 @@ $LN10@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 10		; 0000000aH
 	cmp	DWORD PTR $T14[ebp], 0
 	je	SHORT $LN11@Raven_Bot
-	push	OFFSET $SG170642
+	push	OFFSET $SG170647
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46674,12 +47115,12 @@ $LN10@Raven_Bot:
 	fstp	QWORD PTR [esp]
 	mov	ecx, DWORD PTR $T14[ebp]
 	call	??0Regulator@@QAE@N@Z			; Regulator::Regulator
-	mov	DWORD PTR tv345[ebp], eax
+	mov	DWORD PTR tv347[ebp], eax
 	jmp	SHORT $LN12@Raven_Bot
 $LN11@Raven_Bot:
-	mov	DWORD PTR tv345[ebp], 0
+	mov	DWORD PTR tv347[ebp], 0
 $LN12@Raven_Bot:
-	mov	eax, DWORD PTR tv345[ebp]
+	mov	eax, DWORD PTR tv347[ebp]
 	mov	DWORD PTR $T15[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46695,7 +47136,7 @@ $LN12@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 11		; 0000000bH
 	cmp	DWORD PTR $T12[ebp], 0
 	je	SHORT $LN13@Raven_Bot
-	push	OFFSET $SG170647
+	push	OFFSET $SG170652
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46703,12 +47144,12 @@ $LN12@Raven_Bot:
 	fstp	QWORD PTR [esp]
 	mov	ecx, DWORD PTR $T12[ebp]
 	call	??0Regulator@@QAE@N@Z			; Regulator::Regulator
-	mov	DWORD PTR tv362[ebp], eax
+	mov	DWORD PTR tv364[ebp], eax
 	jmp	SHORT $LN14@Raven_Bot
 $LN13@Raven_Bot:
-	mov	DWORD PTR tv362[ebp], 0
+	mov	DWORD PTR tv364[ebp], 0
 $LN14@Raven_Bot:
-	mov	eax, DWORD PTR tv362[ebp]
+	mov	eax, DWORD PTR tv364[ebp]
 	mov	DWORD PTR $T13[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46724,7 +47165,7 @@ $LN14@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 12		; 0000000cH
 	cmp	DWORD PTR $T10[ebp], 0
 	je	SHORT $LN15@Raven_Bot
-	push	OFFSET $SG170652
+	push	OFFSET $SG170657
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46732,12 +47173,12 @@ $LN14@Raven_Bot:
 	fstp	QWORD PTR [esp]
 	mov	ecx, DWORD PTR $T10[ebp]
 	call	??0Regulator@@QAE@N@Z			; Regulator::Regulator
-	mov	DWORD PTR tv379[ebp], eax
+	mov	DWORD PTR tv381[ebp], eax
 	jmp	SHORT $LN16@Raven_Bot
 $LN15@Raven_Bot:
-	mov	DWORD PTR tv379[ebp], 0
+	mov	DWORD PTR tv381[ebp], 0
 $LN16@Raven_Bot:
-	mov	eax, DWORD PTR tv379[ebp]
+	mov	eax, DWORD PTR tv381[ebp]
 	mov	DWORD PTR $T11[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46759,12 +47200,12 @@ $LN16@Raven_Bot:
 	push	eax
 	mov	ecx, DWORD PTR $T8[ebp]
 	call	??0Goal_Think@@QAE@PAVRaven_Bot@@@Z	; Goal_Think::Goal_Think
-	mov	DWORD PTR tv388[ebp], eax
+	mov	DWORD PTR tv390[ebp], eax
 	jmp	SHORT $LN18@Raven_Bot
 $LN17@Raven_Bot:
-	mov	DWORD PTR tv388[ebp], 0
+	mov	DWORD PTR tv390[ebp], 0
 $LN18@Raven_Bot:
-	mov	ecx, DWORD PTR tv388[ebp]
+	mov	ecx, DWORD PTR tv390[ebp]
 	mov	DWORD PTR $T9[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	edx, DWORD PTR _this$[ebp]
@@ -46786,12 +47227,12 @@ $LN18@Raven_Bot:
 	push	ecx
 	mov	ecx, DWORD PTR $T6[ebp]
 	call	??0Raven_TargetingSystem@@QAE@PAVRaven_Bot@@@Z ; Raven_TargetingSystem::Raven_TargetingSystem
-	mov	DWORD PTR tv397[ebp], eax
+	mov	DWORD PTR tv399[ebp], eax
 	jmp	SHORT $LN20@Raven_Bot
 $LN19@Raven_Bot:
-	mov	DWORD PTR tv397[ebp], 0
+	mov	DWORD PTR tv399[ebp], 0
 $LN20@Raven_Bot:
-	mov	edx, DWORD PTR tv397[ebp]
+	mov	edx, DWORD PTR tv399[ebp]
 	mov	DWORD PTR $T7[ebp], edx
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	eax, DWORD PTR _this$[ebp]
@@ -46804,26 +47245,26 @@ $LN20@Raven_Bot:
 ; 84   :                                         script->GetDouble("Bot_AimAccuracy"),
 ; 85   :                                         script->GetDouble("Bot_AimPersistance"));
 
-	push	48					; 00000030H
+	push	80					; 00000050H
 	call	??2@YAPAXI@Z				; operator new
 	add	esp, 4
 	mov	DWORD PTR $T4[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 15		; 0000000fH
 	cmp	DWORD PTR $T4[ebp], 0
 	je	SHORT $LN21@Raven_Bot
-	push	OFFSET $SG170665
+	push	OFFSET $SG170670
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG170666
+	push	OFFSET $SG170671
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	sub	esp, 8
 	fstp	QWORD PTR [esp]
-	push	OFFSET $SG170667
+	push	OFFSET $SG170672
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46833,12 +47274,12 @@ $LN20@Raven_Bot:
 	push	edx
 	mov	ecx, DWORD PTR $T4[ebp]
 	call	??0Raven_WeaponSystem@@QAE@PAVRaven_Bot@@NNN@Z ; Raven_WeaponSystem::Raven_WeaponSystem
-	mov	DWORD PTR tv433[ebp], eax
+	mov	DWORD PTR tv435[ebp], eax
 	jmp	SHORT $LN22@Raven_Bot
 $LN21@Raven_Bot:
-	mov	DWORD PTR tv433[ebp], 0
+	mov	DWORD PTR tv435[ebp], 0
 $LN22@Raven_Bot:
-	mov	eax, DWORD PTR tv433[ebp]
+	mov	eax, DWORD PTR tv435[ebp]
 	mov	DWORD PTR $T5[ebp], eax
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	ecx, DWORD PTR _this$[ebp]
@@ -46855,7 +47296,7 @@ $LN22@Raven_Bot:
 	mov	BYTE PTR __$EHRec$[ebp+8], 16		; 00000010H
 	cmp	DWORD PTR $T2[ebp], 0
 	je	SHORT $LN23@Raven_Bot
-	push	OFFSET $SG170672
+	push	OFFSET $SG170677
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -46865,12 +47306,12 @@ $LN22@Raven_Bot:
 	push	eax
 	mov	ecx, DWORD PTR $T2[ebp]
 	call	??0Raven_SensoryMemory@@QAE@PAVRaven_Bot@@N@Z ; Raven_SensoryMemory::Raven_SensoryMemory
-	mov	DWORD PTR tv451[ebp], eax
+	mov	DWORD PTR tv453[ebp], eax
 	jmp	SHORT $LN24@Raven_Bot
 $LN23@Raven_Bot:
-	mov	DWORD PTR tv451[ebp], 0
+	mov	DWORD PTR tv453[ebp], 0
 $LN24@Raven_Bot:
-	mov	ecx, DWORD PTR tv451[ebp]
+	mov	ecx, DWORD PTR tv453[ebp]
 	mov	DWORD PTR $T3[ebp], ecx
 	mov	BYTE PTR __$EHRec$[ebp+8], 5
 	mov	edx, DWORD PTR _this$[ebp]
@@ -46886,7 +47327,13 @@ $LN24@Raven_Bot:
 	add	ecx, 300				; 0000012cH
 	call	??4?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV01@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::operator=
 
-; 90   : }
+; 90   : 
+; 91   :   InitializeFuzzyModule();
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?InitializeFuzzyModule@Raven_Bot@@QAEXXZ ; Raven_Bot::InitializeFuzzyModule
+
+; 92   : }
 
 	mov	DWORD PTR __$EHRec$[ebp+8], -1
 	lea	ecx, DWORD PTR _t$[ebp]
@@ -47017,7 +47464,7 @@ __$ArrayPad$ = -4					; size = 4
 ?SetUpVertexBuffer@Raven_Bot@@AAEXXZ PROC		; Raven_Bot::SetUpVertexBuffer
 ; _this$ = ecx
 
-; 566  : {
+; 583  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -47034,15 +47481,15 @@ __$ArrayPad$ = -4					; size = 4
 	mov	DWORD PTR __$ArrayPad$[ebp], eax
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 567  :   //setup the vertex buffers and calculate the bounding radius
-; 568  :   const int NumBotVerts = 4;
+; 584  :   //setup the vertex buffers and calculate the bounding radius
+; 585  :   const int NumBotVerts = 4;
 
 	mov	DWORD PTR _NumBotVerts$[ebp], 4
 
-; 569  :   const Vector2D bot[NumBotVerts] = {Vector2D(-3, 8),
-; 570  :                                      Vector2D(3,10),
-; 571  :                                      Vector2D(3,-10),
-; 572  :                                      Vector2D(-3,-8)};
+; 586  :   const Vector2D bot[NumBotVerts] = {Vector2D(-3, 8),
+; 587  :                                      Vector2D(3,10),
+; 588  :                                      Vector2D(3,-10),
+; 589  :                                      Vector2D(-3,-8)};
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR __real@4020000000000000
@@ -47077,23 +47524,23 @@ __$ArrayPad$ = -4					; size = 4
 	lea	ecx, DWORD PTR _bot$[ebp+48]
 	call	??0Vector2D@@QAE@NN@Z			; Vector2D::Vector2D
 
-; 573  : 
-; 574  :   m_dBoundingRadius = 0.0;
+; 590  : 
+; 591  :   m_dBoundingRadius = 0.0;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	movsd	xmm0, QWORD PTR __real@0000000000000000
 	movsd	QWORD PTR [eax+56], xmm0
 
-; 575  :   double scale = script->GetDouble("Bot_Scale");
+; 592  :   double scale = script->GetDouble("Bot_Scale");
 
-	push	OFFSET $SG170993
+	push	OFFSET $SG171064
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	fstp	QWORD PTR _scale$[ebp]
 
-; 576  :   
-; 577  :   for (int vtx=0; vtx<NumBotVerts; ++vtx)
+; 593  :   
+; 594  :   for (int vtx=0; vtx<NumBotVerts; ++vtx)
 
 	mov	DWORD PTR _vtx$1[ebp], 0
 	jmp	SHORT $LN5@SetUpVerte
@@ -47105,8 +47552,8 @@ $LN5@SetUpVerte:
 	cmp	DWORD PTR _vtx$1[ebp], 4
 	jge	$LN3@SetUpVerte
 
-; 578  :   {
-; 579  :     m_vecBotVB.push_back(bot[vtx]);
+; 595  :   {
+; 596  :     m_vecBotVB.push_back(bot[vtx]);
 
 	mov	edx, DWORD PTR _vtx$1[ebp]
 	shl	edx, 4
@@ -47116,10 +47563,10 @@ $LN5@SetUpVerte:
 	add	ecx, 240				; 000000f0H
 	call	?push_back@?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAEXABUVector2D@@@Z ; std::vector<Vector2D,std::allocator<Vector2D> >::push_back
 
-; 580  : 
-; 581  :     //set the bounding radius to the length of the 
-; 582  :     //greatest extent
-; 583  :     if (abs(bot[vtx].x)*scale > m_dBoundingRadius)
+; 597  : 
+; 598  :     //set the bounding radius to the length of the 
+; 599  :     //greatest extent
+; 600  :     if (abs(bot[vtx].x)*scale > m_dBoundingRadius)
 
 	mov	ecx, DWORD PTR _vtx$1[ebp]
 	shl	ecx, 4
@@ -47135,8 +47582,8 @@ $LN5@SetUpVerte:
 	comisd	xmm0, QWORD PTR [edx+56]
 	jbe	SHORT $LN2@SetUpVerte
 
-; 584  :     {
-; 585  :       m_dBoundingRadius = abs(bot[vtx].x*scale);
+; 601  :     {
+; 602  :       m_dBoundingRadius = abs(bot[vtx].x*scale);
 
 	mov	eax, DWORD PTR _vtx$1[ebp]
 	shl	eax, 4
@@ -47150,9 +47597,9 @@ $LN5@SetUpVerte:
 	fstp	QWORD PTR [ecx+56]
 $LN2@SetUpVerte:
 
-; 586  :     }
-; 587  : 
-; 588  :     if (abs(bot[vtx].y)*scale > m_dBoundingRadius)
+; 603  :     }
+; 604  : 
+; 605  :     if (abs(bot[vtx].y)*scale > m_dBoundingRadius)
 
 	mov	edx, DWORD PTR _vtx$1[ebp]
 	shl	edx, 4
@@ -47168,8 +47615,8 @@ $LN2@SetUpVerte:
 	comisd	xmm0, QWORD PTR [eax+56]
 	jbe	SHORT $LN1@SetUpVerte
 
-; 589  :     {
-; 590  :       m_dBoundingRadius = abs(bot[vtx].y)*scale;
+; 606  :     {
+; 607  :       m_dBoundingRadius = abs(bot[vtx].y)*scale;
 
 	mov	ecx, DWORD PTR _vtx$1[ebp]
 	shl	ecx, 4
@@ -47185,13 +47632,13 @@ $LN2@SetUpVerte:
 	movsd	QWORD PTR [edx+56], xmm0
 $LN1@SetUpVerte:
 
-; 591  :     }
-; 592  :   }
+; 608  :     }
+; 609  :   }
 
 	jmp	$LN4@SetUpVerte
 $LN3@SetUpVerte:
 
-; 593  : }
+; 610  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -47239,7 +47686,7 @@ _this$ = -4						; size = 4
 ?UpdateMovement@Raven_Bot@@AAEXXZ PROC			; Raven_Bot::UpdateMovement
 ; _this$ = ecx
 
-; 181  : {
+; 184  : {
 
 	push	ebp
 	mov	ebp, esp
@@ -47253,8 +47700,8 @@ _this$ = -4						; size = 4
 	pop	ecx
 	mov	DWORD PTR _this$[ebp], ecx
 
-; 182  :   //calculate the combined steering force
-; 183  :   Vector2D force = m_pSteering->Calculate();
+; 185  :   //calculate the combined steering force
+; 186  :   Vector2D force = m_pSteering->Calculate();
 
 	lea	eax, DWORD PTR _force$[ebp]
 	push	eax
@@ -47262,10 +47709,10 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [ecx+160]
 	call	?Calculate@Raven_Steering@@QAE?AUVector2D@@XZ ; Raven_Steering::Calculate
 
-; 184  : 
-; 185  :   //if no steering force is produced decelerate the player by applying a
-; 186  :   //braking force
-; 187  :   if (m_pSteering->Force().isZero())
+; 187  : 
+; 188  :   //if no steering force is produced decelerate the player by applying a
+; 189  :   //braking force
+; 190  :   if (m_pSteering->Force().isZero())
 
 	lea	edx, DWORD PTR $T4[ebp]
 	push	edx
@@ -47278,14 +47725,14 @@ _this$ = -4						; size = 4
 	test	ecx, ecx
 	je	SHORT $LN2@UpdateMove
 
-; 188  :   {
-; 189  :     const double BrakingRate = 0.8; 
+; 191  :   {
+; 192  :     const double BrakingRate = 0.8; 
 
 	movsd	xmm0, QWORD PTR __real@3fe999999999999a
 	movsd	QWORD PTR _BrakingRate$5[ebp], xmm0
 
-; 190  : 
-; 191  :     m_vVelocity = m_vVelocity * BrakingRate;                                     
+; 193  : 
+; 194  :     m_vVelocity = m_vVelocity * BrakingRate;                                     
 
 	sub	esp, 8
 	movsd	xmm0, QWORD PTR _BrakingRate$5[ebp]
@@ -47309,10 +47756,10 @@ _this$ = -4						; size = 4
 	mov	DWORD PTR [ecx+12], eax
 $LN2@UpdateMove:
 
-; 192  :   }
-; 193  : 
-; 194  :   //calculate the acceleration
-; 195  :   Vector2D accel = force / m_dMass;
+; 195  :   }
+; 196  : 
+; 197  :   //calculate the acceleration
+; 198  :   Vector2D accel = force / m_dMass;
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	sub	esp, 8
@@ -47325,9 +47772,9 @@ $LN2@UpdateMove:
 	call	??K@YA?AUVector2D@@ABU0@N@Z		; operator/
 	add	esp, 16					; 00000010H
 
-; 196  : 
-; 197  :   //update the velocity
-; 198  :   m_vVelocity += accel;
+; 199  : 
+; 200  :   //update the velocity
+; 201  :   m_vVelocity += accel;
 
 	lea	ecx, DWORD PTR _accel$[ebp]
 	push	ecx
@@ -47335,9 +47782,9 @@ $LN2@UpdateMove:
 	add	ecx, 64					; 00000040H
 	call	??YVector2D@@QAEABU0@ABU0@@Z		; Vector2D::operator+=
 
-; 199  : 
-; 200  :   //make sure vehicle does not exceed maximum velocity
-; 201  :   m_vVelocity.Truncate(m_dMaxSpeed);
+; 202  : 
+; 203  :   //make sure vehicle does not exceed maximum velocity
+; 204  :   m_vVelocity.Truncate(m_dMaxSpeed);
 
 	mov	edx, DWORD PTR _this$[ebp]
 	sub	esp, 8
@@ -47347,9 +47794,9 @@ $LN2@UpdateMove:
 	add	ecx, 64					; 00000040H
 	call	?Truncate@Vector2D@@QAEXN@Z		; Vector2D::Truncate
 
-; 202  : 
-; 203  :   //update the position
-; 204  :   m_vPosition += m_vVelocity;
+; 205  : 
+; 206  :   //update the position
+; 207  :   m_vPosition += m_vVelocity;
 
 	mov	eax, DWORD PTR _this$[ebp]
 	add	eax, 64					; 00000040H
@@ -47358,10 +47805,10 @@ $LN2@UpdateMove:
 	add	ecx, 24					; 00000018H
 	call	??YVector2D@@QAEABU0@ABU0@@Z		; Vector2D::operator+=
 
-; 205  : 
-; 206  :   //if the vehicle has a non zero velocity the heading and side vectors must 
-; 207  :   //be updated
-; 208  :   if (!m_vVelocity.isZero())
+; 208  : 
+; 209  :   //if the vehicle has a non zero velocity the heading and side vectors must 
+; 210  :   //be updated
+; 211  :   if (!m_vVelocity.isZero())
 
 	mov	ecx, DWORD PTR _this$[ebp]
 	add	ecx, 64					; 00000040H
@@ -47370,8 +47817,8 @@ $LN2@UpdateMove:
 	test	ecx, ecx
 	jne	SHORT $LN1@UpdateMove
 
-; 209  :   {    
-; 210  :     m_vHeading = Vec2DNormalize(m_vVelocity);
+; 212  :   {    
+; 213  :     m_vHeading = Vec2DNormalize(m_vVelocity);
 
 	mov	edx, DWORD PTR _this$[ebp]
 	add	edx, 64					; 00000040H
@@ -47391,8 +47838,8 @@ $LN2@UpdateMove:
 	mov	eax, DWORD PTR [eax+12]
 	mov	DWORD PTR [ecx+12], eax
 
-; 211  : 
-; 212  :     m_vSide = m_vHeading.Perp();
+; 214  : 
+; 215  :     m_vSide = m_vHeading.Perp();
 
 	lea	ecx, DWORD PTR $T1[ebp]
 	push	ecx
@@ -47411,8 +47858,8 @@ $LN2@UpdateMove:
 	mov	DWORD PTR [edx+12], eax
 $LN1@UpdateMove:
 
-; 213  :   }
-; 214  : }
+; 216  :   }
+; 217  : }
 
 	push	edx
 	mov	ecx, ebp
@@ -56093,6 +56540,37 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ?GetTarget@Raven_TargetingSystem@@QBEPAVRaven_Bot@@XZ ENDP ; Raven_TargetingSystem::GetTarget
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_targetingsystem.h
+;	COMDAT ?isTargetPresent@Raven_TargetingSystem@@QBE_NXZ
+_TEXT	SEGMENT
+tv66 = -8						; size = 4
+_this$ = -4						; size = 4
+?isTargetPresent@Raven_TargetingSystem@@QBE_NXZ PROC	; Raven_TargetingSystem::isTargetPresent, COMDAT
+; _this$ = ecx
+
+; 45   :   bool       isTargetPresent()const{return m_pCurrentTarget != 0;}
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR _this$[ebp]
+	cmp	DWORD PTR [eax+4], 0
+	je	SHORT $LN3@isTargetPr
+	mov	DWORD PTR tv66[ebp], 1
+	jmp	SHORT $LN4@isTargetPr
+$LN3@isTargetPr:
+	mov	DWORD PTR tv66[ebp], 0
+$LN4@isTargetPr:
+	mov	al, BYTE PTR tv66[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?isTargetPresent@Raven_TargetingSystem@@QBE_NXZ ENDP	; Raven_TargetingSystem::isTargetPresent
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\misc\utils.h

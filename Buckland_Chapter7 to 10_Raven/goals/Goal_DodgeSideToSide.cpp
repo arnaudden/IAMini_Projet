@@ -87,7 +87,7 @@ void Goal_DodgeSideToSide::Terminate()
 
 void Goal_DodgeSideToSide::Render()
 {
-//#define SHOW_TARGET
+#define SHOW_TARGET
 #ifdef SHOW_TARGET
   gdi->OrangePen();
   gdi->HollowBrush();

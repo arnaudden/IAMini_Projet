@@ -29,7 +29,7 @@ _colors	DD	0ffH
 	ORG $+4
 _SmallestDelay DQ 03fd0000000000000r		; 0.25
 _pi	DQ	0400921f9f01b866er		; 3.14159
-$SG161714 DB	'Goal_GetItem cannot determine item type', 00H
+$SG161716 DB	'Goal_GetItem cannot determine item type', 00H
 CONST	ENDS
 PUBLIC	_hypot
 PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
@@ -6380,7 +6380,7 @@ $LN1@ItemTypeTo:
 ; 32   : 
 ; 33   :   default: throw std::runtime_error("Goal_GetItem cannot determine item type");
 
-	push	OFFSET $SG161714
+	push	OFFSET $SG161716
 	lea	ecx, DWORD PTR $T1[ebp]
 	call	??0runtime_error@std@@QAE@PBD@Z		; std::runtime_error::runtime_error
 	push	OFFSET __TI2?AVruntime_error@std@@
@@ -6416,7 +6416,7 @@ _this$ = -4						; size = 4
 ?GetPathPlanner@Raven_Bot@@QAEQAVRaven_PathPlanner@@XZ PROC ; Raven_Bot::GetPathPlanner, COMDAT
 ; _this$ = ecx
 
-; 211  :   Raven_PathPlanner* const           GetPathPlanner(){return m_pPathPlanner;}
+; 214  :   Raven_PathPlanner* const           GetPathPlanner(){return m_pPathPlanner;}
 
 	push	ebp
 	mov	ebp, esp

@@ -87,6 +87,8 @@ Raven_Bot::Raven_Bot(Raven_Game* world,Vector2D pos, string t):
   m_pSensoryMem = new Raven_SensoryMemory(this, script->GetDouble("Bot_MemorySpan"));
 
   team = t;
+
+  InitializeFuzzyModule();
 }
 
 //-------------------------------- dtor ---------------------------------------
@@ -165,9 +167,10 @@ void Raven_Bot::Update()
       m_pWeaponSys->SelectWeapon();       
     }
 
+	vShotDeviation = addDeviation();
     //this method aims the bot's current weapon at the current target
     //and takes a shot if a shot is possible
-    m_pWeaponSys->TakeAimAndShoot();
+    m_pWeaponSys->TakeAimAndShoot(vShotDeviation);
   }
 }
 
@@ -400,7 +403,7 @@ void Raven_Bot::FireWeapon(Vector2D pos)
 #ifdef LOG_CREATIONAL_STUFF
 		debug_con << "Targetvisibility" << ttos(targetVisibility) << "";
 #endif
-
+		
 		m_FuzzyModule.Fuzzify("DistToTarget", distanceToTarget);
 		m_FuzzyModule.Fuzzify("TargetVisilibity", targetVisibility);
 		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
@@ -408,7 +411,7 @@ void Raven_Bot::FireWeapon(Vector2D pos)
 		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
 		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
 		m_pWeaponSys->ShootAt(pos + vShotDeviation);
-	
+		
 }
 
 //----------------- CalculateExpectedTimeToReachPosition ----------------------
@@ -510,7 +513,12 @@ void Raven_Bot::Render()
 
   if (isDead() || isSpawning()) return;
   
-  gdi->BluePen();
+  
+	  gdi->BluePen();
+  
+ 
+	  
+  
   
   m_vecBotVBTrans = WorldTransform(m_vecBotVB,
                                    Pos(),
@@ -521,8 +529,17 @@ void Raven_Bot::Render()
   gdi->ClosedShape(m_vecBotVBTrans);
   
   //draw the head
-  gdi->BrownBrush();
-  gdi->Circle(Pos(), 6.0 * Scale().x);
+  if (team == "Blue")
+  {
+	  gdi->BlueBrush();
+	  gdi->Circle(Pos(), 6.0 * Scale().x);
+  }
+  else if (team == "Red")
+  {
+	  gdi->RedBrush();
+	  gdi->Circle(Pos(), 6.0 * Scale().x);
+  }
+ 
 
 
   //render the bot's weapon
@@ -606,7 +623,8 @@ void Raven_Bot::IncreaseHealth(unsigned int val)
 
 void Raven_Bot::InitializeFuzzyModule()
 {
-	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistToTarget");
+	
+	FuzzyVariable& DistToTarget = m_FuzzyModule.CreateFLV("DistanceToTarget");
 
 	FzSet& Target_VeryClose = DistToTarget.AddLeftShoulderSet("Target_VeryClose", 0, 25, 50);
 	FzSet& Target_Close = DistToTarget.AddTriangularSet("Target_Close", 25, 50, 150);
@@ -615,9 +633,9 @@ void Raven_Bot::InitializeFuzzyModule()
 	FzSet& Target_VeryFar = DistToTarget.AddRightShoulderSet("Target_VeryFar", 300, 600, 1000);
 
 	FuzzyVariable& Velocity = m_FuzzyModule.CreateFLV("Velocity");
-	FzSet& Fast= Velocity.AddTriangularSet("Fast", 0.30, 0.60, 1);
-	FzSet& Middle = Velocity.AddTriangularSet("MiddleSpeed", 0.10, 0.30, 0.60);
-	FzSet& Slow = Velocity.AddLeftShoulderSet("Slow", 0, 0.10, 0.30);
+	FzSet& Fast= Velocity.AddTriangularSet("Fast", 30, 60, 100);
+	FzSet& Middle = Velocity.AddTriangularSet("MiddleSpeed", 10, 30, 60);
+	FzSet& Slow = Velocity.AddLeftShoulderSet("Slow", 0, 10, 30);
 
 
 	FuzzyVariable& TargetVisibility = m_FuzzyModule.CreateFLV("TargetVisibility");
@@ -702,5 +720,25 @@ void Raven_Bot::InitializeFuzzyModule()
 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, ShortVisibility), LongDeviation);
 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, Visibility), LongDeviation);
 	m_FuzzyModule.AddRule(FzAND(Target_VeryFar, Fast, LongVisibility), LongDeviation);
+	
+}
 
+Vector2D Raven_Bot::addDeviation()
+{
+	if (m_pTargSys->isTargetPresent())
+	{
+		double distanceToTarget = Vec2DDistance(Pos(), GetTargetBot()->Pos());
+		double targetVisibility = m_pSensoryMem->GetTimeOpponentHasBeenVisible(GetTargetBot());
+		double targetVelocity = Vec2DLength(GetTargetBot()->Velocity());
+
+
+		m_FuzzyModule.Fuzzify("DistanceToTarget", distanceToTarget);
+		m_FuzzyModule.Fuzzify("Velocity", targetVelocity);
+		m_FuzzyModule.Fuzzify("TargetVisibility", targetVisibility);
+
+		double shotDeviation = m_FuzzyModule.DeFuzzify("ShotDeviation", FuzzyModule::max_av);
+		Vector2D vShotDeviation = Vector2D(shotDeviation, shotDeviation);
+		return vShotDeviation;
+	}
+	
 }

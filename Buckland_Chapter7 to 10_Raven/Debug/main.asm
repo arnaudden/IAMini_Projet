@@ -16,25 +16,25 @@ _BSS	SEGMENT
 ?g_pRaven@@3PAVRaven_Game@@A DD 01H DUP (?)		; g_pRaven
 _BSS	ENDS
 CONST	SEGMENT
-$SG157766 DB	'Raven', 00H
-$SG157843 DB	00H
+$SG157768 DB	'Raven', 00H
+$SG157845 DB	00H
 	ORG $+1
-$SG157768 DB	'MyWindowClass', 00H
+$SG157770 DB	'MyWindowClass', 00H
 	ORG $+2
-$SG157817 DB	'red', 00H
-$SG157831 DB	'map', 00H
-$SG157832 DB	'Raven map file (*.map)', 00H
+$SG157819 DB	'red', 00H
+$SG157833 DB	'map', 00H
+$SG157834 DB	'Raven map file (*.map)', 00H
 	ORG $+1
-$SG157842 DB	'Filename: ', 00H
+$SG157844 DB	'Filename: ', 00H
 	ORG $+1
-$SG157848 DB	'red', 00H
-$SG157897 DB	'Error', 00H
+$SG157850 DB	'red', 00H
+$SG157899 DB	'Error', 00H
 	ORG $+2
-$SG157898 DB	'Registration Failed!', 00H
+$SG157900 DB	'Registration Failed!', 00H
 	ORG $+3
-$SG157901 DB	'Error!', 00H
+$SG157903 DB	'Error!', 00H
 	ORG $+1
-$SG157902 DB	'CreateWindowEx Failed!', 00H
+$SG157904 DB	'CreateWindowEx Failed!', 00H
 	ORG $+1
 _Pi	DQ	0400921f9f01b866er		; 3.14159
 _pi	DQ	0400921f9f01b866er		; 3.14159
@@ -55,8 +55,8 @@ _colors	DD	0ffH
 	DD	0e6e6ffH
 CONST	ENDS
 _DATA	SEGMENT
-?g_szApplicationName@@3PADA DD FLAT:$SG157766		; g_szApplicationName
-?g_szWindowClassName@@3PADA DD FLAT:$SG157768		; g_szWindowClassName
+?g_szApplicationName@@3PADA DD FLAT:$SG157768		; g_szApplicationName
+?g_szWindowClassName@@3PADA DD FLAT:$SG157770		; g_szWindowClassName
 _DATA	ENDS
 PUBLIC	_WinMain@16
 PUBLIC	_hypot
@@ -10015,7 +10015,7 @@ $LN27@WindowProc:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T3[ebp], esp
-	push	OFFSET $SG157817
+	push	OFFSET $SG157819
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv511[ebp], eax
 	push	1
@@ -10102,11 +10102,11 @@ $LN20@WindowProc:
 ; 203  :           
 ; 204  :           FileOpenDlg(hwnd, szFileName, szTitleName, "Raven map file (*.map)", "map");
 
-	push	OFFSET $SG157831
+	push	OFFSET $SG157833
 	lea	ecx, DWORD PTR $T10[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 1
-	push	OFFSET $SG157832
+	push	OFFSET $SG157834
 	lea	ecx, DWORD PTR $T9[ebp]
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	BYTE PTR __$EHRec$[ebp+8], 2
@@ -10130,9 +10130,9 @@ $LN20@WindowProc:
 ; 205  : 
 ; 206  :           debug_con << "Filename: " << szTitleName << "";
 
-	push	OFFSET $SG157843
+	push	OFFSET $SG157845
 	push	OFFSET ?szTitleName@?1??WindowProc@@YGJPAUHWND__@@IIJ@Z@4PADA
-	push	OFFSET $SG157842
+	push	OFFSET $SG157844
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY0L@$$CBD@DebugConsole@@QAEAAV0@AAY0L@$$CBD@Z ; DebugConsole::operator<<<char const [11]>
@@ -10181,7 +10181,7 @@ $LN18@WindowProc:
 	sub	esp, 28					; 0000001cH
 	mov	ecx, esp
 	mov	DWORD PTR $T2[ebp], esp
-	push	OFFSET $SG157848
+	push	OFFSET $SG157850
 	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 	mov	DWORD PTR tv516[ebp], eax
 	push	1
@@ -26857,8 +26857,8 @@ _WinMain@16 PROC
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG157897
-	push	OFFSET $SG157898
+	push	OFFSET $SG157899
+	push	OFFSET $SG157900
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
@@ -26945,8 +26945,8 @@ $LN10@WinMain:
 
 	mov	esi, esp
 	push	0
-	push	OFFSET $SG157901
-	push	OFFSET $SG157902
+	push	OFFSET $SG157903
+	push	OFFSET $SG157904
 	push	0
 	call	DWORD PTR __imp__MessageBoxA@16
 	cmp	esi, esp
