@@ -1675,7 +1675,7 @@ _this$ = -4						; size = 4
 ?SeekOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOff, COMDAT
 ; _this$ = ecx
 
-; 212  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
+; 220  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -1710,7 +1710,7 @@ _this$ = -4						; size = 4
 ?SeekOn@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOn, COMDAT
 ; _this$ = ecx
 
-; 206  :   void SeekOn(){m_iFlags |= seek;}
+; 214  :   void SeekOn(){m_iFlags |= seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -1736,7 +1736,7 @@ _t$ = 8							; size = 16
 ?SetTarget@Raven_Steering@@QAEXUVector2D@@@Z PROC	; Raven_Steering::SetTarget, COMDAT
 ; _this$ = ecx
 
-; 194  :   void      SetTarget(Vector2D t){m_vTarget = t;}
+; 202  :   void      SetTarget(Vector2D t){m_vTarget = t;}
 
 	push	ebp
 	mov	ebp, esp
@@ -1768,7 +1768,7 @@ _bt$ = 8						; size = 4
 ?On@Raven_Steering@@AAE_NW4behavior_type@1@@Z PROC	; Raven_Steering::On, COMDAT
 ; _this$ = ecx
 
-; 131  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
+; 133  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
 	push	ebp
 	mov	ebp, esp

@@ -1562,7 +1562,7 @@ _this$ = -4						; size = 4
 ?WanderOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::WanderOff, COMDAT
 ; _this$ = ecx
 
-; 214  :   void WanderOff(){if(On(wander)) m_iFlags ^=wander;}
+; 222  :   void WanderOff(){if(On(wander)) m_iFlags ^=wander;}
 
 	push	ebp
 	mov	ebp, esp
@@ -1597,7 +1597,7 @@ _this$ = -4						; size = 4
 ?WanderOn@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::WanderOn, COMDAT
 ; _this$ = ecx
 
-; 208  :   void WanderOn(){m_iFlags |= wander;}
+; 216  :   void WanderOn(){m_iFlags |= wander;}
 
 	push	ebp
 	mov	ebp, esp
@@ -1624,7 +1624,7 @@ _bt$ = 8						; size = 4
 ?On@Raven_Steering@@AAE_NW4behavior_type@1@@Z PROC	; Raven_Steering::On, COMDAT
 ; _this$ = ecx
 
-; 131  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
+; 133  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
 	push	ebp
 	mov	ebp, esp

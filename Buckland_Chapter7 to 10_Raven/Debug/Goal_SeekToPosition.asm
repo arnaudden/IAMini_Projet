@@ -11,10 +11,6 @@ INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
 _Pi	DQ	0400921f9f01b866er		; 3.14159
-$SG160171 DB	'BOT ', 00H
-$SG160173 DB	00H
-	ORG $+2
-$SG160172 DB	' IS STUCK!!', 00H
 _colors	DD	0ffH
 	DD	0ff0000H
 	DD	0ff00H
@@ -30,6 +26,10 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
+$SG160205 DB	'BOT ', 00H
+$SG160207 DB	00H
+	ORG $+2
+$SG160206 DB	' IS STUCK!!', 00H
 _pi	DQ	0400921f9f01b866er		; 3.14159
 CONST	ENDS
 PUBLIC	_hypot
@@ -18153,7 +18153,7 @@ _this$ = -4						; size = 4
 ?ArriveOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::ArriveOff, COMDAT
 ; _this$ = ecx
 
-; 213  :   void ArriveOff(){if(On(arrive)) m_iFlags ^=arrive;}
+; 221  :   void ArriveOff(){if(On(arrive)) m_iFlags ^=arrive;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18188,7 +18188,7 @@ _this$ = -4						; size = 4
 ?SeekOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOff, COMDAT
 ; _this$ = ecx
 
-; 212  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
+; 220  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18223,7 +18223,7 @@ _this$ = -4						; size = 4
 ?SeekOn@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOn, COMDAT
 ; _this$ = ecx
 
-; 206  :   void SeekOn(){m_iFlags |= seek;}
+; 214  :   void SeekOn(){m_iFlags |= seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18249,7 +18249,7 @@ _t$ = 8							; size = 16
 ?SetTarget@Raven_Steering@@QAEXUVector2D@@@Z PROC	; Raven_Steering::SetTarget, COMDAT
 ; _this$ = ecx
 
-; 194  :   void      SetTarget(Vector2D t){m_vTarget = t;}
+; 202  :   void      SetTarget(Vector2D t){m_vTarget = t;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18281,7 +18281,7 @@ _bt$ = 8						; size = 4
 ?On@Raven_Steering@@AAE_NW4behavior_type@1@@Z PROC	; Raven_Steering::On, COMDAT
 ; _this$ = ecx
 
-; 131  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
+; 133  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18815,11 +18815,11 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG160173
-	push	OFFSET $SG160172
+	push	OFFSET $SG160207
+	push	OFFSET $SG160206
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG160171
+	push	OFFSET $SG160205
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY04$$CBD@DebugConsole@@QAEAAV0@AAY04$$CBD@Z ; DebugConsole::operator<<<char const [5]>

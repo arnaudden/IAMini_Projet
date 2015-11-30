@@ -66,6 +66,10 @@ public:
 
   //sets the target pointer to null
   void       ClearTarget(){m_pCurrentTarget=0;}
+
+  bool allyBeforeTarget();
+
+  bool fonctionAffine(Vector2D p1, Vector2D p2, Vector2D p3);
 };
 
 

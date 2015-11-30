@@ -262,21 +262,29 @@ void Raven_Game::AddBots(unsigned int NumBotsToAdd)
 	  if (NumBotsToAdd % 2 == 0)
 	  {
 		  rb= new Raven_Bot(this, Vector2D(), "Blue");
+		  //switch the default steering behaviors on
+			rb->GetSteering()->WallAvoidanceOn();
+			rb->GetSteering()->FlockingOn();
+
+		  m_Bots.push_back(rb);
+
+		  //register the bot with the entity manager
+		  EntityMgr->RegisterEntity(rb);
 	  }
 	  else
 	  {
 		  rb = new Raven_Bot(this, Vector2D(), "Red");
+		  //switch the default steering behaviors on
+		  rb->GetSteering()->WallAvoidanceOn();
+		  rb->GetSteering()->SeparationOn();
+
+		  m_Bots.push_back(rb);
+
+		  //register the bot with the entity manager
+		  EntityMgr->RegisterEntity(rb);
 	  }
 	  
 	  
-    //switch the default steering behaviors on
-    rb->GetSteering()->WallAvoidanceOn();
-    rb->GetSteering()->SeparationOn();
-
-    m_Bots.push_back(rb);
-	
-    //register the bot with the entity manager
-    EntityMgr->RegisterEntity(rb);
 
     
 #ifdef LOG_CREATIONAL_STUFF

@@ -11,15 +11,15 @@ INCLUDELIB OLDNAMES
 
 CONST	SEGMENT
 _Pi	DQ	0400921f9f01b866er		; 3.14159
-$SG161024 DB	'Bot_MaxSwimmingSpeed', 00H
-$SG161060 DB	00H
+$SG161058 DB	'Bot_MaxSwimmingSpeed', 00H
+$SG161094 DB	00H
 	ORG $+2
-$SG161026 DB	'Bot_MaxCrawlingSpeed', 00H
+$SG161060 DB	'Bot_MaxCrawlingSpeed', 00H
 	ORG $+3
-$SG161058 DB	'BOT ', 00H
+$SG161092 DB	'BOT ', 00H
 	ORG $+3
-$SG161059 DB	' IS STUCK!!', 00H
-$SG161064 DB	'Bot_MaxSpeed', 00H
+$SG161093 DB	' IS STUCK!!', 00H
+$SG161098 DB	'Bot_MaxSpeed', 00H
 	ORG $+7
 _pi	DQ	0400921f9f01b866er		; 3.14159
 _colors	DD	0ffH
@@ -18130,7 +18130,7 @@ _this$ = -4						; size = 4
 ?ArriveOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::ArriveOff, COMDAT
 ; _this$ = ecx
 
-; 213  :   void ArriveOff(){if(On(arrive)) m_iFlags ^=arrive;}
+; 221  :   void ArriveOff(){if(On(arrive)) m_iFlags ^=arrive;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18165,7 +18165,7 @@ _this$ = -4						; size = 4
 ?SeekOff@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOff, COMDAT
 ; _this$ = ecx
 
-; 212  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
+; 220  :   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18200,7 +18200,7 @@ _this$ = -4						; size = 4
 ?ArriveOn@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::ArriveOn, COMDAT
 ; _this$ = ecx
 
-; 207  :   void ArriveOn(){m_iFlags |= arrive;}
+; 215  :   void ArriveOn(){m_iFlags |= arrive;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18225,7 +18225,7 @@ _this$ = -4						; size = 4
 ?SeekOn@Raven_Steering@@QAEXXZ PROC			; Raven_Steering::SeekOn, COMDAT
 ; _this$ = ecx
 
-; 206  :   void SeekOn(){m_iFlags |= seek;}
+; 214  :   void SeekOn(){m_iFlags |= seek;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18251,7 +18251,7 @@ _t$ = 8							; size = 16
 ?SetTarget@Raven_Steering@@QAEXUVector2D@@@Z PROC	; Raven_Steering::SetTarget, COMDAT
 ; _this$ = ecx
 
-; 194  :   void      SetTarget(Vector2D t){m_vTarget = t;}
+; 202  :   void      SetTarget(Vector2D t){m_vTarget = t;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18283,7 +18283,7 @@ _bt$ = 8						; size = 4
 ?On@Raven_Steering@@AAE_NW4behavior_type@1@@Z PROC	; Raven_Steering::On, COMDAT
 ; _this$ = ecx
 
-; 131  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
+; 133  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
 	push	ebp
 	mov	ebp, esp
@@ -18517,7 +18517,7 @@ _this$ = -4						; size = 4
 ; 141  :   //return max speed back to normal
 ; 142  :   m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxSpeed"));
 
-	push	OFFSET $SG161064
+	push	OFFSET $SG161098
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18688,7 +18688,7 @@ $LN4@Activate:
 ; 42   :     {
 ; 43   :       m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxSwimmingSpeed"));
 
-	push	OFFSET $SG161024
+	push	OFFSET $SG161058
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18710,7 +18710,7 @@ $LN3@Activate:
 ; 49   :     {
 ; 50   :        m_pOwner->SetMaxSpeed(script->GetDouble("Bot_MaxCrawlingSpeed"));
 
-	push	OFFSET $SG161026
+	push	OFFSET $SG161060
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -18946,11 +18946,11 @@ _this$ = -4						; size = 4
 	mov	ecx, DWORD PTR [edx+8]
 	call	?ID@BaseGameEntity@@QBEHXZ		; BaseGameEntity::ID
 	mov	DWORD PTR $T1[ebp], eax
-	push	OFFSET $SG161060
-	push	OFFSET $SG161059
+	push	OFFSET $SG161094
+	push	OFFSET $SG161093
 	lea	eax, DWORD PTR $T1[ebp]
 	push	eax
-	push	OFFSET $SG161058
+	push	OFFSET $SG161092
 	call	?Instance@DebugConsole@@SAPAV1@XZ	; DebugConsole::Instance
 	mov	ecx, eax
 	call	??$?6$$BY04$$CBD@DebugConsole@@QAEAAV0@AAY04$$CBD@Z ; DebugConsole::operator<<<char const [5]>

@@ -354,6 +354,13 @@ void Raven_Bot::ReduceHealth(unsigned int val)
   m_iNumUpdatesHitPersistant = (int)(FrameRate * script->GetDouble("HitFlashTime"));
 }
 
+void Raven_Bot::DropAmmo(){
+	m_pWeaponSys->GetAmmoRemainingForWeapon(type_rail_gun);
+	m_pWeaponSys->GetAmmoRemainingForWeapon(type_rocket_launcher);
+	m_pWeaponSys->GetAmmoRemainingForWeapon(type_shotgun);
+	m_pWeaponSys->GetAmmoRemainingForWeapon(type_blaster);
+}
+
 //--------------------------- Possess -----------------------------------------
 //
 //  this is called to allow a human player to control the bot

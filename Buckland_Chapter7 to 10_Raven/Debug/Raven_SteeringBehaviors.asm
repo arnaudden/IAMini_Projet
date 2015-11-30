@@ -26,22 +26,22 @@ _colors	DD	0ffH
 	DD	0ffff00H
 	DD	0c8c8c8H
 	DD	0e6e6ffH
-$SG157167 DB	'WallDetectionFeelerLength', 00H
+$SG157201 DB	'WallDetectionFeelerLength', 00H
 	ORG $+2
 _WanderRad DQ	03ff3333333333333r		; 1.2
 _WanderDist DQ	04000000000000000r		; 2
 _WanderJitterPerSec DQ 04044000000000000r	; 40
 _pi	DQ	0400921f9f01b866er		; 3.14159
-$SG157168 DB	'SeparationWeight', 00H
+$SG157202 DB	'SeparationWeight', 00H
 	ORG $+3
-$SG157169 DB	'WanderWeight', 00H
+$SG157203 DB	'WanderWeight', 00H
 	ORG $+3
-$SG157170 DB	'WallAvoidanceWeight', 00H
-$SG157171 DB	'SeekWeight', 00H
+$SG157204 DB	'WallAvoidanceWeight', 00H
+$SG157205 DB	'SeekWeight', 00H
 	ORG $+1
-$SG157172 DB	'ArriveWeight', 00H
+$SG157206 DB	'ArriveWeight', 00H
 	ORG $+3
-$SG157173 DB	'ViewDistance', 00H
+$SG157207 DB	'ViewDistance', 00H
 CONST	ENDS
 PUBLIC	_hypot
 PUBLIC	?max@?$numeric_limits@H@std@@SAHXZ		; std::numeric_limits<int>::max
@@ -52,6 +52,7 @@ PUBLIC	?max@?$numeric_limits@N@std@@SANXZ		; std::numeric_limits<double>::max
 PUBLIC	?epsilon@?$numeric_limits@N@std@@SANXZ		; std::numeric_limits<double>::epsilon
 PUBLIC	??2@YAPAXIPAX@Z					; operator new
 PUBLIC	??3@YAXPAX0@Z					; operator delete
+PUBLIC	?compare@?$char_traits@D@std@@SAHPBD0I@Z	; std::char_traits<char>::compare
 PUBLIC	?length@?$char_traits@D@std@@SAIPBD@Z		; std::char_traits<char>::length
 PUBLIC	?copy@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::copy
 PUBLIC	?move@?$char_traits@D@std@@SAPADPADPBDI@Z	; std::char_traits<char>::move
@@ -66,12 +67,17 @@ PUBLIC	??1_Iterator_base12@std@@QAE@XZ			; std::_Iterator_base12::~_Iterator_bas
 PUBLIC	?_Adopt@_Iterator_base12@std@@QAEXPBU_Container_base12@2@@Z ; std::_Iterator_base12::_Adopt
 PUBLIC	?_Getcont@_Iterator_base12@std@@QBEPBU_Container_base12@2@XZ ; std::_Iterator_base12::_Getcont
 PUBLIC	?_Orphan_me@_Iterator_base12@std@@QAEXXZ	; std::_Iterator_base12::_Orphan_me
+PUBLIC	?select_on_container_copy_construction@?$allocator@D@std@@QBE?AV12@XZ ; std::allocator<char>::select_on_container_copy_construction
 PUBLIC	??0?$allocator@D@std@@QAE@XZ			; std::allocator<char>::allocator<char>
+PUBLIC	??0?$allocator@D@std@@QAE@ABV01@@Z		; std::allocator<char>::allocator<char>
 PUBLIC	?deallocate@?$allocator@D@std@@QAEXPADI@Z	; std::allocator<char>::deallocate
 PUBLIC	?allocate@?$allocator@D@std@@QAEPADI@Z		; std::allocator<char>::allocate
 PUBLIC	?max_size@?$allocator@D@std@@QBEIXZ		; std::allocator<char>::max_size
 PUBLIC	?max_size@?$allocator_traits@V?$allocator@D@std@@@std@@SAIABV?$allocator@D@2@@Z ; std::allocator_traits<std::allocator<char> >::max_size
+PUBLIC	?select_on_container_copy_construction@?$allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ; std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction
+PUBLIC	?select_on_container_copy_construction@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBE?AU12@XZ ; std::_Wrap_alloc<std::allocator<char> >::select_on_container_copy_construction
 PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
+PUBLIC	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
 PUBLIC	?allocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::allocate
 PUBLIC	?deallocate@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPADI@Z ; std::_Wrap_alloc<std::allocator<char> >::deallocate
 PUBLIC	?max_size@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBEIXZ ; std::_Wrap_alloc<std::allocator<char> >::max_size
@@ -84,6 +90,7 @@ PUBLIC	??1?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@
 PUBLIC	?_Alloc_proxy@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAEXXZ ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::_Alloc_proxy
 PUBLIC	?_Free_proxy@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAEXXZ ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::_Free_proxy
 PUBLIC	?_Getal@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QBE?AU?$_Wrap_alloc@V?$allocator@D@std@@@2@XZ ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::_Getal
+PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@PBD@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@$$QAV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
@@ -104,6 +111,8 @@ PUBLIC	?c_str@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEPB
 PUBLIC	?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::size
 PUBLIC	?max_size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::max_size
 PUBLIC	?reserve@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::reserve
+PUBLIC	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHABV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+PUBLIC	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHIIPBDI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
 PUBLIC	?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Copy
 PUBLIC	?_Eos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Eos
 PUBLIC	?_Grow@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE_NI_N@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Grow
@@ -158,7 +167,9 @@ PUBLIC	?LengthSq@Vector2D@@QBENXZ			; Vector2D::LengthSq
 PUBLIC	?Normalize@Vector2D@@QAEXXZ			; Vector2D::Normalize
 PUBLIC	?Dot@Vector2D@@QBENABU1@@Z			; Vector2D::Dot
 PUBLIC	??YVector2D@@QAEABU0@ABU0@@Z			; Vector2D::operator+=
+PUBLIC	??ZVector2D@@QAEABU0@ABU0@@Z			; Vector2D::operator-=
 PUBLIC	??XVector2D@@QAEABU0@ABN@Z			; Vector2D::operator*=
+PUBLIC	??_0Vector2D@@QAEABU0@ABN@Z			; Vector2D::operator/=
 PUBLIC	??D@YA?AUVector2D@@ABU0@N@Z			; operator*
 PUBLIC	??D@YA?AUVector2D@@NABU0@@Z			; operator*
 PUBLIC	??G@YA?AUVector2D@@ABU0@0@Z			; operator-
@@ -201,6 +212,8 @@ PUBLIC	?Arrive@Raven_Steering@@AAE?AUVector2D@@ABU2@W4Deceleration@1@@Z ; Raven_
 PUBLIC	?Wander@Raven_Steering@@AAE?AUVector2D@@XZ	; Raven_Steering::Wander
 PUBLIC	?WallAvoidance@Raven_Steering@@AAE?AUVector2D@@ABV?$vector@PAVWall2D@@V?$allocator@PAVWall2D@@@std@@@std@@@Z ; Raven_Steering::WallAvoidance
 PUBLIC	?Separation@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ; Raven_Steering::Separation
+PUBLIC	?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ; Raven_Steering::Cohesion
+PUBLIC	?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ; Raven_Steering::Alignment
 PUBLIC	?CalculatePrioritized@Raven_Steering@@AAE?AUVector2D@@XZ ; Raven_Steering::CalculatePrioritized
 PUBLIC	??0Raven_Steering@@QAE@PAVRaven_Game@@PAVRaven_Bot@@@Z ; Raven_Steering::Raven_Steering
 PUBLIC	??1Raven_Steering@@UAE@XZ			; Raven_Steering::~Raven_Steering
@@ -231,6 +244,7 @@ PUBLIC	?MaxSpeed@MovingEntity@@QBENXZ			; MovingEntity::MaxSpeed
 PUBLIC	?MaxForce@MovingEntity@@QBENXZ			; MovingEntity::MaxForce
 PUBLIC	?Speed@MovingEntity@@QBENXZ			; MovingEntity::Speed
 PUBLIC	?Heading@MovingEntity@@QBE?AUVector2D@@XZ	; MovingEntity::Heading
+PUBLIC	?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Raven_Bot::GetTeam
 PUBLIC	?From@Wall2D@@QBE?AUVector2D@@XZ		; Wall2D::From
 PUBLIC	?To@Wall2D@@QBE?AUVector2D@@XZ			; Wall2D::To
 PUBLIC	?Normal@Wall2D@@QBE?AUVector2D@@XZ		; Wall2D::Normal
@@ -266,6 +280,7 @@ PUBLIC	??8?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot
 PUBLIC	??9?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator!=
 PUBLIC	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::~_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >
 PUBLIC	??4?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator=
+PUBLIC	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
 PUBLIC	??$forward@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YA$$QAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z ; std::forward<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 PUBLIC	??$_Uninitialized_default_fill_n@PAUVector2D@@IU?$_Wrap_alloc@V?$allocator@UVector2D@@@std@@@std@@@std@@YAXPAUVector2D@@IAAU?$_Wrap_alloc@V?$allocator@UVector2D@@@std@@@0@@Z ; std::_Uninitialized_default_fill_n<Vector2D *,unsigned int,std::_Wrap_alloc<std::allocator<Vector2D> > >
 PUBLIC	??$construct@PADAAPAD@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAEXPAPADAAPAD@Z ; std::_Wrap_alloc<std::allocator<char> >::construct<char *,char * &>
@@ -421,6 +436,7 @@ EXTRN	_sqrt:PROC
 EXTRN	__hypot:PROC
 EXTRN	_memmove:PROC
 EXTRN	_memcpy:PROC
+EXTRN	_memcmp:PROC
 EXTRN	_strlen:PROC
 EXTRN	??0exception@std@@QAE@ABQBD@Z:PROC		; std::exception::exception
 EXTRN	??0exception@std@@QAE@ABV01@@Z:PROC		; std::exception::exception
@@ -1329,9 +1345,39 @@ __unwindtable$?Separation@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot
 	DD	FLAT:__unwindfunclet$?Separation@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$0
 	DD	00H
 	DD	FLAT:__unwindfunclet$?Separation@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$1
+__unwindtable$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$1
+	DD	00H
+	DD	FLAT:__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$2
+	DD	02H
+	DD	FLAT:__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$3
+__unwindtable$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$0
+	DD	00H
+	DD	FLAT:__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$1
+	DD	00H
+	DD	FLAT:__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$2
+	DD	02H
+	DD	FLAT:__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$3
 __ehfuncinfo$??0Raven_Steering@@QAE@PAVRaven_Game@@PAVRaven_Bot@@@Z DD 019930522H
 	DD	01H
 	DD	FLAT:__unwindtable$??0Raven_Steering@@QAE@PAVRaven_Game@@PAVRaven_Bot@@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__ehfuncinfo$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z DD 019930522H
+	DD	04H
+	DD	FLAT:__unwindtable$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+__ehfuncinfo$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z DD 019930522H
+	DD	04H
+	DD	FLAT:__unwindtable$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
 	DD	00H
@@ -1450,6 +1496,18 @@ __unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QA
 __ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ DD 019930522H
 	DD	01H
 	DD	FLAT:__unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ
+	DD	2 DUP(00H)
+	DD	2 DUP(00H)
+	DD	00H
+	DD	01H
+xdata$x	ENDS
+;	COMDAT xdata$x
+xdata$x	SEGMENT
+__unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z DD 0ffffffffH
+	DD	FLAT:__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$0
+__ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z DD 019930522H
+	DD	01H
+	DD	FLAT:__unwindtable$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
 	DD	2 DUP(00H)
 	DD	2 DUP(00H)
 	DD	00H
@@ -3488,6 +3546,47 @@ __Arg$ = 8						; size = 4
 ??$forward@V?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@std@@YA$$QAV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@AAV10@@Z ENDP ; std::forward<std::basic_string<char,std::char_traits<char>,std::allocator<char> > >
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
+;	COMDAT ??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z
+_TEXT	SEGMENT
+tv68 = -4						; size = 4
+__Left$ = 8						; size = 4
+__Right$ = 12						; size = 4
+??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z PROC ; std::operator==<char,std::char_traits<char>,std::allocator<char> >, COMDAT
+
+; 2468 : 	{	// test for string equality
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+
+; 2469 : 	return (_Left.compare(_Right) == 0);
+
+	mov	eax, DWORD PTR __Right$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __Left$[ebp]
+	call	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHABV12@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+	test	eax, eax
+	jne	SHORT $LN3@operator
+	mov	DWORD PTR tv68[ebp], 1
+	jmp	SHORT $LN4@operator
+$LN3@operator:
+	mov	DWORD PTR tv68[ebp], 0
+$LN4@operator:
+	mov	al, BYTE PTR tv68[ebp]
+
+; 2470 : 	}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ENDP ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
 ;	COMDAT ??4?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAEAAV01@ABV01@@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -5334,6 +5433,42 @@ ___$ReturnUdt$ = 8					; size = 4
 	pop	ebp
 	ret	4
 ?From@Wall2D@@QBE?AUVector2D@@XZ ENDP			; Wall2D::From
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_bot.h
+;	COMDAT ?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ
+_TEXT	SEGMENT
+$T1 = -8						; size = 4
+_this$ = -4						; size = 4
+___$ReturnUdt$ = 8					; size = 4
+?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ PROC ; Raven_Bot::GetTeam, COMDAT
+; _this$ = ecx
+
+; 227  :   string GetTeam(){ return team; }
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	DWORD PTR $T1[ebp], 0
+	mov	eax, DWORD PTR _this$[ebp]
+	add	eax, 300				; 0000012cH
+	push	eax
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+	mov	ecx, DWORD PTR $T1[ebp]
+	or	ecx, 1
+	mov	DWORD PTR $T1[ebp], ecx
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	add	esp, 8
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ENDP ; Raven_Bot::GetTeam
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\game\movingentity.h
@@ -7256,7 +7391,7 @@ _agent$ = 12						; size = 4
 	add	ecx, 56					; 00000038H
 	call	??0?$vector@UVector2D@@V?$allocator@UVector2D@@@std@@@std@@QAE@I@Z ; std::vector<Vector2D,std::allocator<Vector2D> >::vector<Vector2D,std::allocator<Vector2D> >
 	mov	DWORD PTR __$EHRec$[ebp+8], 0
-	push	OFFSET $SG157167
+	push	OFFSET $SG157201
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -7274,37 +7409,37 @@ _agent$ = 12						; size = 4
 	mov	ecx, DWORD PTR _this$[ebp]
 	movsd	xmm0, QWORD PTR _WanderDist
 	movsd	QWORD PTR [ecx+112], xmm0
-	push	OFFSET $SG157168
+	push	OFFSET $SG157202
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	mov	edx, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [edx+120]
-	push	OFFSET $SG157169
+	push	OFFSET $SG157203
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	mov	eax, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [eax+128]
-	push	OFFSET $SG157170
+	push	OFFSET $SG157204
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	mov	ecx, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [ecx+136]
-	push	OFFSET $SG157171
+	push	OFFSET $SG157205
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	mov	edx, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [edx+144]
-	push	OFFSET $SG157172
+	push	OFFSET $SG157206
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
 	mov	eax, DWORD PTR _this$[ebp]
 	fstp	QWORD PTR [eax+152]
-	push	OFFSET $SG157173
+	push	OFFSET $SG157207
 	call	?Instance@Raven_Scriptor@@SAPAV1@XZ	; Raven_Scriptor::Instance
 	mov	ecx, eax
 	call	?GetDouble@Scriptor@@QAENPAD@Z		; Scriptor::GetDouble
@@ -7874,6 +8009,746 @@ $LN13@CalculateP:
 	DB	0
 ?CalculatePrioritized@Raven_Steering@@AAE?AUVector2D@@XZ ENDP ; Raven_Steering::CalculatePrioritized
 _TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_steeringbehaviors.cpp
+_TEXT	SEGMENT
+tv148 = -216						; size = 4
+tv190 = -212						; size = 4
+tv200 = -208						; size = 4
+tv185 = -204						; size = 4
+tv196 = -200						; size = 4
+tv180 = -196						; size = 4
+tv66 = -192						; size = 4
+$T2 = -188						; size = 4
+$T3 = -184						; size = 16
+$T4 = -168						; size = 8
+$T5 = -160						; size = 16
+$T6 = -141						; size = 1
+$T7 = -140						; size = 12
+$T8 = -125						; size = 1
+$T9 = -124						; size = 28
+$T10 = -96						; size = 28
+_it$ = -64						; size = 12
+_NeighborCount$ = -48					; size = 4
+_AverageHeading$ = -40					; size = 16
+_this$ = -20						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+_neighbors$ = 12					; size = 4
+?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z PROC ; Raven_Steering::Alignment
+; _this$ = ecx
+
+; 412  : {
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 204				; 000000ccH
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-216]
+	mov	ecx, 51					; 00000033H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	DWORD PTR $T2[ebp], 0
+
+; 413  : 	//used to record the average heading of the neighbors
+; 414  : 	Vector2D AverageHeading;
+
+	lea	ecx, DWORD PTR _AverageHeading$[ebp]
+	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
+
+; 415  : 
+; 416  : 	//used to count the number of vehicles in the neighborhood
+; 417  : 	int    NeighborCount = 0;
+
+	mov	DWORD PTR _NeighborCount$[ebp], 0
+
+; 418  : 
+; 419  : 	std::list<Raven_Bot*>::const_iterator it = neighbors.begin();
+
+	lea	eax, DWORD PTR _it$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _neighbors$[ebp]
+	call	?begin@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QBE?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::begin
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	jmp	SHORT $LN5@Alignment
+$LN4@Alignment:
+
+; 420  : 
+; 421  : 	for (it; it != neighbors.end(); ++it)
+
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??E?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator++
+$LN5@Alignment:
+	lea	ecx, DWORD PTR $T7[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _neighbors$[ebp]
+	call	?end@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QBE?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::end
+	mov	DWORD PTR tv66[ebp], eax
+	mov	edx, DWORD PTR tv66[ebp]
+	mov	DWORD PTR tv180[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	mov	eax, DWORD PTR tv180[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??9?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator!=
+	mov	BYTE PTR $T8[ebp], al
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	lea	ecx, DWORD PTR $T7[ebp]
+	call	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+	movzx	ecx, BYTE PTR $T8[ebp]
+	test	ecx, ecx
+	je	$LN3@Alignment
+
+; 422  : 	{
+; 423  : 		//make sure this agent isn't included in the calculations and that
+; 424  : 		//the agent being examined is close enough. ***also make sure it doesn't
+; 425  : 		//include the evade target ***
+; 426  : 		if ((*it != m_pRaven_Bot) && (*it)->IsTagged() &&
+; 427  : 			(*it != m_pTargetAgent1) && (*it)->GetTeam() == m_pRaven_Bot->GetTeam())
+
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax]
+	cmp	eax, DWORD PTR [edx+8]
+	je	$LN8@Alignment
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?IsTagged@BaseGameEntity@@QBE_NXZ	; BaseGameEntity::IsTagged
+	movzx	ecx, al
+	test	ecx, ecx
+	je	$LN8@Alignment
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax]
+	cmp	eax, DWORD PTR [edx+32]
+	je	$LN8@Alignment
+	lea	ecx, DWORD PTR $T9[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [edx+8]
+	call	?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Raven_Bot::GetTeam
+	mov	DWORD PTR tv196[ebp], eax
+	mov	eax, DWORD PTR tv196[ebp]
+	mov	DWORD PTR tv185[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 2
+	mov	ecx, DWORD PTR $T2[ebp]
+	or	ecx, 1
+	mov	DWORD PTR $T2[ebp], ecx
+	mov	edx, DWORD PTR tv185[ebp]
+	push	edx
+	lea	eax, DWORD PTR $T10[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Raven_Bot::GetTeam
+	mov	DWORD PTR tv200[ebp], eax
+	mov	ecx, DWORD PTR tv200[ebp]
+	mov	DWORD PTR tv190[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], 3
+	mov	edx, DWORD PTR $T2[ebp]
+	or	edx, 2
+	mov	DWORD PTR $T2[ebp], edx
+	mov	eax, DWORD PTR tv190[ebp]
+	push	eax
+	call	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+	add	esp, 8
+	movzx	ecx, al
+	test	ecx, ecx
+	je	SHORT $LN8@Alignment
+	mov	DWORD PTR tv148[ebp], 1
+	jmp	SHORT $LN9@Alignment
+$LN8@Alignment:
+	mov	DWORD PTR tv148[ebp], 0
+$LN9@Alignment:
+	mov	dl, BYTE PTR tv148[ebp]
+	mov	BYTE PTR $T6[ebp], dl
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 2
+	je	SHORT $LN16@Alignment
+	and	DWORD PTR $T2[ebp], -3			; fffffffdH
+	lea	ecx, DWORD PTR $T10[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN16@Alignment:
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	mov	ecx, DWORD PTR $T2[ebp]
+	and	ecx, 1
+	je	SHORT $LN17@Alignment
+	and	DWORD PTR $T2[ebp], -2			; fffffffeH
+	lea	ecx, DWORD PTR $T9[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN17@Alignment:
+	movzx	edx, BYTE PTR $T6[ebp]
+	test	edx, edx
+	je	SHORT $LN2@Alignment
+
+; 428  : 		{
+; 429  : 			AverageHeading += (*it)->Heading();
+
+	lea	eax, DWORD PTR $T5[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?Heading@MovingEntity@@QBE?AUVector2D@@XZ ; MovingEntity::Heading
+	push	eax
+	lea	ecx, DWORD PTR _AverageHeading$[ebp]
+	call	??YVector2D@@QAEABU0@ABU0@@Z		; Vector2D::operator+=
+
+; 430  : 
+; 431  : 			++NeighborCount;
+
+	mov	ecx, DWORD PTR _NeighborCount$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _NeighborCount$[ebp], ecx
+$LN2@Alignment:
+
+; 432  : 		}
+; 433  : 	}
+
+	jmp	$LN4@Alignment
+$LN3@Alignment:
+
+; 434  : 
+; 435  : 	//if the neighborhood contained one or more vehicles, average their
+; 436  : 	//heading vectors.
+; 437  : 	if (NeighborCount > 0)
+
+	cmp	DWORD PTR _NeighborCount$[ebp], 0
+	jle	SHORT $LN1@Alignment
+
+; 438  : 	{
+; 439  : 		AverageHeading /= (double) NeighborCount;
+
+	cvtsi2sd xmm0, DWORD PTR _NeighborCount$[ebp]
+	movsd	QWORD PTR $T4[ebp], xmm0
+	lea	edx, DWORD PTR $T4[ebp]
+	push	edx
+	lea	ecx, DWORD PTR _AverageHeading$[ebp]
+	call	??_0Vector2D@@QAEABU0@ABN@Z		; Vector2D::operator/=
+
+; 440  : 
+; 441  : 		AverageHeading -= m_pRaven_Bot->Heading();
+
+	lea	eax, DWORD PTR $T3[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [ecx+8]
+	call	?Heading@MovingEntity@@QBE?AUVector2D@@XZ ; MovingEntity::Heading
+	push	eax
+	lea	ecx, DWORD PTR _AverageHeading$[ebp]
+	call	??ZVector2D@@QAEABU0@ABU0@@Z		; Vector2D::operator-=
+$LN1@Alignment:
+
+; 442  : 	}
+; 443  : 
+; 444  : 	return AverageHeading;
+
+	mov	edx, DWORD PTR ___$ReturnUdt$[ebp]
+	mov	eax, DWORD PTR _AverageHeading$[ebp]
+	mov	DWORD PTR [edx], eax
+	mov	ecx, DWORD PTR _AverageHeading$[ebp+4]
+	mov	DWORD PTR [edx+4], ecx
+	mov	eax, DWORD PTR _AverageHeading$[ebp+8]
+	mov	DWORD PTR [edx+8], eax
+	mov	ecx, DWORD PTR _AverageHeading$[ebp+12]
+	mov	DWORD PTR [edx+12], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 445  : }
+
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN22@Alignment
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 216				; 000000d8H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+$LN22@Alignment:
+	DD	2
+	DD	$LN21@Alignment
+$LN21@Alignment:
+	DD	-40					; ffffffd8H
+	DD	16					; 00000010H
+	DD	$LN18@Alignment
+	DD	-64					; ffffffc0H
+	DD	12					; 0000000cH
+	DD	$LN19@Alignment
+$LN19@Alignment:
+	DB	105					; 00000069H
+	DB	116					; 00000074H
+	DB	0
+$LN18@Alignment:
+	DB	65					; 00000041H
+	DB	118					; 00000076H
+	DB	101					; 00000065H
+	DB	114					; 00000072H
+	DB	97					; 00000061H
+	DB	103					; 00000067H
+	DB	101					; 00000065H
+	DB	72					; 00000048H
+	DB	101					; 00000065H
+	DB	97					; 00000061H
+	DB	100					; 00000064H
+	DB	105					; 00000069H
+	DB	110					; 0000006eH
+	DB	103					; 00000067H
+	DB	0
+_TEXT	ENDS
+text$x	SEGMENT
+__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$0:
+	lea	ecx, DWORD PTR _it$[ebp]
+	jmp	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$1:
+	lea	ecx, DWORD PTR $T7[ebp]
+	jmp	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$2:
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 1
+	je	$LN13@Alignment
+	and	DWORD PTR $T2[ebp], -2			; fffffffeH
+	lea	ecx, DWORD PTR $T9[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN13@Alignment:
+	ret	0
+__unwindfunclet$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$3:
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 2
+	je	$LN15@Alignment
+	and	DWORD PTR $T2[ebp], -3			; fffffffdH
+	lea	ecx, DWORD PTR $T10[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN15@Alignment:
+	ret	0
+__ehhandler$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-212]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?Alignment@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ENDP ; Raven_Steering::Alignment
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_steeringbehaviors.cpp
+_TEXT	SEGMENT
+tv149 = -240						; size = 4
+tv188 = -236						; size = 4
+tv198 = -232						; size = 4
+tv183 = -228						; size = 4
+tv194 = -224						; size = 4
+tv178 = -220						; size = 4
+tv67 = -216						; size = 4
+$T2 = -212						; size = 4
+$T3 = -208						; size = 16
+$T4 = -192						; size = 8
+$T5 = -184						; size = 16
+$T6 = -165						; size = 1
+$T7 = -164						; size = 12
+$T8 = -149						; size = 1
+$T9 = -148						; size = 28
+$T10 = -120						; size = 28
+_it$ = -88						; size = 12
+_NeighborCount$ = -72					; size = 4
+_SteeringForce$ = -64					; size = 16
+_CenterOfMass$ = -40					; size = 16
+_this$ = -20						; size = 4
+__$ArrayPad$ = -16					; size = 4
+__$EHRec$ = -12						; size = 12
+___$ReturnUdt$ = 8					; size = 4
+_neighbors$ = 12					; size = 4
+?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z PROC ; Raven_Steering::Cohesion
+; _this$ = ecx
+
+; 453  : {
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 228				; 000000e4H
+	push	edi
+	push	ecx
+	lea	edi, DWORD PTR [ebp-240]
+	mov	ecx, 57					; 00000039H
+	mov	eax, -858993460				; ccccccccH
+	rep stosd
+	pop	ecx
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	mov	DWORD PTR __$ArrayPad$[ebp], eax
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	DWORD PTR $T2[ebp], 0
+
+; 454  : 	//first find the center of mass of all the agents
+; 455  : 	Vector2D CenterOfMass, SteeringForce;
+
+	lea	ecx, DWORD PTR _CenterOfMass$[ebp]
+	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
+	lea	ecx, DWORD PTR _SteeringForce$[ebp]
+	call	??0Vector2D@@QAE@XZ			; Vector2D::Vector2D
+
+; 456  : 
+; 457  : 	int NeighborCount = 0;
+
+	mov	DWORD PTR _NeighborCount$[ebp], 0
+
+; 458  : 
+; 459  : 	std::list<Raven_Bot*>::const_iterator it = neighbors.begin();
+
+	lea	eax, DWORD PTR _it$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _neighbors$[ebp]
+	call	?begin@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QBE?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::begin
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	jmp	SHORT $LN5@Cohesion
+$LN4@Cohesion:
+
+; 460  : 
+; 461  : 	for (it; it != neighbors.end(); ++it)
+
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??E?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAEAAV01@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator++
+$LN5@Cohesion:
+	lea	ecx, DWORD PTR $T7[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _neighbors$[ebp]
+	call	?end@?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@QBE?AV?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@2@XZ ; std::list<Raven_Bot *,std::allocator<Raven_Bot *> >::end
+	mov	DWORD PTR tv67[ebp], eax
+	mov	edx, DWORD PTR tv67[ebp]
+	mov	DWORD PTR tv178[ebp], edx
+	mov	BYTE PTR __$EHRec$[ebp+8], 1
+	mov	eax, DWORD PTR tv178[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??9?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBE_NABV01@@Z ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator!=
+	mov	BYTE PTR $T8[ebp], al
+	mov	BYTE PTR __$EHRec$[ebp+8], 0
+	lea	ecx, DWORD PTR $T7[ebp]
+	call	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+	movzx	ecx, BYTE PTR $T8[ebp]
+	test	ecx, ecx
+	je	$LN3@Cohesion
+
+; 462  : 	{
+; 463  : 		//make sure this agent isn't included in the calculations and that
+; 464  : 		//the agent being examined is close enough. ***also make sure it doesn't
+; 465  : 		//include the evade target ***
+; 466  : 		if ((*it != m_pRaven_Bot) && (*it)->IsTagged() &&
+; 467  : 			(*it != m_pTargetAgent1) && (*it)->GetTeam()==m_pRaven_Bot->GetTeam())
+
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax]
+	cmp	eax, DWORD PTR [edx+8]
+	je	$LN8@Cohesion
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?IsTagged@BaseGameEntity@@QBE_NXZ	; BaseGameEntity::IsTagged
+	movzx	ecx, al
+	test	ecx, ecx
+	je	$LN8@Cohesion
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [eax]
+	cmp	eax, DWORD PTR [edx+32]
+	je	$LN8@Cohesion
+	lea	ecx, DWORD PTR $T9[ebp]
+	push	ecx
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [edx+8]
+	call	?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Raven_Bot::GetTeam
+	mov	DWORD PTR tv194[ebp], eax
+	mov	eax, DWORD PTR tv194[ebp]
+	mov	DWORD PTR tv183[ebp], eax
+	mov	BYTE PTR __$EHRec$[ebp+8], 2
+	mov	ecx, DWORD PTR $T2[ebp]
+	or	ecx, 1
+	mov	DWORD PTR $T2[ebp], ecx
+	mov	edx, DWORD PTR tv183[ebp]
+	push	edx
+	lea	eax, DWORD PTR $T10[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?GetTeam@Raven_Bot@@QAE?AV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ ; Raven_Bot::GetTeam
+	mov	DWORD PTR tv198[ebp], eax
+	mov	ecx, DWORD PTR tv198[ebp]
+	mov	DWORD PTR tv188[ebp], ecx
+	mov	DWORD PTR __$EHRec$[ebp+8], 3
+	mov	edx, DWORD PTR $T2[ebp]
+	or	edx, 2
+	mov	DWORD PTR $T2[ebp], edx
+	mov	eax, DWORD PTR tv188[ebp]
+	push	eax
+	call	??$?8DU?$char_traits@D@std@@V?$allocator@D@1@@std@@YA_NABV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@0@0@Z ; std::operator==<char,std::char_traits<char>,std::allocator<char> >
+	add	esp, 8
+	movzx	ecx, al
+	test	ecx, ecx
+	je	SHORT $LN8@Cohesion
+	mov	DWORD PTR tv149[ebp], 1
+	jmp	SHORT $LN9@Cohesion
+$LN8@Cohesion:
+	mov	DWORD PTR tv149[ebp], 0
+$LN9@Cohesion:
+	mov	dl, BYTE PTR tv149[ebp]
+	mov	BYTE PTR $T6[ebp], dl
+	mov	DWORD PTR __$EHRec$[ebp+8], 2
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 2
+	je	SHORT $LN16@Cohesion
+	and	DWORD PTR $T2[ebp], -3			; fffffffdH
+	lea	ecx, DWORD PTR $T10[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN16@Cohesion:
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+	mov	ecx, DWORD PTR $T2[ebp]
+	and	ecx, 1
+	je	SHORT $LN17@Cohesion
+	and	DWORD PTR $T2[ebp], -2			; fffffffeH
+	lea	ecx, DWORD PTR $T9[ebp]
+	call	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN17@Cohesion:
+	movzx	edx, BYTE PTR $T6[ebp]
+	test	edx, edx
+	je	SHORT $LN2@Cohesion
+
+; 468  : 		{
+; 469  : 			CenterOfMass += (*it)->Pos();
+
+	lea	eax, DWORD PTR $T5[ebp]
+	push	eax
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??D?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QBEABQAVRaven_Bot@@XZ ; std::_List_const_iterator<std::_List_val<std::_List_simple_types<Raven_Bot *> > >::operator*
+	mov	ecx, DWORD PTR [eax]
+	call	?Pos@BaseGameEntity@@QBE?AUVector2D@@XZ	; BaseGameEntity::Pos
+	push	eax
+	lea	ecx, DWORD PTR _CenterOfMass$[ebp]
+	call	??YVector2D@@QAEABU0@ABU0@@Z		; Vector2D::operator+=
+
+; 470  : 
+; 471  : 			++NeighborCount;
+
+	mov	ecx, DWORD PTR _NeighborCount$[ebp]
+	add	ecx, 1
+	mov	DWORD PTR _NeighborCount$[ebp], ecx
+$LN2@Cohesion:
+
+; 472  : 		}
+; 473  : 	}
+
+	jmp	$LN4@Cohesion
+$LN3@Cohesion:
+
+; 474  : 
+; 475  : 	if (NeighborCount > 0)
+
+	cmp	DWORD PTR _NeighborCount$[ebp], 0
+	jle	SHORT $LN1@Cohesion
+
+; 476  : 	{
+; 477  : 		//the center of mass is the average of the sum of positions
+; 478  : 		CenterOfMass /= (double) NeighborCount;
+
+	cvtsi2sd xmm0, DWORD PTR _NeighborCount$[ebp]
+	movsd	QWORD PTR $T4[ebp], xmm0
+	lea	edx, DWORD PTR $T4[ebp]
+	push	edx
+	lea	ecx, DWORD PTR _CenterOfMass$[ebp]
+	call	??_0Vector2D@@QAEABU0@ABN@Z		; Vector2D::operator/=
+
+; 479  : 
+; 480  : 		//now seek towards that position
+; 481  : 		SteeringForce = Seek(CenterOfMass);
+
+	lea	eax, DWORD PTR _CenterOfMass$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR $T3[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?Seek@Raven_Steering@@AAE?AUVector2D@@ABU2@@Z ; Raven_Steering::Seek
+	mov	edx, DWORD PTR [eax]
+	mov	DWORD PTR _SteeringForce$[ebp], edx
+	mov	ecx, DWORD PTR [eax+4]
+	mov	DWORD PTR _SteeringForce$[ebp+4], ecx
+	mov	edx, DWORD PTR [eax+8]
+	mov	DWORD PTR _SteeringForce$[ebp+8], edx
+	mov	eax, DWORD PTR [eax+12]
+	mov	DWORD PTR _SteeringForce$[ebp+12], eax
+$LN1@Cohesion:
+
+; 482  : 	}
+; 483  : 
+; 484  : 	//the magnitude of cohesion is usually much larger than separation or
+; 485  : 	//allignment so it usually helps to normalize it.
+; 486  : 	return Vec2DNormalize(SteeringForce);
+
+	lea	ecx, DWORD PTR _SteeringForce$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR ___$ReturnUdt$[ebp]
+	push	edx
+	call	?Vec2DNormalize@@YA?AUVector2D@@ABU1@@Z	; Vec2DNormalize
+	add	esp, 8
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	lea	ecx, DWORD PTR _it$[ebp]
+	call	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 487  : }
+
+	push	edx
+	mov	ecx, ebp
+	push	eax
+	lea	edx, DWORD PTR $LN23@Cohesion
+	call	@_RTC_CheckStackVars@8
+	pop	eax
+	pop	edx
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	pop	edi
+	mov	ecx, DWORD PTR __$ArrayPad$[ebp]
+	xor	ecx, ebp
+	call	@__security_check_cookie@4
+	add	esp, 240				; 000000f0H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	8
+	npad	3
+$LN23@Cohesion:
+	DD	3
+	DD	$LN22@Cohesion
+$LN22@Cohesion:
+	DD	-40					; ffffffd8H
+	DD	16					; 00000010H
+	DD	$LN18@Cohesion
+	DD	-64					; ffffffc0H
+	DD	16					; 00000010H
+	DD	$LN19@Cohesion
+	DD	-88					; ffffffa8H
+	DD	12					; 0000000cH
+	DD	$LN20@Cohesion
+$LN20@Cohesion:
+	DB	105					; 00000069H
+	DB	116					; 00000074H
+	DB	0
+$LN19@Cohesion:
+	DB	83					; 00000053H
+	DB	116					; 00000074H
+	DB	101					; 00000065H
+	DB	101					; 00000065H
+	DB	114					; 00000072H
+	DB	105					; 00000069H
+	DB	110					; 0000006eH
+	DB	103					; 00000067H
+	DB	70					; 00000046H
+	DB	111					; 0000006fH
+	DB	114					; 00000072H
+	DB	99					; 00000063H
+	DB	101					; 00000065H
+	DB	0
+$LN18@Cohesion:
+	DB	67					; 00000043H
+	DB	101					; 00000065H
+	DB	110					; 0000006eH
+	DB	116					; 00000074H
+	DB	101					; 00000065H
+	DB	114					; 00000072H
+	DB	79					; 0000004fH
+	DB	102					; 00000066H
+	DB	77					; 0000004dH
+	DB	97					; 00000061H
+	DB	115					; 00000073H
+	DB	115					; 00000073H
+	DB	0
+_TEXT	ENDS
+text$x	SEGMENT
+__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$0:
+	lea	ecx, DWORD PTR _it$[ebp]
+	jmp	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$1:
+	lea	ecx, DWORD PTR $T7[ebp]
+	jmp	??1?$_List_const_iterator@V?$_List_val@U?$_List_simple_types@PAVRaven_Bot@@@std@@@std@@@std@@QAE@XZ
+__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$2:
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 1
+	je	$LN13@Cohesion
+	and	DWORD PTR $T2[ebp], -2			; fffffffeH
+	lea	ecx, DWORD PTR $T9[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN13@Cohesion:
+	ret	0
+__unwindfunclet$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z$3:
+	mov	eax, DWORD PTR $T2[ebp]
+	and	eax, 2
+	je	$LN15@Cohesion
+	and	DWORD PTR $T2[ebp], -3			; fffffffdH
+	lea	ecx, DWORD PTR $T10[ebp]
+	jmp	??1?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::~basic_string<char,std::char_traits<char>,std::allocator<char> >
+$LN15@Cohesion:
+	ret	0
+__ehhandler$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-236]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	ecx, DWORD PTR [edx-4]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+?Cohesion@Raven_Steering@@AAE?AUVector2D@@ABV?$list@PAVRaven_Bot@@V?$allocator@PAVRaven_Bot@@@std@@@std@@@Z ENDP ; Raven_Steering::Cohesion
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\buckland_chapter7 to 10_raven\raven_steeringbehaviors.cpp
 _TEXT	SEGMENT
@@ -9479,7 +10354,7 @@ _bt$ = 8						; size = 4
 ?On@Raven_Steering@@AAE_NW4behavior_type@1@@Z PROC	; Raven_Steering::On, COMDAT
 ; _this$ = ecx
 
-; 131  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
+; 133  :   bool      On(behavior_type bt){return (m_iFlags & bt) == bt;}
 
 	push	ebp
 	mov	ebp, esp
@@ -11568,6 +12443,53 @@ $LN3@operator:
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\2d\vector2d.h
+;	COMDAT ??_0Vector2D@@QAEABU0@ABN@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_rhs$ = 8						; size = 4
+??_0Vector2D@@QAEABU0@ABN@Z PROC			; Vector2D::operator/=, COMDAT
+; _this$ = ecx
+
+; 92   :   {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 93   :     x /= rhs;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _rhs$[ebp]
+	movsd	xmm0, QWORD PTR [eax]
+	divsd	xmm0, QWORD PTR [ecx]
+	mov	edx, DWORD PTR _this$[ebp]
+	movsd	QWORD PTR [edx], xmm0
+
+; 94   :     y /= rhs;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _rhs$[ebp]
+	movsd	xmm0, QWORD PTR [eax+8]
+	divsd	xmm0, QWORD PTR [ecx]
+	mov	edx, DWORD PTR _this$[ebp]
+	movsd	QWORD PTR [edx+8], xmm0
+
+; 95   : 
+; 96   :     return *this;
+
+	mov	eax, DWORD PTR _this$[ebp]
+
+; 97   :   }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??_0Vector2D@@QAEABU0@ABN@Z ENDP			; Vector2D::operator/=
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\2d\vector2d.h
 ;	COMDAT ??XVector2D@@QAEABU0@ABN@Z
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -11612,6 +12534,53 @@ _rhs$ = 8						; size = 4
 	pop	ebp
 	ret	4
 ??XVector2D@@QAEABU0@ABN@Z ENDP				; Vector2D::operator*=
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\2d\vector2d.h
+;	COMDAT ??ZVector2D@@QAEABU0@ABU0@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+_rhs$ = 8						; size = 4
+??ZVector2D@@QAEABU0@ABU0@@Z PROC			; Vector2D::operator-=, COMDAT
+; _this$ = ecx
+
+; 76   :   {
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 77   :     x -= rhs.x;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _rhs$[ebp]
+	movsd	xmm0, QWORD PTR [eax]
+	subsd	xmm0, QWORD PTR [ecx]
+	mov	edx, DWORD PTR _this$[ebp]
+	movsd	QWORD PTR [edx], xmm0
+
+; 78   :     y -= rhs.y;
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR _rhs$[ebp]
+	movsd	xmm0, QWORD PTR [eax+8]
+	subsd	xmm0, QWORD PTR [ecx+8]
+	mov	edx, DWORD PTR _this$[ebp]
+	movsd	QWORD PTR [edx+8], xmm0
+
+; 79   : 
+; 80   :     return *this;
+
+	mov	eax, DWORD PTR _this$[ebp]
+
+; 81   :   }
+
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??ZVector2D@@QAEABU0@ABU0@@Z ENDP			; Vector2D::operator-=
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File d:\uqac\intellignece artificielle pour le jeu vidéo\tp 3\common\2d\vector2d.h
@@ -14136,6 +15105,194 @@ text$x	ENDS
 ?_Copy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXII@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Copy
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
+;	COMDAT ?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHIIPBDI@Z
+_TEXT	SEGMENT
+tv136 = -24						; size = 4
+tv137 = -20						; size = 4
+tv138 = -16						; size = 4
+tv90 = -12						; size = 4
+__Ans$ = -8						; size = 4
+_this$ = -4						; size = 4
+__Off$ = 8						; size = 4
+__N0$ = 12						; size = 4
+__Ptr$ = 16						; size = 4
+__Count$ = 20						; size = 4
+?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHIIPBDI@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare, COMDAT
+; _this$ = ecx
+
+; 2170 : 		{	// compare [_Off, _Off + _N0) with [_Ptr, _Ptr + _Count)
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 24					; 00000018H
+	mov	eax, -858993460				; ccccccccH
+	mov	DWORD PTR [ebp-24], eax
+	mov	DWORD PTR [ebp-20], eax
+	mov	DWORD PTR [ebp-16], eax
+	mov	DWORD PTR [ebp-12], eax
+	mov	DWORD PTR [ebp-8], eax
+	mov	DWORD PTR [ebp-4], eax
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 2171 :  #if _ITERATOR_DEBUG_LEVEL == 2
+; 2172 : 		if (_Count != 0)
+
+	cmp	DWORD PTR __Count$[ebp], 0
+	je	SHORT $LN3@compare
+
+; 2173 : 			_DEBUG_POINTER(_Ptr);
+
+	push	2173					; 0000087dH
+	push	OFFSET ??_C@_1IO@FEAPGJBD@?$AAC?$AA?3?$AA?2?$AAP?$AAr?$AAo?$AAg?$AAr?$AAa?$AAm?$AA?5?$AAF?$AAi?$AAl?$AAe?$AAs?$AA?5?$AA?$CI?$AAx?$AA8?$AA6?$AA?$CJ?$AA?2?$AAM?$AAi?$AAc?$AAr?$AAo?$AAs?$AAo?$AAf?$AAt@
+	mov	eax, DWORD PTR __Ptr$[ebp]
+	push	eax
+	call	??$_Debug_pointer@D@std@@YAXPBDPB_WI@Z	; std::_Debug_pointer<char>
+	add	esp, 12					; 0000000cH
+$LN3@compare:
+
+; 2174 :  #endif /* _ITERATOR_DEBUG_LEVEL == 2 */
+; 2175 : 
+; 2176 : 		if (this->_Mysize < _Off)
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	mov	edx, DWORD PTR [ecx+20]
+	cmp	edx, DWORD PTR __Off$[ebp]
+	jae	SHORT $LN2@compare
+
+; 2177 : 			_Xran();	// _Off off end
+
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Xran@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEXXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Xran
+$LN2@compare:
+
+; 2178 : 		if (this->_Mysize - _Off < _N0)
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+20]
+	sub	ecx, DWORD PTR __Off$[ebp]
+	cmp	ecx, DWORD PTR __N0$[ebp]
+	jae	SHORT $LN1@compare
+
+; 2179 : 			_N0 = this->_Mysize - _Off;	// trim _N0 to size
+
+	mov	edx, DWORD PTR _this$[ebp]
+	mov	eax, DWORD PTR [edx+20]
+	sub	eax, DWORD PTR __Off$[ebp]
+	mov	DWORD PTR __N0$[ebp], eax
+$LN1@compare:
+
+; 2180 : 
+; 2181 : 		size_type _Ans = _Traits::compare(this->_Myptr() + _Off, _Ptr,
+; 2182 : 			_N0 < _Count ? _N0 : _Count);
+
+	mov	ecx, DWORD PTR __N0$[ebp]
+	cmp	ecx, DWORD PTR __Count$[ebp]
+	jae	SHORT $LN6@compare
+	mov	edx, DWORD PTR __N0$[ebp]
+	mov	DWORD PTR tv90[ebp], edx
+	jmp	SHORT $LN7@compare
+$LN6@compare:
+	mov	eax, DWORD PTR __Count$[ebp]
+	mov	DWORD PTR tv90[ebp], eax
+$LN7@compare:
+	mov	ecx, DWORD PTR tv90[ebp]
+	push	ecx
+	mov	edx, DWORD PTR __Ptr$[ebp]
+	push	edx
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ ; std::_String_val<std::_Simple_types<char> >::_Myptr
+	add	eax, DWORD PTR __Off$[ebp]
+	push	eax
+	call	?compare@?$char_traits@D@std@@SAHPBD0I@Z ; std::char_traits<char>::compare
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR __Ans$[ebp], eax
+
+; 2183 : 		return (_Ans != 0 ? (int)_Ans : _N0 < _Count ? -1
+; 2184 : 			: _N0 == _Count ? 0 : +1);
+
+	cmp	DWORD PTR __Ans$[ebp], 0
+	je	SHORT $LN12@compare
+	mov	eax, DWORD PTR __Ans$[ebp]
+	mov	DWORD PTR tv138[ebp], eax
+	jmp	SHORT $LN13@compare
+$LN12@compare:
+	mov	ecx, DWORD PTR __N0$[ebp]
+	cmp	ecx, DWORD PTR __Count$[ebp]
+	jae	SHORT $LN10@compare
+	mov	DWORD PTR tv137[ebp], -1
+	jmp	SHORT $LN11@compare
+$LN10@compare:
+	mov	edx, DWORD PTR __N0$[ebp]
+	cmp	edx, DWORD PTR __Count$[ebp]
+	jne	SHORT $LN8@compare
+	mov	DWORD PTR tv136[ebp], 0
+	jmp	SHORT $LN9@compare
+$LN8@compare:
+	mov	DWORD PTR tv136[ebp], 1
+$LN9@compare:
+	mov	eax, DWORD PTR tv136[ebp]
+	mov	DWORD PTR tv137[ebp], eax
+$LN11@compare:
+	mov	ecx, DWORD PTR tv137[ebp]
+	mov	DWORD PTR tv138[ebp], ecx
+$LN13@compare:
+	mov	eax, DWORD PTR tv138[ebp]
+$LN5@compare:
+
+; 2185 : 		}
+
+	add	esp, 24					; 00000018H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	16					; 00000010H
+?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHIIPBDI@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
+;	COMDAT ?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHABV12@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+__Right$ = 8						; size = 4
+?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHABV12@@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare, COMDAT
+; _this$ = ecx
+
+; 2135 : 		{	// compare [0, _Mysize) with _Right
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 2136 : 		return (compare(0, this->_Mysize, _Right._Myptr(), _Right.size()));
+
+	mov	ecx, DWORD PTR __Right$[ebp]
+	call	?size@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEIXZ ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::size
+	push	eax
+	mov	ecx, DWORD PTR __Right$[ebp]
+	call	?_Myptr@?$_String_val@U?$_Simple_types@D@std@@@std@@QBEPBDXZ ; std::_String_val<std::_Simple_types<char> >::_Myptr
+	push	eax
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR [eax+20]
+	push	ecx
+	push	0
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHIIPBDI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+
+; 2137 : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?compare@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QBEHABV12@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::compare
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
 ;	COMDAT ?reserve@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEXI@Z
 _TEXT	SEGMENT
 __Size$1 = -8						; size = 4
@@ -15519,6 +16676,94 @@ text$x	ENDS
 ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@XZ ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
+;	COMDAT ??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT
+$T2 = -18						; size = 1
+$T3 = -17						; size = 1
+_this$ = -16						; size = 4
+__$EHRec$ = -12						; size = 12
+__Right$ = 8						; size = 4
+??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z PROC ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >, COMDAT
+; _this$ = ecx
+
+; 724  : 		{	// construct by copying _Right
+
+	push	ebp
+	mov	ebp, esp
+	push	-1
+	push	__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	mov	eax, DWORD PTR fs:0
+	push	eax
+	sub	esp, 8
+	mov	DWORD PTR [ebp-20], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-16], -858993460		; ccccccccH
+	mov	eax, DWORD PTR ___security_cookie
+	xor	eax, ebp
+	push	eax
+	lea	eax, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, eax
+	mov	DWORD PTR _this$[ebp], ecx
+	lea	eax, DWORD PTR $T2[ebp]
+	push	eax
+	lea	ecx, DWORD PTR $T3[ebp]
+	push	ecx
+	mov	ecx, DWORD PTR __Right$[ebp]
+	call	?_Getal@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QBE?AU?$_Wrap_alloc@V?$allocator@D@std@@@2@XZ ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::_Getal
+	mov	ecx, eax
+	call	?select_on_container_copy_construction@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBE?AU12@XZ ; std::_Wrap_alloc<std::allocator<char> >::select_on_container_copy_construction
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >
+	mov	DWORD PTR __$EHRec$[ebp+8], 0
+
+; 725  : 		_Tidy();
+
+	push	0
+	push	0
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?_Tidy@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEX_NI@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::_Tidy
+
+; 726  : 		assign(_Right, 0, npos);
+
+	mov	edx, DWORD PTR ?npos@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@2IB ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::npos
+	push	edx
+	push	0
+	mov	eax, DWORD PTR __Right$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	?assign@?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAEAAV12@ABV12@II@Z ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::assign
+
+; 727  : 		}
+
+	mov	DWORD PTR __$EHRec$[ebp+8], -1
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	ecx, DWORD PTR __$EHRec$[ebp]
+	mov	DWORD PTR fs:0, ecx
+	pop	ecx
+	add	esp, 20					; 00000014H
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+_TEXT	ENDS
+;	COMDAT text$x
+text$x	SEGMENT
+__unwindfunclet$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z$0:
+	mov	ecx, DWORD PTR _this$[ebp]
+	jmp	??1?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QAE@XZ ; std::_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >::~_String_alloc<0,std::_String_base_types<char,std::allocator<char> > >
+__ehhandler$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z:
+	mov	edx, DWORD PTR [esp+8]
+	lea	eax, DWORD PTR [edx+12]
+	mov	ecx, DWORD PTR [edx-12]
+	xor	ecx, eax
+	call	@__security_check_cookie@4
+	mov	eax, OFFSET __ehfuncinfo$??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z
+	jmp	___CxxFrameHandler3
+text$x	ENDS
+??0?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@QAE@ABV01@@Z ENDP ; std::basic_string<char,std::char_traits<char>,std::allocator<char> >::basic_string<char,std::char_traits<char>,std::allocator<char> >
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xstring
 ;	COMDAT ?_Getal@?$_String_alloc@$0A@U?$_String_base_types@DV?$allocator@D@std@@@std@@@std@@QBE?AU?$_Wrap_alloc@V?$allocator@D@std@@@2@XZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -16092,6 +17337,38 @@ __Count$ = 8						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
+;	COMDAT ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@ABV?$allocator@D@1@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+__Right$ = 8						; size = 4
+??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@ABV?$allocator@D@1@@Z PROC ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >, COMDAT
+; _this$ = ecx
+
+; 806  : 		{	// construct by copying base
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+	mov	eax, DWORD PTR __Right$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR _this$[ebp]
+	call	??0?$allocator@D@std@@QAE@ABV01@@Z	; std::allocator<char>::allocator<char>
+
+; 807  : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@ABV?$allocator@D@1@@Z ENDP ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
 ;	COMDAT ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -16118,6 +17395,77 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@XZ ENDP	; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
+;	COMDAT ?select_on_container_copy_construction@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBE?AU12@XZ
+_TEXT	SEGMENT
+$T1 = -5						; size = 1
+_this$ = -4						; size = 4
+___$ReturnUdt$ = 8					; size = 4
+?select_on_container_copy_construction@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBE?AU12@XZ PROC ; std::_Wrap_alloc<std::allocator<char> >::select_on_container_copy_construction, COMDAT
+; _this$ = ecx
+
+; 778  : 		{	// get allocator to use
+
+	push	ebp
+	mov	ebp, esp
+	sub	esp, 8
+	mov	DWORD PTR [ebp-8], -858993460		; ccccccccH
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 779  : 		return (_Mytraits::select_on_container_copy_construction(*this));
+
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	lea	ecx, DWORD PTR $T1[ebp]
+	push	ecx
+	call	?select_on_container_copy_construction@?$allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ; std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction
+	add	esp, 8
+	push	eax
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0?$_Wrap_alloc@V?$allocator@D@std@@@std@@QAE@ABV?$allocator@D@1@@Z ; std::_Wrap_alloc<std::allocator<char> >::_Wrap_alloc<std::allocator<char> >
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 780  : 		}
+
+	add	esp, 8
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?select_on_container_copy_construction@?$_Wrap_alloc@V?$allocator@D@std@@@std@@QBE?AU12@XZ ENDP ; std::_Wrap_alloc<std::allocator<char> >::select_on_container_copy_construction
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
+;	COMDAT ?select_on_container_copy_construction@?$allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z
+_TEXT	SEGMENT
+___$ReturnUdt$ = 8					; size = 4
+__Al$ = 12						; size = 4
+?select_on_container_copy_construction@?$allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z PROC ; std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction, COMDAT
+
+; 740  : 		{	// get allocator to use
+
+	push	ebp
+	mov	ebp, esp
+
+; 741  : 		return (_Al.select_on_container_copy_construction());
+
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __Al$[ebp]
+	call	?select_on_container_copy_construction@?$allocator@D@std@@QBE?AV12@XZ ; std::allocator<char>::select_on_container_copy_construction
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 742  : 		}
+
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	pop	ebp
+	ret	0
+?select_on_container_copy_construction@?$allocator_traits@V?$allocator@D@std@@@std@@SA?AV?$allocator@D@2@ABV32@@Z ENDP ; std::allocator_traits<std::allocator<char> >::select_on_container_copy_construction
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
@@ -16243,6 +17591,32 @@ ___formal$ = 12						; size = 4
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
+;	COMDAT ??0?$allocator@D@std@@QAE@ABV01@@Z
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___formal$ = 8						; size = 4
+??0?$allocator@D@std@@QAE@ABV01@@Z PROC			; std::allocator<char>::allocator<char>, COMDAT
+; _this$ = ecx
+
+; 556  : 	allocator(const allocator<_Ty>&) _THROW0()
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 557  : 		{	// construct by copying (do nothing)
+; 558  : 		}
+
+	mov	eax, DWORD PTR _this$[ebp]
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+??0?$allocator@D@std@@QAE@ABV01@@Z ENDP			; std::allocator<char>::allocator<char>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
 ;	COMDAT ??0?$allocator@D@std@@QAE@XZ
 _TEXT	SEGMENT
 _this$ = -4						; size = 4
@@ -16265,6 +17639,41 @@ _this$ = -4						; size = 4
 	pop	ebp
 	ret	0
 ??0?$allocator@D@std@@QAE@XZ ENDP			; std::allocator<char>::allocator<char>
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xmemory0
+;	COMDAT ?select_on_container_copy_construction@?$allocator@D@std@@QBE?AV12@XZ
+_TEXT	SEGMENT
+_this$ = -4						; size = 4
+___$ReturnUdt$ = 8					; size = 4
+?select_on_container_copy_construction@?$allocator@D@std@@QBE?AV12@XZ PROC ; std::allocator<char>::select_on_container_copy_construction, COMDAT
+; _this$ = ecx
+
+; 532  : 		{	// return this allocator
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+	mov	DWORD PTR _this$[ebp], ecx
+
+; 533  : 		return (*this);
+
+	mov	eax, DWORD PTR _this$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR ___$ReturnUdt$[ebp]
+	call	??0?$allocator@D@std@@QAE@ABV01@@Z	; std::allocator<char>::allocator<char>
+	mov	eax, DWORD PTR ___$ReturnUdt$[ebp]
+
+; 534  : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	4
+?select_on_container_copy_construction@?$allocator@D@std@@QBE?AV12@XZ ENDP ; std::allocator<char>::select_on_container_copy_construction
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\xutility
@@ -17224,6 +18633,53 @@ $LN4@length:
 	pop	ebp
 	ret	0
 ?length@?$char_traits@D@std@@SAIPBD@Z ENDP		; std::char_traits<char>::length
+_TEXT	ENDS
+; Function compile flags: /Odtp /RTCsu
+; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\iosfwd
+;	COMDAT ?compare@?$char_traits@D@std@@SAHPBD0I@Z
+_TEXT	SEGMENT
+tv69 = -4						; size = 4
+__First1$ = 8						; size = 4
+__First2$ = 12						; size = 4
+__Count$ = 16						; size = 4
+?compare@?$char_traits@D@std@@SAHPBD0I@Z PROC		; std::char_traits<char>::compare, COMDAT
+
+; 515  : 		{	// compare [_First1, _First1 + _Count) with [_First2, ...)
+
+	push	ebp
+	mov	ebp, esp
+	push	ecx
+	mov	DWORD PTR [ebp-4], -858993460		; ccccccccH
+
+; 516  : 		return (_Count == 0 ? 0
+; 517  : 			: _CSTD memcmp(_First1, _First2, _Count));
+
+	cmp	DWORD PTR __Count$[ebp], 0
+	jne	SHORT $LN3@compare
+	mov	DWORD PTR tv69[ebp], 0
+	jmp	SHORT $LN4@compare
+$LN3@compare:
+	mov	eax, DWORD PTR __Count$[ebp]
+	push	eax
+	mov	ecx, DWORD PTR __First2$[ebp]
+	push	ecx
+	mov	edx, DWORD PTR __First1$[ebp]
+	push	edx
+	call	_memcmp
+	add	esp, 12					; 0000000cH
+	mov	DWORD PTR tv69[ebp], eax
+$LN4@compare:
+	mov	eax, DWORD PTR tv69[ebp]
+
+; 518  : 		}
+
+	add	esp, 4
+	cmp	ebp, esp
+	call	__RTC_CheckEsp
+	mov	esp, ebp
+	pop	ebp
+	ret	0
+?compare@?$char_traits@D@std@@SAHPBD0I@Z ENDP		; std::char_traits<char>::compare
 _TEXT	ENDS
 ; Function compile flags: /Odtp /RTCsu
 ; File c:\program files (x86)\microsoft visual studio 12.0\vc\include\new

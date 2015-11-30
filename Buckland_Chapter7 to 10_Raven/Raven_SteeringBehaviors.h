@@ -54,9 +54,11 @@ private:
     none               = 0x00000,
     seek               = 0x00002,
     arrive             = 0x00008,
-    wander             = 0x00010,
-    separation         = 0x00040,
-    wall_avoidance     = 0x00200,
+	wander = 0x00010,
+	cohesion = 0x00020,
+	separation = 0x00040,
+	alignment = 0x00080,
+	wall_avoidance = 0x00200,
   };
 
 private:
@@ -163,6 +165,12 @@ private:
   Vector2D Separation(const std::list<Raven_Bot*> &agents);
 
 
+  // -- Group Behaviors -- //
+
+  Vector2D Cohesion(const std::list<Raven_Bot*> &agents);
+
+  Vector2D Alignment(const std::list<Raven_Bot*> &agents);
+
     /* .......................................................
 
                        END BEHAVIOR DECLARATIONS
@@ -212,14 +220,20 @@ public:
   void SeekOff()  {if(On(seek))   m_iFlags ^=seek;}
   void ArriveOff(){if(On(arrive)) m_iFlags ^=arrive;}
   void WanderOff(){if(On(wander)) m_iFlags ^=wander;}
-  void SeparationOff(){if(On(separation)) m_iFlags ^=separation;}
-  void WallAvoidanceOff(){if(On(wall_avoidance)) m_iFlags ^=wall_avoidance;}
+  void SeparationOff(){ if (On(separation)) m_iFlags ^= separation; }
+  void CohesionOff(){ if (On(cohesion)) m_iFlags ^= cohesion; }
+  void AlignmentOff(){ if (On(alignment)) m_iFlags ^= alignment; }
+  void WallAvoidanceOff(){ if (On(wall_avoidance)) m_iFlags ^= wall_avoidance; }
+  void FlockingOff(){ CohesionOff(); AlignmentOff(); SeparationOff(); WanderOff(); }
 
   bool SeekIsOn(){return On(seek);}
   bool ArriveIsOn(){return On(arrive);}
   bool WanderIsOn(){return On(wander);}
   bool SeparationIsOn(){return On(separation);}
   bool WallAvoidanceIsOn(){return On(wall_avoidance);}
+  bool CohesionOn(){return On(cohesion); }
+  bool AlignmentOn(){ return On(alignment); }
+  void FlockingOn(){ CohesionOn(); AlignmentOn(); SeparationOn(); WanderOn(); }
 
   const std::vector<Vector2D>& GetFeelers()const{return m_Feelers;}
   

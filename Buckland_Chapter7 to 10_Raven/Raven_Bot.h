@@ -226,6 +226,8 @@ public:
 
   string GetTeam(){ return team; }
 
+  void DropAmmo();
+
 };
 
 
